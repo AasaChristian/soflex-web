@@ -16,7 +16,6 @@ function Board() {
     margin-color: black;
     width: 12.5%
 
-    
     `;
     
 
