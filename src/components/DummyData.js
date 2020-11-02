@@ -70,21 +70,6 @@ const data = {
                     reps: 0,
                     key: "12"
                 },
-                {
-                    name: "Bench Press",
-                    weight: 0,
-                    sets: 0,
-                    reps: 0,
-                    key: "121"
-
-                },
-                {
-                    name: "Squats",
-                    weight: 0,
-                    sets: 0,
-                    reps: 0,
-                    key: "122"
-                },
             ]
         }
 
