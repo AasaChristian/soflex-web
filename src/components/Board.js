@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import ExBox from './ExerciseStatBox';
 import data from './DummyData'
@@ -6,7 +6,7 @@ import data from './DummyData'
 
 function Board() {
     console.log(data, "data")
-    const {user, blog} = data
+    const {user} = data
 
     const exlist = user.ExerciseH.Standard
 
