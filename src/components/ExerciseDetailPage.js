@@ -2,11 +2,17 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-function ExDetailsPage() {
+function ExDetailsPage({exlist, match}) {
 
+    const chosenExercise = exlist.find(
+        filterFor => filterFor.name === match.params.exName
+    )
+
+    console.log(chosenExercise, 'chosenExercise')
+const {key, name } = chosenExercise
   return (
-<div>
-    <h1>ExDetailsPage</h1>
+<div key={key}>
+  <h1>{name}</h1>
 </div>
   );
 }
