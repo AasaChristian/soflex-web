@@ -16,8 +16,8 @@ function ExBox({name, key, reps, sets, weight}) {
 
     @media (max-width: 750px) {
 
-      padding-bottom: 15px;
-      margin-bottom: 10px;
+      padding-bottom: 45px;
+      margin-bottom: 30px;
     
     }
     `;
