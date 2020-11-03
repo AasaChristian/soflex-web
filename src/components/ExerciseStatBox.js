@@ -26,6 +26,13 @@ function ExBox({name, key, reps, sets, weight}) {
     border-bottom: solid black 5px;
     `;
 
+    const Details = styled.h4 `
+    
+    @media (max-width: 750px) {
+      display: none;
+    }
+    `;
+
     console.log(name, "exe")
 
   return (
@@ -34,9 +41,9 @@ function ExBox({name, key, reps, sets, weight}) {
         <div >
         <ExName>{name}</ExName>
 
-        <h4>Sets: {sets}</h4>
-        <h4>Reps: {reps} </h4>
-        <h4>Weight: {weight} </h4>
+        <Details>Sets: {sets}</Details>
+        <Details>Reps: {reps} </Details>
+        <Details>Weight: {weight} </Details>
         </div>
     </Exbox>
 
