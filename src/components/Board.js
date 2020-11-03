@@ -7,41 +7,47 @@ import data from './DummyData'
 function Board() {
     console.log(data, "data")
     const {user} = data
-
     const exlist = user.ExerciseH.Standard
 
-    console.log(exlist)
+
 
     const BoardCont = styled.div`
     display: flex;
-    height: 100%
+    width: inherit;
+    height: 90%;
     ;`
 
     const LeftWall = styled.section`
     background-color: blue;
-    margin-color: black;
-    width: 12.5%;
+    border-radius: 2%;
+
+
     `;
     
     const MainWall = styled.section`
     background-color: red;
-    width: 75%
+    width: 60%;
+    border-radius: 2%;
+    border: solid black 5px;
+
     `;
 
     const RightWall = styled.section`
     background-color: yellow;
-    width: 12.5%
+    border-radius: 2%;
+
     `;
 
     const ExboxCont = styled.section`
     display: flex;
     flex-direction: column;
     
+    
     `;
 
 
   return (
-    <BoardCont className="Board">
+    <BoardCont >
 
         <LeftWall>
             <h2>Left Wall</h2>

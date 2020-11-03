@@ -5,11 +5,9 @@ import styled from 'styled-components'
 function Head() {
 
     const Button = styled.button`
-    width: 13%;
     `;
     const HeadCont = styled.section`
     background-color: grey;
-    width: 100%;
     display: flex;
     justify-content: space-around;
     `;

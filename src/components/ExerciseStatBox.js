@@ -11,6 +11,10 @@ function ExBox({name, key}) {
     border: solid black 4px ;
     border-radius: 30%;
     margin-left: 5%;
+
+    @media (max-width: 750px) {
+      background-color: black;
+    }
     `;
 
     console.log(name, "exe")
