@@ -19,8 +19,7 @@ function Board() {
 
     const LeftWall = styled.section`
     background-color: #F8F1FF;
-    border-radius: 4%;
-    border-left: solid #656176 5px;
+    border-left: solid #656176 7px;
     border-bottom: solid #656176 5px;
     border-top: solid #656176 5px;
     

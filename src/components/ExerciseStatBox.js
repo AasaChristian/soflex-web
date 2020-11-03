@@ -11,9 +11,14 @@ function ExBox({name, key}) {
     border: solid black 4px ;
     border-radius: 30%;
     margin-left: 5%;
+    display: flex;
+    justify-content: center;
 
     @media (max-width: 750px) {
-      background-color: black;
+
+      padding-bottom: 75px;
+      margin-bottom: 10px;
+    
     }
     `;
 
