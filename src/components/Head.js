@@ -23,9 +23,23 @@ function Head() {
 
   return (
     <HeadCont>
-        <NavLink to = {`/board`}> Home </NavLink>
+        <NavLink to = {`/board`}>
+          <div>
+            <h2>
+            Home
+            </h2>
+          </div>
+            </NavLink>
         <h1>SoFlex</h1>
-        <NavLink  to = {`/`}>Log Out</NavLink>
+        <NavLink  to = {`/`}>
+          <div>
+          <h2>
+          Log Out
+
+          </h2>
+          </div>
+          
+          </NavLink>
     </HeadCont>
   );
 }
