@@ -1,13 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import ExBox from './ExerciseStatBox';
-import data from './DummyData'
 
 
-function Board() {
-    console.log(data, "data")
-    const {user} = data
-    const exlist = user.ExerciseH.Standard
+
+function Board({exlist}) {
+
 
 
 
@@ -61,6 +59,7 @@ function Board() {
         </LeftWall>
         <MainWall>
             <h1>MainWall</h1>
+
             <ExboxCont>
             {exlist.map((e) => {
                 return(
