@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import {NavLink} from "react-router-dom"
 
 
 
@@ -38,6 +39,7 @@ function ExBox({name, key, reps, sets, weight}) {
   return (
 
     <Exbox key ={key}>
+      <NavLink  to = {`/board/${name}`}>
         <div >
         <ExName>{name}</ExName>
 
@@ -45,6 +47,7 @@ function ExBox({name, key, reps, sets, weight}) {
         <Details>Reps: {reps} </Details>
         <Details>Weight: {weight} </Details>
         </div>
+        </NavLink>
     </Exbox>
 
   );
