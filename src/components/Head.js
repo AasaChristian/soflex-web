@@ -1,11 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import {NavLink} from "react-router-dom"
 
 
 function Head() {
 
-    const Button = styled.button`
-    `;
+
     const HeadCont = styled.section`
     background-color: #F8F1FF;
     display: flex;
@@ -23,9 +23,9 @@ function Head() {
 
   return (
     <HeadCont>
-        <Button> Home </Button>
+        <NavLink to = {`/board`}> Home </NavLink>
         <h1>SoFlex</h1>
-        <Button>Log Out</Button>
+        <NavLink  to = {`/`}>Log Out</NavLink>
     </HeadCont>
   );
 }
