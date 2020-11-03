@@ -7,10 +7,12 @@ function Head() {
     const Button = styled.button`
     `;
     const HeadCont = styled.section`
-    background-color: #656176;
+    background-color: #F8F1FF;
     display: flex;
     justify-content: space-around;
-    border-radius: 4%;
+    border-radius: 10%;
+    border: solid #656176 5px;
+    border-bottom: solid #656176 5px;
     `;
 
     

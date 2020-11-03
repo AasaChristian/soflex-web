@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 
-function ExBox({name, key}) {
+function ExBox({name, key, reps, sets, weight}) {
 
     const Exbox = styled.section`
     background-color: white;
@@ -16,10 +16,14 @@ function ExBox({name, key}) {
 
     @media (max-width: 750px) {
 
-      padding-bottom: 75px;
+      padding-bottom: 15px;
       margin-bottom: 10px;
     
     }
+    `;
+
+    const ExName = styled.h3 `
+    border-bottom: solid black 5px;
     `;
 
     console.log(name, "exe")
@@ -28,7 +32,11 @@ function ExBox({name, key}) {
 
     <Exbox key ={key}>
         <div >
-        <p>{name}</p>
+        <ExName>{name}</ExName>
+
+        <h4>Sets: {sets}</h4>
+        <h4>Reps: {reps} </h4>
+        <h4>Weight: {weight} </h4>
         </div>
     </Exbox>
 

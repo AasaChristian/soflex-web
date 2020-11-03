@@ -15,6 +15,7 @@ function Board() {
     display: flex;
     width: inherit;
     height: 90%;
+    border-radius: 2%;
     ;`
 
     const LeftWall = styled.section`
