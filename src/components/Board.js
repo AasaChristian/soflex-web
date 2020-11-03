@@ -45,6 +45,8 @@ function Board() {
     const ExboxCont = styled.section`
     display: flex;
     flex-direction: column;
+    height: 90%;
+    overflow: scroll;
     
     
     `;
