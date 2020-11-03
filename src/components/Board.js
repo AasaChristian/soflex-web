@@ -18,17 +18,22 @@ function Board() {
     ;`
 
     const LeftWall = styled.section`
-    background-color: blue;
-    border-radius: 2%;
+    background-color: #F8F1FF;
+    border-radius: 4%;
+    border-left: solid #656176 5px;
+    border-bottom: solid #656176 5px;
+    border-top: solid #656176 5px;
+    
+    width: 20%;
 
 
     `;
     
     const MainWall = styled.section`
-    background-color: red;
-    width: 60%;
-    border-radius: 2%;
-    border: solid black 5px;
+    background-color: #F8F1FF;
+    width: 80%;
+    border-radius: 4%;
+    border: solid #656176 5px;
 
     `;
 
@@ -69,9 +74,9 @@ function Board() {
             </ExboxCont>
             
         </MainWall>
-        <RightWall>
+        {/* <RightWall>
             <h2>Right Wall</h2>
-        </RightWall>
+        </RightWall> */}
       
     </BoardCont>
   );

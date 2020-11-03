@@ -7,9 +7,10 @@ function Head() {
     const Button = styled.button`
     `;
     const HeadCont = styled.section`
-    background-color: grey;
+    background-color: #656176;
     display: flex;
     justify-content: space-around;
+    border-radius: 4%;
     `;
 
     
