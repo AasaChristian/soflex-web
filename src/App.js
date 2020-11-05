@@ -5,6 +5,7 @@ import Head from './components/Head';
 import Board from './components/Board';
 import ExDetailsPage from './components/ExerciseDetailPage';
 import data from './DummyData'
+import Login from './components/Login';
 
 function App() {
 
@@ -21,6 +22,10 @@ function App() {
       <header>
         <Head/>
       </header>
+      <Route exact path= '/'
+      render={props => <Login {...props}  />}
+      
+      />
       <Route exact path='/board'
       render={props => <Board {...props} exlist={exlist} />}
       />
