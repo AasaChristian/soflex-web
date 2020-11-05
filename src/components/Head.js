@@ -15,12 +15,6 @@ function Head() {
     border-bottom: solid #656176 5px;
     `;
 
-    
-
-
-
-
-
   return (
     <HeadCont>
         <NavLink to = {`/board`}>
@@ -31,7 +25,10 @@ function Head() {
           </div>
             </NavLink>
         <h1>SoFlex</h1>
-        <NavLink  to = {`/`}>
+        <NavLink  to = {`/`} onClick={e => {
+          localStorage.removeItem('id')
+          localStorage.removeItem('username')
+        }}>
           <div>
           <h2>
           Log Out
