@@ -6,15 +6,22 @@ import Board from './components/Board';
 import ExDetailsPage from './components/ExerciseDetailPage';
 import data from './DummyData'
 import Login from './components/Login';
+import { useState } from 'react';
+import axios from 'axios'
 
 function App() {
 
+
+  const [userData, setUserData] = useState([{
+    regimen: []
+  }])
+
+
+
   console.log(data, "data")
+
   const {user} = data
   const exlist = user.ExerciseH.Standard
-
-
-
 
 
   return (
