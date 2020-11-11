@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 
 
 
-function ExBox({name, key, reps, sets, weight}) {
+function ExBox({name, regimenID, reps, sets, regimenWeight}) {
 
     const Exbox = styled.section`
     background-color: white;
@@ -34,18 +34,20 @@ function ExBox({name, key, reps, sets, weight}) {
     }
     `;
 
-    console.log(name, "exe")
+    console.log(regimenID, "key")
+    console.log(name, "name")
+    console.log(regimenWeight, "weight")
 
   return (
 
-    <Exbox key ={key}>
+    <Exbox key ={regimenID}>
       <NavLink  to = {`/board/${name}`}>
         <div >
         <ExName>{name}</ExName>
 
         <Details>Sets: {sets}</Details>
         <Details>Reps: {reps} </Details>
-        <Details>Weight: {weight} </Details>
+        <Details>Weight: {regimenWeight} </Details>
         </div>
         </NavLink>
     </Exbox>

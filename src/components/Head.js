@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom"
 
 function Head() {
 
-
+  
     const HeadCont = styled.section`
     background-color: #F8F1FF;
     display: flex;

@@ -5,8 +5,35 @@ import ExBox from './ExerciseStatBox';
 
 
 function Board({exlist}) {
+//////////////////////////////////////////////////////////////////////////
+    const Exbox = styled.section`
+    background-color: white;
+    width: 90%;
+    border: solid black 4px ;
+    border-radius: 30%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
 
+    @media (max-width: 750px) {
 
+      padding-bottom: 45px;
+      margin-bottom: 30px;
+    
+    }
+    `;
+
+    const ExName = styled.h3 `
+    border-bottom: solid black 5px;
+    `;
+
+    const Details = styled.h4 `
+    
+    @media (max-width: 750px) {
+      display: none;
+    }
+    `;
+//////////////////////////////////////////////////////////////////////////////////////////////
 
 
     const BoardCont = styled.div`
@@ -50,7 +77,7 @@ function Board({exlist}) {
     
     `;
 
-
+console.log(exlist, "exlist")
   return (
     <BoardCont >
 
@@ -67,12 +94,19 @@ function Board({exlist}) {
                     name = {e.name}
                     reps = {e.reps}
                     sets = {e.sets}
-                    weight = {e.weight}
-                    key = {e.key}
+                    regimenWeight = {e.regimenWeight}
+                    regimenID = {e.regimenID}
                     />   
                 )
             })}
+            <Exbox >
+                <div>
+                <ExName> ADD + </ExName>
+                </div>
+            
+            </Exbox>
             </ExboxCont>
+
             
         </MainWall>
         {/* <RightWall>

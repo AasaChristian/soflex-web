@@ -19,7 +19,7 @@ const handleChange = e => {
 const login = (e) => {
     console.log("Button")
     e.preventDefault()
-    axios.post('http://localhost:5000/api/users/login', {username: credentials.username, password: credentials.password})
+    axios.post('https://citysoflex.herokuapp.com/api/users/login', {username: credentials.username, password: credentials.password})
     .then(res => {
         const {id, username} = res.data
 
