@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import ExBox from './ExerciseStatBox';
 
 
 
-function Board({exlist}) {
+function Board({exlist, state, setState}) {
 //////////////////////////////////////////////////////////////////////////
+
+    useEffect(() => {
+        setState(!state)
+        console.log("setState")
+    },[])
     const Exbox = styled.section`
     background-color: white;
     width: 90%;

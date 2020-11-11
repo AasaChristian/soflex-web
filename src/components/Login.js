@@ -27,6 +27,7 @@ const login = (e) => {
 
         localStorage.setItem('id', id)
         localStorage.setItem('username', username)
+        alert(`Hello ${credentials.username}!!! You are now logged in to SoFlex!!!`)
         history.push('/board')
     }).catch(error => console.log(error, "error"))
 }

@@ -27,6 +27,7 @@ const login = (e) => {
         localStorage.setItem('id', id)
         localStorage.setItem('username', username)
         history.push('/board')
+        alert(`Hello ${credentials.username}!!! Welcome to SoFlex!!!`)
     }).catch(error => console.log(error, "error"))
 }
 const SubmitButton = styled.button`

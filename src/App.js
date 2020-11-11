@@ -44,7 +44,7 @@ const id = localStorage.getItem('id')
       
       />
       <Route exact path='/board'
-      render={props => <Board {...props} exlist={userData} />}
+      render={props => <Board {...props} exlist={userData} state={state}  setState= {setState}/>}
       />
       <Route exact path='/board/:exName'
       render={props => <ExDetailsPage {...props}  exlist={userData}/>}
