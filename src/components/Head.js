@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 
 
 function Head() {
-
+console.log(localStorage.getItem('id') , "localStorage.getItem('id') ")
   
     const HeadCont = styled.section`
     background-color: #F8F1FF;
@@ -17,7 +17,7 @@ function Head() {
 
   return (
     <HeadCont>
-        <NavLink to = {`/board`}>
+        <NavLink to = {localStorage.getItem('id') === null ? "/" : "/board"}>
           <div>
             <h2>
             Home
@@ -25,13 +25,13 @@ function Head() {
           </div>
             </NavLink>
         <h1>SoFlex</h1>
-        <NavLink  to = {`/`} onClick={e => {
+        <NavLink  to = {localStorage.getItem('id') === null ? "/register" : "/board"} onClick={e => {
           localStorage.removeItem('id')
           localStorage.removeItem('username')
         }}>
           <div>
           <h2>
-          Log Out
+          {localStorage.getItem('id') === null ? "Register" : "Logout"}
 
           </h2>
           </div>
