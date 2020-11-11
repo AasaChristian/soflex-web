@@ -9,6 +9,7 @@ import Login from './components/Login';
 import { useEffect, useState } from 'react';
 import axios from 'axios'
 import ExForm from './components/ExForm';
+import Register from './components/Register';
 
 function App() {
 
@@ -37,6 +38,9 @@ const id = localStorage.getItem('id')
       </header>
       <Route exact path= '/'
       render={props => <Login {...props}  />}
+      />
+      <Route exact path= '/register'
+      render={props => <Register {...props}  />}
       
       />
       <Route exact path='/board'
