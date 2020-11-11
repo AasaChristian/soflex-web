@@ -21,6 +21,7 @@ const login = (e) => {
     e.preventDefault()
     axios.post('https://citysoflex.herokuapp.com/api/users/login', {username: credentials.username, password: credentials.password})
     .then(res => {
+        console.log(res, "res")
         const {id, username} = res.data
 
         localStorage.setItem('id', id)
