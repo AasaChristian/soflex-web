@@ -8,7 +8,9 @@ function ExDetailsPage({exlist, match}) {
         filterFor => filterFor.name === match.params.exName
     )
 
-const {regimenID, name, sets, reps, regimenWeight, link} = chosenExercise
+
+    console.log(chosenExercise, "chosenExercise")
+const {regimenID, name, sets, reps, regimenWeight, link, regimenName} = chosenExercise
 
 const TitleCont = styled.div`
 display: flex;
@@ -75,7 +77,7 @@ const handleChange = e => {
 <div key={regimenID}>
   <TitleCont>
     <TitleInner >
-    <CenterText>{link}</CenterText>
+    <CenterText>{regimenName}</CenterText>
   <CenterText>{name}</CenterText>
     </TitleInner>
 

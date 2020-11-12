@@ -10,49 +10,61 @@ import { useEffect, useState } from 'react';
 import axios from 'axios'
 import ExForm from './components/ExForm';
 import Register from './components/Register';
+import Foot from './components/Foot';
 
 function App() {
 
+  // const axiosAddress = "http://localhost:5000"
+  const axiosAddress = "http://citysoflex.herokuapp.com"
+  
   const [state, setState] = useState()
+  const [allEx, setAllEx] = useState()
   const [userData, setUserData] = useState([{
     regimen: []
   }])
 const id = localStorage.getItem('id')
   useEffect(() => {
-    axios.get(`https://citysoflex.herokuapp.com/api/regimen/find/${id}`)
+    axios.get(`${axiosAddress}/api/regimen/find/${id}`)
     .then(res => {
       console.log(res.data,"res from server")
       setUserData(res.data)
     }).catch(error => console.log(error))
-  },[state])
+  },[])
   console.log(userData, "userData")
 
-  // const {user} = data
-  // const exlist = user.ExerciseH.Standard
+  useEffect(() => {
+    axios.get(`http://localhost:5000/api/exercises/all`)
+    .then(res => {
+      setAllEx(res.data)
+      console.log(allEx, "allEx")
+    }).catch(error => console.log(error))
+  },[])
 
-// console.log(exlist, "exlist")
   return (
     <div className="App">
       <header>
         <Head/>
       </header>
       <Route exact path= '/'
-      render={props => <Login {...props}  />}
+      render={props => <Login {...props}  axiosAddress={axiosAddress} />}
       />
       <Route exact path= '/register'
-      render={props => <Register {...props}  />}
+      render={props => <Register {...props}  axiosAddress={axiosAddress} />}
       
       />
       <Route exact path='/board'
-      render={props => <Board {...props} exlist={userData} state={state}  setState= {setState}/>}
+      render={props => <Board {...props} exlist={userData} state={state}  axiosAddress={axiosAddress} setState={setState} allEx={allEx} />}
       />
       <Route exact path='/board/:exName'
       render={props => <ExDetailsPage {...props}  exlist={userData}/>}
       />
 
 <Route exact path='/board/update/:update/:id'
-      render={props => <ExForm {...props}  exlist={userData} state={state}  setState= {setState}/>}
+      render={props => <ExForm {...props}  exlist={userData} state={state}  setState= {setState} axiosAddress={axiosAddress} />  }
       />
+      <section>
+        <Foot/>
+      </section>
     </div>
   );
 }

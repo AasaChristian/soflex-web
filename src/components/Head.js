@@ -25,10 +25,13 @@ console.log(localStorage.getItem('id') , "localStorage.getItem('id') ")
           </div>
             </NavLink>
         <h1>SoFlex</h1>
+
         <NavLink  to = {localStorage.getItem('id') === null ? "/register" : "/board"} onClick={e => {
           localStorage.removeItem('id')
           localStorage.removeItem('username')
         }}>
+
+
           <div>
           <h2>
           {localStorage.getItem('id') === null ? "Register" : "Logout"}

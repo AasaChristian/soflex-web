@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 import axios from 'axios'
 
 
-function Login({history}) {
+function Login({history, axiosAddress}) {
 
 const [credentials, setCredentials] = useState([{
     username: '',
@@ -20,7 +20,7 @@ const handleChange = e => {
 const login = (e) => {
     console.log("Button")
     e.preventDefault()
-    axios.post('https://citysoflex.herokuapp.com/api/users/login', {username: credentials.username, password: credentials.password})
+    axios.post(`${axiosAddress}/api/users/login`, {username: credentials.username, password: credentials.password})
     .then(res => {
         console.log(res, "res")
         const {id, username} = res.data

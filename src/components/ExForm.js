@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-function ExForm({match, setState, state}){
+function ExForm({match, setState, state, axiosAddress}){
 const exToUpdate =  match.params.update
 const regimenId = match.params.id
 
@@ -21,7 +21,7 @@ const updatedObj = {
 
 const SendUpdate = (e) => {
     e.preventDefault()
-    axios.put(`https://citysoflex.herokuapp.com/api/regimen/update/${regimenId}`, 
+    axios.put(`${axiosAddress}/api/regimen/update/${regimenId}`, 
     updatedObj)
     .then(res => {
         setState(!state)
