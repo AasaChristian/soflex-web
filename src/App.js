@@ -33,7 +33,7 @@ const id = localStorage.getItem('id')
   console.log(userData, "userData")
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/exercises/all`)
+    axios.get(`${axiosAddress}/api/exercises/all`)
     .then(res => {
       setAllEx(res.data)
       console.log(allEx, "allEx")
