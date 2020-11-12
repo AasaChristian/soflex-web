@@ -15,7 +15,7 @@ import Foot from './components/Foot';
 function App() {
 
   // const axiosAddress = "http://localhost:5000"
-  const axiosAddress = "http://citysoflex.herokuapp.com"
+  const axiosAddress = "https://citysoflex.herokuapp.com"
   
   const [state, setState] = useState()
   const [allEx, setAllEx] = useState()
