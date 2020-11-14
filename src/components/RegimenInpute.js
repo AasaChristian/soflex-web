@@ -1,22 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import axios from 'axios'
+import { connect } from 'react-redux';
+import { createRegimen } from '../action/regimenActions';
 
-
-function RegInput({selectedExercise, axiosAddress}){
-
+function RegInput(props){
+const {selectedExercise, createRegimen} = props
 const [newReg, setNewReg] = useState({})
 
 const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
-console.log(newReg, "updated")
+console.log(newReg, "newReg")
 
 const userId = localStorage.getItem('id')
 
 const sendNewReg = (e) => {
 e.preventDefault()
-
 const createdLink = (newReg.name + userId).toLowerCase().replace(" ", "")
 const newRegimenObj = {
     name: newReg.name,
@@ -28,18 +27,13 @@ const newRegimenObj = {
     weight: newReg.weight,
     completion: false
 }
-
-axios.post(`${axiosAddress}/api/regimen/add`,
-newRegimenObj
-).then(res => {
-    console.log(res, "sent regimen res")
-    setNewReg({
-        name: "",
-        weight: "",
-        reps: "",
-        sets: ""
-    })
-}).catch(error => console.log(error, "error sent regimen"))
+createRegimen(newRegimenObj)
+setNewReg({
+    name: "",
+    weight: "",
+    reps: "",
+    sets: ""
+})
 
 }
 
@@ -56,4 +50,9 @@ return(
 
 )
 }
-export default RegInput;
+
+const mapStateToProps = state => {
+	return {
+	};
+};
+export default connect(mapStateToProps, {createRegimen})(RegInput);
