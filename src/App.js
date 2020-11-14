@@ -12,33 +12,12 @@ import ExForm from './components/ExForm';
 import Register from './components/Register';
 import Foot from './components/Foot';
 
+import { connect } from 'react-redux';
+import {fetchRegimen, createRegimen} from './action/regimenActions'
+
 function App() {
-
-  // const axiosAddress = "http://localhost:5000"
-  const axiosAddress = "https://citysoflex.herokuapp.com"
-  
-  const [state, setState] = useState()
-  const [allEx, setAllEx] = useState()
-  const [userData, setUserData] = useState([{
-    regimen: []
-  }])
-const id = localStorage.getItem('id')
-  useEffect(() => {
-    axios.get(`${axiosAddress}/api/regimen/find/${id}`)
-    .then(res => {
-      console.log(res.data,"res from server")
-      setUserData(res.data)
-    }).catch(error => console.log(error))
-  },[])
-  console.log(userData, "userData")
-
-  useEffect(() => {
-    axios.get(`${axiosAddress}/api/exercises/all`)
-    .then(res => {
-      setAllEx(res.data)
-      console.log(allEx, "allEx")
-    }).catch(error => console.log(error))
-  },[])
+  const axiosAddress = "http://localhost:5000"
+  // const axiosAddress = "https://citysoflex.herokuapp.com"
 
   return (
     <div className="App">
@@ -53,14 +32,14 @@ const id = localStorage.getItem('id')
       
       />
       <Route exact path='/board'
-      render={props => <Board {...props} exlist={userData} state={state}  axiosAddress={axiosAddress} setState={setState} allEx={allEx} />}
+      render={props => <Board {...props}  axiosAddress={axiosAddress} />}
       />
       <Route exact path='/board/:exName'
-      render={props => <ExDetailsPage {...props}  exlist={userData}/>}
+      render={props => <ExDetailsPage {...props}/>}
       />
 
 <Route exact path='/board/update/:update/:id'
-      render={props => <ExForm {...props}  exlist={userData} state={state}  setState= {setState} axiosAddress={axiosAddress} />  }
+      render={props => <ExForm {...props} axiosAddress={axiosAddress} />  }
       />
       <section>
         <Foot/>
@@ -69,4 +48,10 @@ const id = localStorage.getItem('id')
   );
 }
 
-export default App;
+const mapStateToProps = state => {
+	return {
+        regimen: state.regimen
+	};
+};
+
+export default connect(mapStateToProps, {fetchRegimen, createRegimen})(App);
