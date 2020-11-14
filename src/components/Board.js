@@ -9,7 +9,7 @@ import { connect } from 'react-redux';
 import {fetchRegimen} from '../action/regimenActions'
 
 function Board(props) {
-    const {history, axiosAddress, exercises, regimen} = props
+    const {history, exercises, regimen} = props
 //////////////////////////////////////////////////////////////////////////
 const [edit, setEdit] = useState(false)
 const [reEdit, setRegEdit] = useState(false)
@@ -34,6 +34,7 @@ console.log(litEx, "litEx")
 
 
 const byRegName = (arr) => {
+    console.log("BYREGNAME FUNCTION RAN")
     const cashe = []
     for (let i = 0; i < arr.length; i++){
         if (  cashe.includes(arr[i].regimenName) ){
@@ -60,14 +61,16 @@ const SortedRegs = byRegName(regimen)
 
     @media (max-width: 750px) {
 
-      padding-bottom: 20px;
-      margin-bottom: 20px;
+      padding-bottom: 5px;
+      margin-bottom: 2px;
     
     }
     `;
 
-    const ExName = styled.h3 `
+    const ExName = styled.h2 `
     border-bottom: solid black 5px;
+    display: flex;
+    justify-content: center;
     `;
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -82,6 +85,7 @@ const SortedRegs = byRegName(regimen)
     const LeftWall = styled.section`
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     background-color: #F8F1FF;
     border-left: solid #656176 7px;
     border-bottom: solid #656176 5px;
@@ -93,6 +97,9 @@ const SortedRegs = byRegName(regimen)
     `;
     
     const MainWall = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     background-color: #F8F1FF;
     width: 80%;
     border-radius: 4%;
@@ -103,7 +110,8 @@ const SortedRegs = byRegName(regimen)
     const ExboxCont = styled.section`
     display: flex;
     flex-direction: column;
-    height: 90%;
+    justify-content: space-evenly;
+    height: 60%;
     overflow: scroll;
     
     
@@ -136,6 +144,22 @@ e.preventDefault()
             <div style={{display: "flex", justifyContent: "center", fontSize: "40px"}}>
                     <h>Regimen</h>
                 </div>
+                <Exbox style={{marginTop: "25px"}}>
+                <div>
+                    <ExName onClick={x => setRegEdit(!reEdit)} > Create Regimen + </ExName>
+                <h4  style={{display: "flex", justifyContent: "space-evenly"}}>{selectedExercise > 0? "Exercise Selected!" : "Selecet an Exercise!" }</h4>
+                </div>
+            </Exbox>
+
+            <div style={reEdit === false? {display:"none"}: {marginLeft: "7px"}}>
+                <RegInput 
+                edit={edit}
+                setEdit={setEdit}
+                setRegEdit={setRegEdit}
+                reEdit={reEdit}
+                selectedExercise={selectedExercise}
+                />
+            </div>
 
             <ExboxCont>
             {SortedRegs.map((e, i) => {
@@ -166,7 +190,6 @@ e.preventDefault()
                 setEdit={setEdit}
                 setRegEdit={setRegEdit}
                 reEdit={reEdit}
-                axiosAddress={axiosAddress}
                 />
             </div>
 
@@ -192,22 +215,21 @@ e.preventDefault()
                    })}
             </div>
 
-            <Exbox style={{marginTop: "25px"}}>
+            {/* <Exbox style={{marginTop: "25px"}}>
                 <div>
                     <ExName onClick={x => setRegEdit(!reEdit)} > Create Regimen + </ExName>
                 </div>
-            </Exbox>
+            </Exbox> */}
 
-            <div style={reEdit === false? {display:"none"}: {marginLeft: "7px"}}>
+            {/* <div style={reEdit === false? {display:"none"}: {marginLeft: "7px"}}>
                 <RegInput 
                 edit={edit}
                 setEdit={setEdit}
                 setRegEdit={setRegEdit}
                 reEdit={reEdit}
                 selectedExercise={selectedExercise}
-                axiosAddress={axiosAddress}
                 />
-            </div>
+            </div> */}
             
             </ExboxCont>
 
