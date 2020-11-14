@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import axios from 'axios'
+import {createExercise} from '../action/exerciseActions'
+import { connect } from 'react-redux';
 
 
-function ExForm({match, setState, state, edit, axiosAddress, setEdit}){
-
-
+function ExForm(props){
 const [newEx, setNewEx] = useState({
     name: "",
     description: ""
@@ -13,34 +12,19 @@ const [newEx, setNewEx] = useState({
 const handleChange = e => {
     setNewEx({...newEx, [e.target.name]: e.target.value})
 }
-console.log([newEx], "updated")
-
-
-
-// console.log(newExObj, "newExObj")
 
 const SendExercise = (e) => {
     e.preventDefault()
-
     const newExObj = {
         name: newEx.name,
         description: newEx.description,
         img: "00000001"
     }
-
-    console.log(newExObj, "newExObj")
-
-    axios.post(`${axiosAddress}/api/exercises/add`, 
-    newExObj)
-    .then(res => {
-
-        setNewEx({
-            name: "",
-            description: ""
-        })
-        // setState(!state)
-        console.log(res, "res")
-    }).catch(error => console.log(error))
+    props.createExercise(newExObj)
+    setNewEx({
+        name: "",
+        description: ""
+    })
 }
 return(
     <section>
@@ -55,4 +39,10 @@ return(
 
 )
 }
-export default ExForm;
+
+const mapStateToProps = state => {
+	return {
+        exercises: state.exercises
+	};
+};
+export default connect(mapStateToProps, {createExercise})(ExForm);
