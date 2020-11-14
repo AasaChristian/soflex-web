@@ -44,10 +44,6 @@ function ExBox({name, regimenID, reps, sets, regimenWeight}) {
       <NavLink  to = {`/board/${name}`}>
         <div >
         <ExName>{name}</ExName>
-
-        <Details>Sets: {sets}</Details>
-        <Details>Reps: {reps} </Details>
-        <Details>Weight: {regimenWeight} </Details>
         </div>
         </NavLink>
     </Exbox>

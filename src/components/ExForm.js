@@ -2,19 +2,14 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 
-function ExForm({match, setState, state, axiosAddress}){
+function ExForm({match, axiosAddress}){
 const exToUpdate =  match.params.update
 const regimenId = match.params.id
-
-console.log(regimenId, "regimenId")
-console.log(exToUpdate, "exToUpdate")
 
 const [updated, setUpdated] = useState([])
 const handleChange = e => {
     setUpdated(e.target.value)
 }
-console.log(updated, "updated")
-
 const updatedObj = {
     [exToUpdate] : updated
 }
@@ -24,7 +19,6 @@ const SendUpdate = (e) => {
     axios.put(`${axiosAddress}/api/regimen/update/${regimenId}`, 
     updatedObj)
     .then(res => {
-        setState(!state)
         console.log(res, "res")
     }).catch(error => console.log(error))
 }

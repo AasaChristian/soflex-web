@@ -4,7 +4,6 @@ import {NavLink} from "react-router-dom"
 
 
 function Head() {
-console.log(localStorage.getItem('id') , "localStorage.getItem('id') ")
   
     const HeadCont = styled.section`
     background-color: #F8F1FF;
