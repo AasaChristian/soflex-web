@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
+import { connect } from 'react-redux';
 
-function ExDetailsPage({exlist, match}) {
+function ExDetailsPage(props) {
 
-    const chosenExercise = exlist.find(
+  const {match, regimen} = props
+    const chosenExercise = regimen.find(
         filterFor => filterFor.name === match.params.exName
     )
 
-
-    console.log(chosenExercise, "chosenExercise")
-const {regimenID, name, sets, reps, regimenWeight, link, regimenName} = chosenExercise
+const {regimenID, name, sets, reps, regimenWeight, regimenName} = chosenExercise
 
 const TitleCont = styled.div`
 display: flex;
@@ -61,18 +61,9 @@ const CenterText = styled.h4`
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 30px;
-  
-
 `;
 
 
-
-const [changes, setChanges] = useState([])
-const [editor, setEditor] = useState(false)
-
-const handleChange = e => {
-  setChanges({...changes, [e.target.name]: e.target.value})
-}
   return (
 <div key={regimenID}>
   <TitleCont>
@@ -117,4 +108,12 @@ const handleChange = e => {
   );
 }
 
-export default ExDetailsPage;
+const mapStateToProps = state => {
+	return {
+        exercises: state.exercises,
+        regimen: state.regimen
+	};
+};
+
+
+export default connect(mapStateToProps, {})(ExDetailsPage);

@@ -3,21 +3,9 @@ import styled from 'styled-components'
 
 
 
-function ExList({match, setState, state, exName, exid, exDescription, setSelectedExercie}){
+function ExList({exName, exid, setSelectedExercie, selectedExercise}){
 
-
-const [newReg, setNewReg] = useState({
-    name: "",
-    description: ""
-})
-
-const handleChange = e => {
-    setNewReg({...newReg, [e.target.name]: e.target.value})
-}
-
-const userId = localStorage.getItem('id')
-
-const selectExercie = (e) => {
+const selectExercise = (e) => {
     e.preventDefault()
     setSelectedExercie(exid)
 }
@@ -41,10 +29,10 @@ margin-top: 1px;
 margin-bottom: 5px;
 `;
 return(
-    <div onClick={selectExercie} value={exid}>
-    <Constainer>
+    <div onClick={selectExercise} value={exid} key={exid} >
+    <Constainer style={selectedExercise === exid? {backgroundColor: "red"}: {backgroundColor: "inherit"}} >
 
-    <CenterText  >{exName}</CenterText>
+    <CenterText>{exName}</CenterText>
 
     </Constainer>
     </div>
