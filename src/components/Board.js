@@ -4,15 +4,33 @@ import ExBox from './ExerciseStatBox';
 import NewExForm from './NewExForm'
 import ExList from './ExerciesList';
 import RegInput from './RegimenInpute'
+import {fetchExercise, createExercise} from '../action/exerciseActions'
+import { connect } from 'react-redux';
+import {fetchRegimen} from '../action/regimenActions'
 
-
-function Board({exlist, state, setState, allEx, history, axiosAddress}) {
+function Board(props) {
+    const {history, axiosAddress, exercises, regimen} = props
 //////////////////////////////////////////////////////////////////////////
 const [edit, setEdit] = useState(false)
 const [reEdit, setRegEdit] = useState(false)
 const [selectedExercise, setSelectedExercie] = useState()
-console.log(exlist, "exlist")
+const [litEx, setLitEx] = useState(false)
+console.log(regimen, "regimen")
 console.log(selectedExercise, "selectedExercise")
+
+useEffect(() => {
+    props.fetchExercise()
+    console.log("in ues Effect")
+},[props.createExercise])
+
+useEffect(() => {
+    props.fetchRegimen()
+
+  },[])
+
+console.log(exercises, "exercises")
+console.log(litEx, "litEx")
+
 
 
 const byRegName = (arr) => {
@@ -26,15 +44,11 @@ const byRegName = (arr) => {
     }
     return(cashe)
 }
+const SortedRegs = byRegName(regimen)
 
 
 
-console.log(byRegName(exlist), "sortedRegs")
 
-    useEffect(() => {
-        setState(!state)
-        console.log("setState")
-    },[])
     const Exbox = styled.section`
     background-color: white;
     width: 90%;
@@ -102,12 +116,12 @@ console.log(byRegName(exlist), "sortedRegs")
     font-size: 20px;
     `;
 const userName = localStorage.getItem('username')
-console.log(allEx, "allEx")
 
 const SendBack = (e) => {
 e.preventDefault()
     history.goBack()
 }
+
 
   return (
     <BoardCont >
@@ -124,17 +138,16 @@ e.preventDefault()
                 </div>
 
             <ExboxCont>
-            {exlist.map((e) => {
+            {SortedRegs.map((e, i) => {
                 return(
                     <ExBox
-                    name = {e.name}
-                    reps = {e.reps}
-                    sets = {e.sets}
-                    regimenWeight = {e.regimenWeight}
-                    regimenID = {e.regimenID}
-                    />   
+                name = {e}
+                regimenID = {i}
+                />
                 )
+                
             })}
+
             <Exbox style={{marginTop: "15px"}}>
                 <div >
                     
@@ -165,7 +178,7 @@ e.preventDefault()
                     <h>Exercises</h>
                 </div>
                 
-            {allEx.map((e) => {
+            {exercises.map((e) => {
                        return(
                         <ExList
                         exid = {e.id}
@@ -173,6 +186,7 @@ e.preventDefault()
                         exDescription = {e.description}
                         img = {e.img}
                         setSelectedExercie={setSelectedExercie}
+                        selectedExercise={selectedExercise}
                         />
                        )
                    })}
@@ -214,4 +228,11 @@ e.preventDefault()
   );
 }
 
-export default Board;
+const mapStateToProps = state => {
+	return {
+        exercises: state.exercises,
+        regimen: state.regimen
+	};
+};
+
+export default connect(mapStateToProps, {fetchExercise, createExercise, fetchRegimen})(Board);
