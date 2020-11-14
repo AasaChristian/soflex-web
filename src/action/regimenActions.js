@@ -2,8 +2,8 @@ import axios from 'axios'
 import {Fetch_Regimen, Create_Regimen} from './index'
 const id = localStorage.getItem('id')
 
-// const axiosAddress = "https://citysoflex.herokuapp.com"
-const axiosAddress = "http://localhost:5000"
+const axiosAddress = "https://citysoflex.herokuapp.com"
+// const axiosAddress = "http://localhost:5000"
 
 export const fetchRegimen = () => dispatch => {
     axios.get(`${axiosAddress}/api/regimen/find/${id}`)
