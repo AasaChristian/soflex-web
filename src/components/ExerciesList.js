@@ -10,6 +10,11 @@ const selectExercise = (e) => {
     setSelectedExercie(exid)
 }
 
+const uncelectExercise = (e) => {
+    e.preventDefault()
+    setSelectedExercie(0)
+}
+
 const Constainer = styled.section`
 border-left: solid black 2px;
 border-right: solid black 2px;
@@ -29,7 +34,7 @@ margin-top: 1px;
 margin-bottom: 5px;
 `;
 return(
-    <div onClick={selectExercise} value={exid} key={exid} >
+    <div onClick={selectExercise}  onDoubleClick={uncelectExercise}  value={exid} key={exid} >
     <Constainer style={selectedExercise === exid? {backgroundColor: "red"}: {backgroundColor: "inherit"}} >
 
     <CenterText>{exName}</CenterText>
