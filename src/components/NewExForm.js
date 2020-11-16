@@ -8,6 +8,7 @@ const [newEx, setNewEx] = useState({
     name: "",
     description: ""
 })
+const {setEdit} = props
 
 const handleChange = e => {
     setNewEx({...newEx, [e.target.name]: e.target.value})
@@ -25,6 +26,7 @@ const SendExercise = (e) => {
         name: "",
         description: ""
     })
+    setEdit(false)
 }
 return(
     <section>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { createRegimen } from '../action/regimenActions';
 
 function RegInput(props){
-const {selectedExercise, createRegimen} = props
+const {selectedExercise, createRegimen,setRegEdit} = props
 const [newReg, setNewReg] = useState({})
 
 const handleChange = e => {
@@ -34,6 +34,7 @@ setNewReg({
     reps: "",
     sets: ""
 })
+setRegEdit(false)
 
 }
 
