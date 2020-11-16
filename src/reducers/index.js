@@ -7,7 +7,7 @@ regimen: []
   
   export const reducer = (state = initialState, action) => {
     console.log(action.payload, "action.payload")
-    console.log(state.exercises, "action.exercises")
+    console.log(state.regimen, "action.regime")
     switch (action.type){
 
       case Fetch_Exercise:
@@ -28,7 +28,7 @@ regimen: []
         case Create_Regimen:
               return {
                 ...state,
-                regimen: [...state.regimen, action.payload]
+                regimen: [...state.regimen, action.payload[0]]
               };
 
         default:
