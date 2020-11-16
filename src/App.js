@@ -13,8 +13,8 @@ import {fetchRegimen, createRegimen} from './action/regimenActions'
 import Landing from './components/Landing';
 
 function App() {
-  const axiosAddress = "http://localhost:5000"
-  // const axiosAddress = "https://citysoflex.herokuapp.com"
+  // const axiosAddress = "http://localhost:5000"
+  const axiosAddress = "https://citysoflex.herokuapp.com"
 
   return (
     <div className="App">
