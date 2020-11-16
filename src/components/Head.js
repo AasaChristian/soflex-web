@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
 
 
+
 function Head() {
+
+  let userID = localStorage.getItem('id')
   
     const HeadCont = styled.section`
     background-color: #F8F1FF;
@@ -16,7 +19,7 @@ function Head() {
 
   return (
     <HeadCont>
-        <NavLink to = {localStorage.getItem('id') === null ? "/" : "/board"}>
+        <NavLink to = {userID === null ? "/" : "/board"}>
           <div>
             <h2>
             Home
@@ -25,7 +28,7 @@ function Head() {
             </NavLink>
         <h1>SoFlex</h1>
 
-        <NavLink  to = {localStorage.getItem('id') === null ? "/register" : "/board"} onClick={e => {
+        <NavLink  to = {"/Login"} onClick={e => {
           localStorage.removeItem('id')
           localStorage.removeItem('username')
         }}>
@@ -33,7 +36,8 @@ function Head() {
 
           <div>
           <h2>
-          {localStorage.getItem('id') === null ? "Register" : "Logout"}
+
+          {userID === null ? "Login" : "Logout"}
 
           </h2>
           </div>
