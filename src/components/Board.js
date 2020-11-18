@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import ExBox from './ExerciseStatBox';
+import ExStatBox from './ExerciseStatBox';
 import NewExForm from './NewExForm'
 import ExList from './ExerciesList';
 import RegInput from './RegimenInpute'
@@ -164,7 +164,7 @@ e.preventDefault()
             <ExboxCont>
             {SortedRegs.map((e, i) => {
                 return(
-                    <ExBox
+                    <ExStatBox
                 name = {e}
                 regimenID = {i}
                 />
