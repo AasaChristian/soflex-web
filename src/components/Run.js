@@ -5,11 +5,17 @@ import { connect } from 'react-redux';
 
 
 function Run(props) {
-  const {history} = props
+  const {history, match, regimen} = props
+
+  const chosenExercise = regimen.find(
+      filterFor => filterFor.regimenName === match.params.regimenName
+  )
   const SendBack = (e) => {
     e.preventDefault()
         history.goBack()
     }
+
+    console.log(chosenExercise, "chosenExercise RUN")
     const Exbox = styled.section`
     background-color: white;
     width: 90%;
