@@ -7,6 +7,7 @@ import RunSets from './RunSets';
 
 
 function Run(props) {
+const [showReg, setShowReg] = useState(null)
   const {history, match, regimen} = props
 
   const chosenRegimen = regimen.filter(
@@ -15,6 +16,16 @@ function Run(props) {
     console.log(chosenRegimen, "chosenRegimen RUN")
 
 const regimenName = chosenRegimen[0].regimenName
+const regsExercises = []
+useEffect(() => {
+    chosenRegimen.map((exs) => {
+        regsExercises.push(exs.regimenID)
+        console.log(regsExercises, "regsExercises")
+        setShowReg(regsExercises[0])
+    })
+},[])
+console.log(showReg, "showReg")
+
 
 const RunHeader = styled.div`
 display: flex;
@@ -45,17 +56,20 @@ width: 100%;
 overflow-x: scroll;
 `;
    return(
-       <div>
+       <div style={{ width: "100%"}}>
     <RunHeader>
     <h1>
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll"}} >
+   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "red"}} >
        {chosenRegimen.map((ex) => {
+           console.log(ex,'ex')
+           
+           
        return( 
        
-       <RunCardCont>
+       <RunCardCont style={showReg == ex.regimenID? {display: "initial"}: {display: "none"}}>
 
         <section>
         <RunExerciseNameCont>
