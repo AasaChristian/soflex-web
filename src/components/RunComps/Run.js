@@ -7,14 +7,42 @@ import RunSets from './RunSets';
 
 
 function Run(props) {
+const [showReg, setShowReg] = useState(null)
+const [reState, setRestate] = useState(false)
   const {history, match, regimen} = props
 
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
     console.log(chosenRegimen, "chosenRegimen RUN")
-
+const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName
+const regsExercises = []
+let chosenLen = chosenRegimen.length
+useEffect(() => {
+    chosenRegimen.map((exs) => {
+        regsExercises.push(exs.regimenID)
+        // console.log(regsExercises, "regsExercises")
+        setShowReg(regsExercises[index])
+        return chosenLen = regsExercises.length
+    })
+},[reState])
+console.log(showReg, "showReg")
+
+const Swipe = e => {
+    e.preventDefault()
+    if (index == chosenLen -1){
+        console.log(chosenLen, "chosenLen")
+        setIndex(0)
+        setRestate(!reState)
+        console.log(index, "index")
+    } else {
+        setIndex(index + 1)
+        setRestate(!reState)
+        console.log(index, "index")
+        console.log(chosenLen, "chosenLen")
+    }
+}
 
 const RunHeader = styled.div`
 display: flex;
@@ -45,20 +73,23 @@ width: 100%;
 overflow-x: scroll;
 `;
    return(
-       <div>
-    <RunHeader>
+       <div style={{ width: "100%"}}>
+    <RunHeader onClick={Swipe}>
     <h1>
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll"}} >
+   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "white"}} >
        {chosenRegimen.map((ex) => {
+           console.log(ex,'ex')
+           
+           
        return( 
        
-       <RunCardCont>
+       <RunCardCont style={showReg == ex.regimenID? {display: "initial"}: {display: "none"}}>
 
         <section>
-        <RunExerciseNameCont>
+        <RunExerciseNameCont onClick={Swipe}>
             <RenExerciseName>
                 {ex.name}
             </RenExerciseName>
@@ -70,6 +101,7 @@ overflow-x: scroll;
             <div>
         <RunSets
         runSets={ex.sets}
+        reps={ex.reps}
         />
             </div>
         </SetsCont>
