@@ -10,6 +10,10 @@ export const Fetch_Regimen = 'Fetch_Regimen'
 
 export const Create_Regimen = 'Create_Regimen'
 
+export const Update_Regimen = 'Update_Regimen'
+
 export const Create_TempRegName = 'Create_TempRegName'
 
 export const Clear_TempRegName = 'Clear_TempRegName'
+
+export const Set_UserId = 'Set_UserId'

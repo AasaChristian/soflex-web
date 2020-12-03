@@ -3,28 +3,40 @@ import { connect } from 'react-redux';
 import { createRegimen, clearTempRegName } from '../../action/regimenActions';
 
 function RegInput(props){
-const {selectedExercise, setSelectedExercise, createRegimen, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName} = props
+const {selectedExercise, setSelectedExercise, userIdState, createRegimen,regTempName, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName} = props
 const [newReg, setNewReg] = useState({})
-
+console.log(userIdState, 'userIdState')
 const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
-const userId = localStorage.getItem('id')
 
+
+console.log(chosenExercise, 'chosenExercise')
 const sendNewReg = (e) => {
+    e.preventDefault()
+    let userIdInput = null
+    const userIdLocalStorage = localStorage.getItem('key')
 
-e.preventDefault()
-const createdLink = (chosenExercise.name + userId).toLowerCase().replace(" ", "")
+    if (userIdState === null){
+    userIdInput = userIdLocalStorage
+
+    } else {
+        userIdInput = userIdState
+    }
+
+const createdLink = (regTempName + userIdInput).toLowerCase().replace(" ", "")
 const newRegimenObj = {
-    name: chosenExercise.name,
+    name: regTempName,
     link: createdLink,
-    userId: userId,
+    userId: userIdInput,
     exerciseId: selectedExercise,
     sets: newReg.sets,
     reps: newReg.reps,
     weight: newReg.weight,
     completion: false
 }
+
+console.log(newRegimenObj, "newRegimenObj")
 createRegimen(newRegimenObj)
 
 setNewReg({
@@ -131,7 +143,9 @@ return(
 
 const mapStateToProps = state => {
 	return {
-        exercises: state.exercises
+        exercises: state.exercises,
+        userIdState: state.userIdState,
+        regTempName: state.regTempName,
 	};
 };
 export default connect(mapStateToProps, {createRegimen, clearTempRegName})(RegInput);

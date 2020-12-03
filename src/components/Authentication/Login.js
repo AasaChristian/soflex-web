@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {setUserId} from '../../action/regimenActions'
+import { SubmitButton} from '../StyledComponent'
 
 
-function Login({history, axiosAddress}) {
-
+function Login(props) {
+const {setUserId, history, axiosAddress} = props
 const [credentials, setCredentials] = useState([{
     username: '',
     password: ''
@@ -13,28 +16,25 @@ const [credentials, setCredentials] = useState([{
 console.log(credentials)
 const handleChange = e => {
     setCredentials({...credentials, [e.target.name]: e.target.value})
-    console.log("here")
 }
 
 const login = (e) => {
-    console.log("Button")
+
     e.preventDefault()
     axios.post(`${axiosAddress}/api/users/login`, {username: credentials.username, password: credentials.password})
     .then(res => {
-        console.log(res, "res")
-        const {id, username} = res.data
+        const {id, username, token} = res.data
 
-        localStorage.setItem('id', id)
+        setUserId(id)
         localStorage.setItem('username', username)
+        localStorage.setItem('token', token )
+        localStorage.setItem('key' , id)
+
         alert(`Hello ${credentials.username}!!! You are now logged in to SoFlex!!!`)
         history.push('/board')
     }).catch(error => console.log(error, "error"))
 }
-const SubmitButton = styled.button`
-height: 10pc;
-margin-top: 20%;
-font-size: 50px;
-`;
+
 
   return (
 <div>
@@ -49,4 +49,13 @@ font-size: 50px;
   );
 }
 
-export default Login;
+const mapStateToProps = state => {
+	return {
+        exercises: state.exercises,
+        regimen: state.regimen,
+        regTempName: state.regTempName,
+        regimenName: state.regimenName
+	};
+};
+
+export default  connect(mapStateToProps, {setUserId})(Login);

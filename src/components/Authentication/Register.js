@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import {NavLink} from "react-router-dom"
 import axios from 'axios'
+import {connect} from 'react-redux'
+import {setUserId} from '../../action/regimenActions'
+import { SubmitButton} from '../StyledComponent'
 
 
 function Register({history, axiosAddress}) {
@@ -21,20 +23,15 @@ const register = (e) => {
     e.preventDefault()
     axios.post(`${axiosAddress}/api/users/register`, {username: credentials.username, password: credentials.password})
     .then(res => {
-        
-        const {id, username} = res.data[0]
-
-        localStorage.setItem('id', id)
+        const {id, username, token} = res.data
+        setUserId(id)
         localStorage.setItem('username', username)
+        localStorage.setItem('token', token )
+        localStorage.setItem('key' , id)
         history.push('/board')
         alert(`Hello ${credentials.username}!!! Welcome to SoFlex!!!`)
     }).catch(error => console.log(error, "error"))
 }
-const SubmitButton = styled.button`
-height: 10pc;
-margin-top: 20%;
-font-size: 50px;
-`;
 
 
   return (
@@ -48,4 +45,13 @@ font-size: 50px;
   );
 }
 
-export default Register;
+const mapStateToProps = state => {
+	return {
+        exercises: state.exercises,
+        regimen: state.regimen,
+        regTempName: state.regTempName,
+        regimenName: state.regimenName
+	};
+};
+
+export default connect(mapStateToProps, {setUserId})(Register);

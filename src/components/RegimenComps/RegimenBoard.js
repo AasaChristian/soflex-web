@@ -2,41 +2,47 @@ import React, { useEffect, useState } from 'react'
 import RegimenList from './RegimenList';
 import RegInput from './RegimenInpute'
 import { connect } from 'react-redux';
-import {fetchRegimen, clearTempRegName} from '../../action/regimenActions'
+import {fetchRegimen, clearTempRegName, createRegimen,updateRegimen} from '../../action/regimenActions'
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
 
 function RegimenBoard(props) {
-    const {history, regimen, regTempName, clearTempRegName, exercises} = props
+    const {history, regimen, regTempName, clearTempRegName, createRegimen, updateRegimen, exercises, regBoard, regimenName, userIdState} = props
 //////////////////////////////////////////////////////////////////////////
 const [newRegNameEditor, setNewRegNameEditor] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
 const [confEx, setConfEx] = useState(false)
-
 const [compSet, setCompSet] = useState(false)
 const [compRep, setCompRep] = useState(false)
 const [compWeight, setCompWeight] = useState(false)
+console.log(userIdState, "userIdState")
+console.log(regimenName, "regimenName")
+
+
+
 
 
 useEffect(() => {
-    props.fetchRegimen()
-  },[])
+    const userIdLocalStorage = localStorage.getItem('key')
 
-const byRegName = (arr) => {
-    console.log("BYREGNAME FUNCTION RAN")
-    const cashe = []
-    for (let i = 0; i < arr.length; i++){
-        if (  cashe.includes(arr[i].regimenName) ){
-            console.log("pass")
-        } else{
-            cashe.push(arr[i].regimenName)
-        }
+    if (userIdState === null){
+
+        console.log(userIdLocalStorage, 'userIdLocalStorage')
+        props.fetchRegimen(userIdLocalStorage)
+
+
+
+    } else{
+        console.log(userIdState[0], 'userIdState  Attempted Regimen get')
+        props.fetchRegimen(userIdState)
     }
-    return(cashe)
-}
 
-const SortedRegs = byRegName(regimen)
+  },[exercises, createRegimen, updateRegimen])
+
+  useEffect(() => {
+console.log("Regimen UseEffect")
+  },[exercises])
 
 const SwapEdit = (e) => {
     e.preventDefault()
@@ -76,7 +82,7 @@ const ComnfirmExercise = (e) => {
                 </div>
                 {/* ExstatBox is a list or regimen */}
             <ExboxCont>
-            {SortedRegs.map((e, i) => {
+            {regimenName.map((e, i) => {
                 return(
                     <RegimenList
                 name = {e}
@@ -160,8 +166,10 @@ const mapStateToProps = state => {
 	return {
         exercises: state.exercises,
         regimen: state.regimen,
-        regTempName: state.regTempName
+        regTempName: state.regTempName,
+        regimenName: state.regimenName,
+        userIdState: state.userIdState
 	};
 };
 
-export default connect(mapStateToProps, {fetchRegimen, clearTempRegName})(RegimenBoard);
+export default connect(mapStateToProps, {fetchRegimen, clearTempRegName, createRegimen, updateRegimen})(RegimenBoard);
