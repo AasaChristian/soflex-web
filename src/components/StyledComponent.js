@@ -76,3 +76,81 @@ export const Exbox = styled.section`
     width: 100%;
     `;
 
+// Login 
+export const SubmitButton = styled.button`
+height: 10pc;
+margin-top: 20%;
+font-size: 50px;
+`;
+
+// Exercise List 
+
+export const CenterText = styled.h2`
+display: flex;
+justify-content: center;
+margin-top: 1px;
+margin-bottom: 5px;
+`;
+
+export const ExListConstainer = styled.section`
+border-left: solid black 2px;
+border-right: solid black 2px;
+border-bottom: solid black 1px;
+border-top: solid black 1px;
+background-color: white;
+width: 90%;
+max-width: 90%;
+margin-left: 15px;
+border-radius: 5%;
+height: 3.5pc;
+`;
+
+// Regimen List
+export const NavSection = styled.section`
+display: flex;
+justify-content: space-between;
+`;
+
+export const BorderBottom = styled.h3 `
+border-bottom: solid black 5px;
+`;
+
+export const Constainer = styled.section`
+border-left: solid black 2px;
+border-right: solid black 2px;
+border-bottom: solid black 1px;
+border-top: solid black 1px;
+background-color: white;
+width: 90%;
+max-width: 90%;
+margin-left: 15px;
+border-radius: 5%;
+height: 3.5pc;
+`;
+
+// RunList 
+export const RunListExbox = styled.section`
+    background-color: white;
+    width: 90%;
+    border: solid black 4px ;
+    border-radius: 30%;
+    margin-left: 5%;
+    display: flex;
+    justify-content: center;
+    height: 200px;
+
+    @media (max-width: 750px) {
+
+      padding-bottom: 5px;
+      margin-bottom: 2px;
+    
+    }
+    `;
+
+    export const RunListBorderBottom = styled.h3 `
+border-bottom: solid black 5px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+font-size: 30px;
+`;

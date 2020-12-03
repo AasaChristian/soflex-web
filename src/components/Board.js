@@ -1,38 +1,41 @@
 import React, { useEffect, useState } from 'react'
-import {fetchExercise, createExercise} from '../action/exerciseActions'
 import { connect } from 'react-redux';
-
 import {MainWall, LeftWall, BoardCont, ExboxCont, BackButton} from './StyledComponent'
 import RegimenBoard from './RegimenComps/RegimenBoard';
 import ExerciseBoard from './ExerciseComps/ExerciseBoard';
+import RunBoard from './RunComps/RunBoard';
 
 
 function Board(props) {
-    const {history, exercises, regimen} = props
+    const {history} = props
 //////////////////////////////////////////////////////////////////////////
+const [runBoard, setRunBoard] = useState(false)
 const [regBoard, setRegBoard] = useState(false)
 const [exBoard, setExBoard] = useState(false)
-
-const [selectedExercise, setSelectedExercie] = useState()
-
-const userId = localStorage.getItem('id')
 const userName = localStorage.getItem('username')
 
-
-// Left Wall Nav Bar
 const SendBack = (e) => {
 e.preventDefault()
     history.goBack()
 }
+const SwapRun = (e) => {
+    e.preventDefault()
+    setRunBoard(!runBoard)
+    setRegBoard(false)
+    setExBoard(false)
+}
+
 const SwapReg = (e) => {
     e.preventDefault()
     setRegBoard(!regBoard)
     setExBoard(false)
+    setRunBoard(false)
 }
 const SwapEx = (e) => {
     e.preventDefault()
     setExBoard(!exBoard)
     setRegBoard(false)
+    setRunBoard(false)
 }
 
 
@@ -44,9 +47,19 @@ const SwapEx = (e) => {
             <h1>{userName}'s Main Wall</h1>
             </div>
             <ExboxCont>
+
+{/* Run Board */}
+<div style={runBoard === false? {display: "none"}: {height: '100%'}}>
+<RunBoard
+runBoard={runBoard}
+/>
+</div>
+
 {/* REGIMEN BOARD */}
 <div style={regBoard === false? {display: "none"}: {height: '100%'}}>
-<RegimenBoard/>
+<RegimenBoard
+regBoard={regBoard}
+/>
 </div>
 
 {/* EXERCISE BOARD */}
@@ -59,7 +72,8 @@ const SwapEx = (e) => {
             </ExboxCont>
         </MainWall>
         <LeftWall>
-        <BackButton>WORK</BackButton>
+        <BackButton 
+        onClick={SwapRun}>WORK</BackButton>
             <BackButton 
             onClick={SwapReg}>Create Regimen</BackButton>
             <BackButton
@@ -76,9 +90,7 @@ const SwapEx = (e) => {
 
 const mapStateToProps = state => {
 	return {
-        exercises: state.exercises,
-        regimen: state.regimen
 	};
 };
 
-export default connect(mapStateToProps, {fetchExercise, createExercise})(Board);
+export default connect(mapStateToProps, {})(Board);

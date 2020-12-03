@@ -19,7 +19,7 @@ function Head() {
 
   return (
     <HeadCont>
-        <NavLink to = {userID === null ? "/" : "/board"}>
+        <NavLink to = {"/"}>
           <div>
             <h2>
             Home
@@ -29,8 +29,9 @@ function Head() {
         <h1>SoFlex</h1>
 
         <NavLink  to = {"/Login"} onClick={e => {
-          localStorage.removeItem('id')
+          localStorage.removeItem('key')
           localStorage.removeItem('username')
+          localStorage.removeItem('token')
         }}>
 
 

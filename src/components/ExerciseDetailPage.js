@@ -3,14 +3,18 @@ import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
 import { connect } from 'react-redux';
 
+
 function ExDetailsPage(props) {
 
   const {match, regimen} = props
-    const chosenExercise = regimen.find(
-        filterFor => filterFor.name === match.params.exName
-    )
 
-const {regimenID, name, sets, reps, regimenWeight, regimenName} = chosenExercise
+    const chosenExercise = regimen.filter(x => x.regimenName === match.params.exName)
+
+    console.log(chosenExercise, "chosenExercise")
+
+    console.log(regimen, "regimen")
+
+const { name, sets, reps, regimenWeight, regimenName} = chosenExercise
 
 const TitleCont = styled.div`
 display: flex;
@@ -65,7 +69,7 @@ const CenterText = styled.h4`
 
 
   return (
-<div key={regimenID}>
+<div >
   <TitleCont>
     <TitleInner >
     <CenterText>{regimenName}</CenterText>
@@ -77,14 +81,14 @@ const CenterText = styled.h4`
 
     <Exbox>
       <InnerBox>
-        <NavLink to = {`/board/update/reps/${regimenID}`}>
+        <NavLink to = {`/board/update/reps/`}>
       <CenterText>Reps</CenterText>
       <CenterText>{reps}</CenterText>
       </NavLink>
       </InnerBox>
     </Exbox>
 
-    <Exbox>
+    {/* <Exbox>
     <InnerBox>
     <NavLink to = {`/board/update/weight/${regimenID}`}>
   <CenterText  >Weight</CenterText >
@@ -100,7 +104,7 @@ const CenterText = styled.h4`
       <CenterText>{sets}</CenterText>
       </NavLink>
       </InnerBox>
-    </Exbox>
+    </Exbox> */}
 
   </ExCont>
  

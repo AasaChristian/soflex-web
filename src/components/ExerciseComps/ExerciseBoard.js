@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import NewExForm from './NewExForm'
 import ExList from './ExerciesList';
 import {fetchExercise, createExercise} from '../../action/exerciseActions'
@@ -12,15 +11,11 @@ function ExerciseBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 const [edit, setEdit] = useState(false)
 const [reEdit, setRegEdit] = useState(false)
-const [selectedReg, setSelectedReg] = useState(false)
-const [selectedExercise, setSelectedExercie] = useState()
-const [litEx, setLitEx] = useState(false)
+const [selectedExercise, setSelectedExercise] = useState(null)
 
 useEffect(() => {
     props.fetchExercise()
 }, [exBoard])
-
-
     
   return (
     <div style={{width: "100%"}}>
@@ -32,7 +27,7 @@ useEffect(() => {
 
             <div style={{height: "50%"}}>
 
-                <section style={{overflow: "scroll", height: "60%", marginTop: "10%", borderBottom: "solid black 1px"}}>
+                <section style={{overflow: "scroll", height: "200px", marginTop: "10%", borderBottom: "solid black 1px"}}>
             {exercises.map((e) => {
                        return(
                         <ExList
@@ -40,7 +35,7 @@ useEffect(() => {
                         exName = {e.name}
                         exDescription = {e.description}
                         img = {e.img}
-                        setSelectedExercie={setSelectedExercie}
+                        setSelectedExercise={setSelectedExercise}
                         selectedExercise={selectedExercise}
                         />
                        )
@@ -48,11 +43,6 @@ useEffect(() => {
                    </section>
             </div>
 
-
-
-
-
-           
             <Exbox style={{marginTop: "15px", }}>
                 <div >
                     <ExName onClick={x => setEdit(!edit)} > Create Exercies + </ExName>
