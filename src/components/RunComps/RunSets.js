@@ -30,8 +30,9 @@ display: flex;
 
 
 `;
+
    return(
- <div style={{display: "flex", flexDirection: "row", justifyContent: "center", width: "100%", overflow: "scroll"}}>
+ <div style={{display: "flex", flexDirection: "row",  width: "initial", overflowX: "scroll"}}>
 {setsArr.map((sets) => {
     return(
         <section>
