@@ -6,16 +6,16 @@ import {ExboxCont} from '../StyledComponent'
 
 
 function RunSets(props) {
-  const {runSets, match, regimen} = props
+  const {runSets, match, regimen, reps} = props
 
-  console.log(runSets, "runSets")
+//   console.log(runSets, "runSets")
 
   let setsArr = []
 
   for (let i = 0; i <= runSets; i++){
       setsArr.push(i)
   }
-  console.log(setsArr, "setsArr")
+//   console.log(setsArr, "setsArr")
 
 const RunDetailCont = styled.div`
 display: flex;
@@ -44,7 +44,7 @@ display: flex;
 
                 <SetSection>
                 <p>Rep Goal</p>
-                <p>Reps</p>
+    <p>{reps}</p>
                 </SetSection>
 
                 <SetSection>
