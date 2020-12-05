@@ -12,10 +12,10 @@ function Landing() {
            <h1>CITY SO FLEX</h1>
        </div>
        
-       <div >
+       <div display={{height: "50px"}}>
        <NavLink to={"/login"} style={{display: "flex", justifyContent: "center"}}> 
        
-       {/* <img src={Logo} alt="picture of weight room"  width="90%" height="40%"/> */}
+       <img src={Logo} alt="picture of weight room"  width="90%" height="40%"/>
 
        </NavLink>
           
