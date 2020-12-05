@@ -102,6 +102,7 @@ overflow-x: scroll;
         <RunSets
         runSets={ex.sets}
         reps={ex.reps}
+        weight={ex.regimenWeight}
         />
             </div>
         </SetsCont>

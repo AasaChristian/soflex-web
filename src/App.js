@@ -16,8 +16,8 @@ import PrivateRoute from './components/Authentication/PrivateRoute';
 import RegimenDetails from './components/RegimenComps/RegimenDetails';
 
 function App() {
-  const axiosAddress = "http://localhost:5000"
-  // const axiosAddress = "https://citysoflex.herokuapp.com"
+  // const axiosAddress = "http://localhost:5000"
+  const axiosAddress = "https://citysoflex.herokuapp.com"
 
   return (
     <div className="App">

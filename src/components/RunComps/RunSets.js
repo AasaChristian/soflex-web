@@ -6,7 +6,7 @@ import {ExboxCont} from '../StyledComponent'
 
 
 function RunSets(props) {
-  const {runSets, match, regimen, reps} = props
+  const {runSets, match, regimen, reps, weight} = props
 
 //   console.log(runSets, "runSets")
 
@@ -22,34 +22,35 @@ display: flex;
 justify-content: space-evenly;
 border: solid green 5px;
 height: 400px;
-width: 100%;
+width: 205px;;
 `;
 
 const SetSection = styled.section`
 display: flex;
-
-
+flex-direction: column;
 `;
 
+const RunText = styled.p`
+font-size: 40px;
+`;
    return(
  <div style={{display: "flex", flexDirection: "row",  width: "initial", overflowX: "scroll"}}>
 {setsArr.map((sets) => {
     return(
         <section>
-            <RunDetailCont>
-                <SetSection>
+                 <section style={{display: "flex", justifyContent: "space-evenly"}}>
                 <p>SET #</p>
                 <p>{sets + 1}</p>
+                </section>
+            <RunDetailCont>
+                <SetSection>
+                <p>Rep</p>
+    <RunText>{reps}</RunText>
                 </SetSection>
 
                 <SetSection>
-                <p>Rep Goal</p>
-    <p>{reps}</p>
-                </SetSection>
-
-                <SetSection>
-                <p>weight Goal</p>
                 <p>Weight</p>
+    <RunText>{weight}</RunText>
                 </SetSection>
             </RunDetailCont>
         </section>
