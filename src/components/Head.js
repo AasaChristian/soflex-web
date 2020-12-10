@@ -19,7 +19,7 @@ function Head() {
 
   return (
     <HeadCont>
-        <NavLink to = {"/"}>
+        <NavLink to = {"/board"}>
           <div>
             <h2>
             Home
