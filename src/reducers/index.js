@@ -1,11 +1,12 @@
-import {Fetch_Exercise, Create_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId} from '../action/index'
+import {Fetch_Exercise, Create_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log} from '../action/index'
 
 const initialState = {
 exercises: [],
 regimen: [],
 regimenName:[],
 regTempName: [],
-userIdState: null
+userIdState: null,
+logs: []
   };
   
   export const reducer = (state = initialState, action) => {
@@ -53,6 +54,11 @@ userIdState: null
                       ...state,
               userIdState: action.payload
                     };
+        case Create_Log:
+              return {
+                ...state,
+              logs: [state.logs, action.payload[0]]
+              }
 
         default:
             return state;
