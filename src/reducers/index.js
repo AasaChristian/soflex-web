@@ -1,4 +1,4 @@
-import {Fetch_Exercise, Create_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log} from '../action/index'
+import {Fetch_Exercise, Create_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log, Fetch_Logs} from '../action/index'
 
 const initialState = {
 exercises: [],
@@ -56,8 +56,13 @@ logs: []
                     };
         case Create_Log:
               return {
-                ...state,
+                      ...state,
               logs: [state.logs, action.payload[0]]
+              };
+        case Fetch_Logs:
+              return{
+                     ...state,
+                     logs: action.payload
               }
 
         default:
