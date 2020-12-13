@@ -19,14 +19,17 @@ function Head() {
 
   return (
     <HeadCont>
-        <NavLink to = {"/"}>
+        <NavLink to = {"/board"}>
           <div>
             <h2>
             Home
             </h2>
           </div>
             </NavLink>
-        <h1>SoFlex</h1>
+          <NavLink to = {"/"}>
+          <h1>SoFlex</h1>
+          </NavLink>  
+        
 
         <NavLink  to = {"/Login"} onClick={e => {
           localStorage.removeItem('key')
