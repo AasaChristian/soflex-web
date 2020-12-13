@@ -26,7 +26,10 @@ function Head() {
             </h2>
           </div>
             </NavLink>
-        <h1>SoFlex</h1>
+          <NavLink to = {"/"}>
+          <h1>SoFlex</h1>
+          </NavLink>  
+        
 
         <NavLink  to = {"/Login"} onClick={e => {
           localStorage.removeItem('key')
