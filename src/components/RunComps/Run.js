@@ -10,7 +10,7 @@ function Run(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
   const {history, match, regimen} = props
-
+console.log(match.params.regimenName, "match.params.regimenName")
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
@@ -103,6 +103,8 @@ overflow-x: scroll;
         runSets={ex.sets}
         reps={ex.reps}
         weight={ex.regimenWeight}
+        regimenId={ex.regimenID}
+
         />
             </div>
         </SetsCont>
