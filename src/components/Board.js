@@ -4,6 +4,7 @@ import {MainWall, LeftWall, BoardCont, ExboxCont, BackButton} from './StyledComp
 import RegimenBoard from './RegimenComps/RegimenBoard';
 import ExerciseBoard from './ExerciseComps/ExerciseBoard';
 import RunBoard from './RunComps/RunBoard';
+import WallBoard from './WallComps/WallBoard';
 
 
 function Board(props) {
@@ -47,6 +48,11 @@ const SwapEx = (e) => {
             <h1>{userName}'s Main Wall</h1>
             </div>
             <ExboxCont>
+
+<div style={runBoard === true || regBoard === true || exBoard === true ? {display: "none"}: {height: '100%'}}>
+<WallBoard/>
+</div>
+
 
 {/* Run Board */}
 <div style={runBoard === false? {display: "none"}: {height: '100%'}}>
