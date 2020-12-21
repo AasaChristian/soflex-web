@@ -1,8 +1,6 @@
 import axios from 'axios'
 import {Create_Log, Fetch_Logs} from './index'
-
-// const axiosAddress = "http://localhost:5000"
-const axiosAddress = "https://citysoflex.herokuapp.com"
+import {axiosAddress} from '../AxiosAdress'
 
 export const fetchLogs = (id) => dispatch => {
     axios.get(`${axiosAddress}/api/logs/find/${id}`)

@@ -14,10 +14,10 @@ import Landing from './components/Landing';
 import Run from './components/RunComps/Run';
 import PrivateRoute from './components/Authentication/PrivateRoute';
 import RegimenDetails from './components/RegimenComps/RegimenDetails';
+import {axiosAddress} from './AxiosAdress'
 
 function App() {
-  // const axiosAddress = "http://localhost:5000"
-  const axiosAddress = "https://citysoflex.herokuapp.com"
+
 
   return (
     <div className="App">

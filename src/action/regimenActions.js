@@ -1,8 +1,6 @@
 import axios from 'axios'
 import {Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId} from './index'
-
-const axiosAddress = "https://citysoflex.herokuapp.com"
-// const axiosAddress = "http://localhost:5000"
+import {axiosAddress} from '../AxiosAdress'
 
 export const fetchRegimen = (id) => dispatch => {
     axios.get(`${axiosAddress}/api/regimen/find/${id}`)

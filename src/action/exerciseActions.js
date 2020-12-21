@@ -1,8 +1,7 @@
 import axios from 'axios'
 import {Fetch_Exercise, Create_Exercise} from './index'
+import {axiosAddress} from '../AxiosAdress'
 
-const axiosAddress = "https://citysoflex.herokuapp.com"
-// const axiosAddress = "http://localhost:5000"
 
 export const fetchExercise = () => dispatch => {
     axios.get(`${axiosAddress}/api/exercises/all`)
