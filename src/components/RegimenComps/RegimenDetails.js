@@ -30,6 +30,7 @@ history.push('/board')
 
 
 
+
 let arrLen = chosenExercise.length
 
 useEffect(() => {
@@ -160,6 +161,14 @@ height: 100%;
     </Exbox>
 
   </ExCont>
+  <section>
+    <div>
+
+      <p>Add new Exercise</p>
+
+    </div>
+    <div></div>
+  </section>
 </PageScroll>
 
         
