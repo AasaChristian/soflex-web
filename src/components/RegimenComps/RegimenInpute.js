@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createRegimen, clearTempRegName } from '../../action/regimenActions';
 
 function RegInput(props){
-const {selectedExercise, setSelectedExercise, userIdState, createRegimen,regTempName, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName, regimenName} = props
+const {setRegBoard, regBoard, selectedExercise, setSelectedExercise, userIdState, createRegimen,regTempName, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName, regimenName} = props
 const [newReg, setNewReg] = useState({})
 const [nameOfUpdatedReg, setNameOfUpdatedReg] = useState()
 console.log(userIdState, 'userIdState')
@@ -50,6 +50,7 @@ setCompSet(false)
 setCompWeight(false)
 setSelectedExercise(null)
 clearTempRegName()
+setRegBoard(!regBoard)
 }
 
 const confirmWeight = (e) => {

@@ -65,6 +65,7 @@ runBoard={runBoard}
 <div style={regBoard === false? {display: "none"}: {height: '100%'}}>
 <RegimenBoard
 regBoard={regBoard}
+setRegBoard={setRegBoard}
 />
 </div>
 
