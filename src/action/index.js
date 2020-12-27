@@ -12,6 +12,8 @@ export const Fetch_Regimen = 'Fetch_Regimen'
 
 export const Create_Regimen = 'Create_Regimen'
 
+export const Delete_RegimenEx = 'Delete_RegimenEx'
+
 export const Update_Regimen = 'Update_Regimen'
 
 export const Create_TempRegName = 'Create_TempRegName'
