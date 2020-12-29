@@ -1,4 +1,4 @@
-import {Fetch_Exercise, Create_Exercise, Delete_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log, Fetch_Logs} from '../action/index'
+import {Fetch_Exercise, Create_Exercise, Delete_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Delete_RegimenEx, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log, Fetch_Logs} from '../action/index'
 
 const initialState = {
 exercises: [],
@@ -44,6 +44,11 @@ logs: []
                   ...state,
                 regimen: [action.payload]
                 };
+        case Delete_RegimenEx:
+                  return {
+                    ...state,
+                    exercises: [...state.regimen.filter(ex => ex.regimenID !== action.payload)]
+                  };
         case Create_TempRegName:
               return {
                   ...state,
