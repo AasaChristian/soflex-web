@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import {createLog} from '../../action/runActions'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
-import { createStore } from 'redux';
+
 
 
 function RunSets(props) {
@@ -16,6 +16,8 @@ function RunSets(props) {
   const [postInput, setPostInput] = useState('')
 
   const [setInput, setSetInput] = useState(1)
+
+  const [shownRep, setShownRep] = useState(0)
   // console.log(runSets, "runSets")
 
   let setsArr = []
@@ -26,8 +28,8 @@ function RunSets(props) {
   // console.log(setsArr, "setsArr")
 
   console.log(postInput, "postInput")
-
-  
+console.log(setsArr.length, "setsArr.length")
+console.log(shownRep, "shownRep")
 
 const handleChange = e => {
   setPostInput(e.target.value)
@@ -60,10 +62,6 @@ const sendNewLog = (e) => {
 
 }
 
-
-
-
-
 const repUp = e => {
   e.preventDefault()
   setRepInput(repInput + 1)
@@ -87,16 +85,16 @@ const RunDetailCont = styled.div`
 display: flex;
 justify-content: space-evenly;
 border: solid green 5px;
-height: 220px;
-width: 205px;;
+height: 200px;
+width: 100%;
 `;
 
 const RunInputeCont = styled.div`
 display: flex;
 justify-content: space-evenly;
 border: solid red 5px;
-height: 220px;
-width: 205px;;
+height: 200px;
+width: 100%;
 `;
 
 const SetSection = styled.section`
@@ -109,7 +107,8 @@ height: 100px;
 `;
 
 const RunText = styled.p`
-font-size: 40px;
+font-size: 50px;
+margin: 0 0 0 0;
 `;
 
 const RunInputText = styled.p`
@@ -117,14 +116,22 @@ font-size: 50px;
 margin: 5px;
 `;
    return(
- <div style={{display: "flex", flexDirection: "row",  width: "initial", overflowX: "scroll"}}>
+ <div style={{display: "flex", flexDirection: "row", overflowX: "scroll"}}>
 {setsArr.map((sets, key) => {
     return(
-        <section>
+        <section key={key} style={shownRep === key? {display: "initial", width:"100%"}: {display: "none"}}>
                  <section style={{display: "flex", justifyContent: "space-evenly"}}>
                 <p>SET #</p>
-                <p>{sets + 1}</p>
-    <p>{key}</p>
+                <RunText
+                onClick={((e) => {
+                  e.preventDefault()
+                  if (shownRep + 1 === setsArr.length){
+                    setShownRep(0)
+                  } else {
+                    setShownRep(shownRep + 1)
+                  }
+                })}
+                >{sets + 1}</RunText>
                 </section>
             <RunDetailCont>
                 <SetSection>
