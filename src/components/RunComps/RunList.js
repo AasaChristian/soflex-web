@@ -35,8 +35,8 @@ function RunList({name, key}) {
     // justify-content: space-between;
     // `;
 
-    console.log(key, "key")
-    console.log(name, "name")
+    // console.log(key, "key")
+    // console.log(name, "name")
 
   return (
     <RunListExbox key ={key}>

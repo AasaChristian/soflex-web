@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
-import {fetchRegimen, updateRegimen} from '../action/regimenActions'
+import { updateRegimen} from '../action/regimenActions'
 
 
 function ExForm(props){
-const {match, axiosAddress, history, updateRegimen, regimen} = props
+const {match, history, updateRegimen} = props
 const exToUpdate =  match.params.update
 const regimenId = match.params.id
 
-console.log(regimen, "regimen")
+// console.log(regimen, "regimen")
 
 const [updated, setUpdated] = useState([])
 const handleChange = e => {
@@ -21,14 +21,7 @@ console.log(history, "HISTORY")
 const SendUpdate = (e) => {
     e.preventDefault()
     updateRegimen(updatedObj, regimenId)
-    // axios.put(`${axiosAddress}/api/regimen/update/${regimenId}`, 
-    // updatedObj)
-    // .then(res => {
-    //     console.log(res, "res")
-    // }).catch(error => console.log(error))
-
-    history.push('/board')
-    
+    history.push('/board')  
 }
 return(
     <section>

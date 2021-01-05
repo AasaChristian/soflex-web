@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchRegimen, clearTempRegName, createRegimen,updateRegimen} from '../../action/regimenActions'
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
-import ExList from '../ExerciseComps/ExerciesList';
 import RunList from './RunList';
 
 function RunBoard(props) {
-    const {history, regimen, regTempName, clearTempRegName, createRegimen, updateRegimen, exercises, regBoard, regimenName, userIdState} = props
+    const {createRegimen, updateRegimen, exercises, regimenName, userIdState} = props
 //////////////////////////////////////////////////////////////////////////
 
 
-console.log(regimenName, "regimenName")
+// console.log(regimenName, "regimenName")
 
 
 
@@ -19,13 +18,13 @@ useEffect(() => {
 
     if (userIdState === null){
 
-        console.log(userIdLocalStorage, 'userIdLocalStorage')
+        // console.log(userIdLocalStorage, 'userIdLocalStorage')
         props.fetchRegimen(userIdLocalStorage)
 
 
 
     } else{
-        console.log(userIdState[0], 'userIdState  Attempted Regimen get')
+        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
         props.fetchRegimen(userIdState)
     }
 

@@ -10,8 +10,8 @@ logs: []
   };
   
   export const reducer = (state = initialState, action) => {
-    console.log(action.payload, "action.payload")
-    console.log(state.regTempName, "action.regTempName")
+    // console.log(action.payload, "action.payload")
+    // console.log(state.regTempName, "action.regTempName")
     switch (action.type){
       case Fetch_Regimen:
         return{
@@ -67,7 +67,7 @@ logs: []
         case Create_Log:
               return {
                       ...state,
-              logs: [state.logs, action.payload[0]]
+              logs: [...state.logs, action.payload[0]]
               };
         case Fetch_Logs:
               return{

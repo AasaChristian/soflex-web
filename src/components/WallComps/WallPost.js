@@ -1,5 +1,4 @@
-import { stringify } from 'query-string';
-import React, { useEffect, useState } from 'react'
+import React, {useState} from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components'
 
@@ -7,12 +6,13 @@ function WallPost(props) {
     const {logs, userIdState, submission, subIndex} = props
 //////////////////////////////////////////////////////////////////////////
 
-const {LoggedReps, LoggedSet, LoggedWeight, name, post, uswername, dateAdded} = submission
-console.log(subIndex, "subIndex")
+const {LoggedReps, LoggedSet, LoggedWeight, name, post, dateAdded} = submission
+// console.log(subIndex, "subIndex")
+// console.log(dateAdded, "dateAdded")
 
 const [curEx, setCurEx] = useState(null)
 
-console.log(curEx,"curEx")
+// console.log(curEx,"curEx")
 const PostCont = styled.section`
 display: flex;
 flex-direction: column;

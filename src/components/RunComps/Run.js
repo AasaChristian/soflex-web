@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {fetchExercise, createExercise} from '../../action/exerciseActions'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
@@ -9,8 +8,8 @@ import RunSets from './RunSets';
 function Run(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
-  const {history, match, regimen} = props
-console.log(match.params.regimenName, "match.params.regimenName")
+  const { match, regimen} = props
+// console.log(match.params.regimenName, "match.params.regimenName")
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
@@ -27,20 +26,20 @@ useEffect(() => {
         return chosenLen = regsExercises.length
     })
 },[reState])
-console.log(showReg, "showReg")
+// console.log(showReg, "showReg")
 
 const Swipe = e => {
     e.preventDefault()
     if (index == chosenLen -1){
-        console.log(chosenLen, "chosenLen")
+        // console.log(chosenLen, "chosenLen")
         setIndex(0)
         setRestate(!reState)
-        console.log(index, "index")
+        // console.log(index, "index")
     } else {
         setIndex(index + 1)
         setRestate(!reState)
-        console.log(index, "index")
-        console.log(chosenLen, "chosenLen")
+        // console.log(index, "index")
+        // console.log(chosenLen, "chosenLen")
     }
 }
 

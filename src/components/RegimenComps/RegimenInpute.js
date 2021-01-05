@@ -11,7 +11,7 @@ const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
 
-console.log(chosenExercise, 'chosenExercise')
+// console.log(chosenExercise, 'chosenExercise')
 const sendNewReg = (e) => {
     e.preventDefault()
     let userIdInput = null
