@@ -10,11 +10,11 @@ function ExDetailsPage(props) {
 
     const chosenExercise = regimen.filter(x => x.regimenName === match.params.exName)
 
-    console.log(chosenExercise, "chosenExercise")
+    // console.log(chosenExercise, "chosenExercise")
 
-    console.log(regimen, "regimen")
+    // console.log(regimen, "regimen")
 
-const { name, sets, reps, regimenWeight, regimenName} = chosenExercise
+const { name, reps, regimenName} = chosenExercise
 
 const TitleCont = styled.div`
 display: flex;

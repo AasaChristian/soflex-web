@@ -12,7 +12,7 @@ function ExerciseBoard(props) {
 const [edit, setEdit] = useState(false)
 const [reEdit, setRegEdit] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
-console.log(selectedExercise, "selectedExercise")
+// console.log(selectedExercise, "selectedExercise")
 useEffect(() => {
     props.fetchExercise()
 }, [exBoard])

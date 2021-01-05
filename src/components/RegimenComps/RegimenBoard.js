@@ -9,7 +9,7 @@ import ExList from '../ExerciseComps/ExerciesList';
 import styled from 'styled-components';
 
 function RegimenBoard(props) {
-    const {history, regimen, regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState} = props
+    const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState} = props
 //////////////////////////////////////////////////////////////////////////
 const [newRegNameEditor, setNewRegNameEditor] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
@@ -17,9 +17,9 @@ const [confEx, setConfEx] = useState(false)
 const [compSet, setCompSet] = useState(false)
 const [compRep, setCompRep] = useState(false)
 const [compWeight, setCompWeight] = useState(false)
-console.log(userIdState, "userIdState")
-console.log(regimenName, "regimenName")
-console.log(newRegNameEditor, "newRegNameEditor")
+// console.log(userIdState, "userIdState")
+// console.log(regimenName, "regimenName")
+// console.log(newRegNameEditor, "newRegNameEditor")
 
 
 
@@ -30,13 +30,13 @@ useEffect(() => {
 
     if (userIdState === null){
 
-        console.log(userIdLocalStorage, 'userIdLocalStorage')
+        // console.log(userIdLocalStorage, 'userIdLocalStorage')
         props.fetchRegimen(userIdLocalStorage)
 
 
 
     } else{
-        console.log(userIdState[0], 'userIdState  Attempted Regimen get')
+        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
         props.fetchRegimen(userIdState)
     }
 
@@ -45,7 +45,7 @@ useEffect(() => {
   },[exercises, createRegimen, updateRegimen, deleteRegimenEX, regBoard])
 
   useEffect(() => {
-console.log("Regimen UseEffect")
+// console.log("Regimen UseEffect")
   },[exercises])
 
 const SwapEdit = (e) => {

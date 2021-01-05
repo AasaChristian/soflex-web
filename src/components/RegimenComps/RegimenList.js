@@ -35,8 +35,8 @@ function RegimenList({name, regimenID}) {
     // justify-content: space-between;
     // `;
 
-    console.log(regimenID, "key")
-    console.log(name, "name")
+    // console.log(regimenID, "key")
+    // console.log(name, "name")
 
   return (
     <Exbox key ={regimenID}>

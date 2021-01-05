@@ -7,7 +7,7 @@ import {ExboxCont} from '../StyledComponent'
 
 
 function RunSets(props) {
-  const {runSets, match, regimen, reps, weight, logs, createLog, userIdState, regimenId} = props
+  const {runSets,  reps, weight, createLog, userIdState, regimenId} = props
 
   const [repInput, setRepInput] = useState(reps)
 
@@ -27,9 +27,9 @@ function RunSets(props) {
   }
   // console.log(setsArr, "setsArr")
 
-  console.log(postInput, "postInput")
-console.log(setsArr.length, "setsArr.length")
-console.log(shownRep, "shownRep")
+//   console.log(postInput, "postInput")
+// console.log(setsArr.length, "setsArr.length")
+// console.log(shownRep, "shownRep")
 
 const handleChange = e => {
   setPostInput(e.target.value)
@@ -59,7 +59,6 @@ const sendNewLog = (e) => {
 
   createLog(newLogObj)
   setSetInput(setInput + 1)
-
 }
 
 const repUp = e => {
@@ -168,7 +167,7 @@ margin: 5px;
               onChange={handleChange}
               />
             </form>
-                        <button
+                        <button style={{width: "100%", height:"45px"}}
             onClick={sendNewLog}
             >Submit</button>
         </section>

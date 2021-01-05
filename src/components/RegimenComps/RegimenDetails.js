@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {NavLink, Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import { connect } from 'react-redux';
 import {fetchRegimen, deleteRegimenEX} from '../../action/regimenActions'
 
@@ -11,7 +11,7 @@ function RegimenDetails(props) {
     const [index, setIndex] = useState(0)
     const [reState, setRestate] = useState(false)
 
-  const {match, regimen, history, fetchRegimen, deleteRegimenEX} = props
+  const {match, regimen, history, deleteRegimenEX} = props
 
   let chosenExercise = regimen.filter(x => x.regimenName === match.params.exName)
 
@@ -22,13 +22,13 @@ history.push('/board')
 
 // console.log(match.params.exName, "EXNAME")
 
-    console.log(regimen.length, "regimen Len")
+    // console.log(regimen.length, "regimen Len")
 
-    console.log(regimen, "regimen")
+    // console.log(regimen, "regimen")
 
-    console.log(curEx, "curEx")
+    // console.log(curEx, "curEx")
 
-    console.log(chosenExercise, "chosenExercise")
+    // console.log(chosenExercise, "chosenExercise")
 
 
 
@@ -58,7 +58,7 @@ const Swipe = e => {
 const RemoveExerciseFromRegimen = e => {
   e.preventDefault()
   deleteRegimenEX(curEx)
-  console.log("Removers exdeercies Button", curEx)
+  // console.log("Removers exdeercies Button", curEx)
   history.push('/board')
 }
 const TitleCont = styled.div`
