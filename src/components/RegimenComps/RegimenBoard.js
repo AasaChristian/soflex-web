@@ -6,6 +6,7 @@ import {fetchRegimen, clearTempRegName, createRegimen,updateRegimen, deleteRegim
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
+import styled from 'styled-components';
 
 function RegimenBoard(props) {
     const {history, regimen, regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState} = props
@@ -84,7 +85,9 @@ const ComnfirmExercise = (e) => {
                     <h>Regimen</h>
                 </div>
                 {/* ExstatBox is a list or regimen */}
-            <ExboxCont>
+               
+            <ExboxCont> 
+                <div style={newRegNameEditor === true ? {display: "none"}: {display: "initial"}} >
             {regimenName.map((e, i) => {
                 return(
                     <RegimenList
@@ -92,7 +95,7 @@ const ComnfirmExercise = (e) => {
                 regimenID = {i}
                 />
                 )
-            })}
+            })}</div>
 
                 <Exbox style={regTempName.length === 0 ? {marginTop: "25px"} : {display: "none"} }>
                 <div >
