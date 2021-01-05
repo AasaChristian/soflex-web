@@ -31,7 +31,7 @@ useEffect(() => {
 
             <div style={{height: "50%"}}>
 
-                <section style={{overflow: "scroll", height: "200px", marginTop: "10%", borderBottom: "solid black 1px"}}>
+                <section style={ edit=== true?{ display: "none"}:  {overflow: "scroll", height: "200px", marginTop: "10%", borderBottom: "solid black 1px"}}>
             {exercises.map((e) => {
                        return(
                         <ExList
