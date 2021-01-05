@@ -59,7 +59,6 @@ const sendNewLog = (e) => {
 
   createLog(newLogObj)
   setSetInput(setInput + 1)
-
 }
 
 const repUp = e => {
@@ -168,7 +167,7 @@ margin: 5px;
               onChange={handleChange}
               />
             </form>
-                        <button
+                        <button style={{width: "100%", height:"45px"}}
             onClick={sendNewLog}
             >Submit</button>
         </section>
