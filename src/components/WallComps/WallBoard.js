@@ -11,7 +11,7 @@ function WallBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 
 
-console.log(logs, "logs")
+// console.log(logs, "logs")
 
 useEffect(() => {
     const userIdLocalStorage = localStorage.getItem('key')

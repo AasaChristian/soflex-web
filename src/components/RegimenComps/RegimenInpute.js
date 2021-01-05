@@ -6,7 +6,7 @@ function RegInput(props){
 const {setRegBoard, regBoard, selectedExercise, setSelectedExercise, userIdState, createRegimen,regTempName, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName, regimenName} = props
 const [newReg, setNewReg] = useState({})
 const [nameOfUpdatedReg, setNameOfUpdatedReg] = useState()
-console.log(userIdState, 'userIdState')
+// console.log(userIdState, 'userIdState')
 const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }

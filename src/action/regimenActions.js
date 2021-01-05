@@ -5,7 +5,7 @@ import {axiosAddress} from '../AxiosAdress'
 export const fetchRegimen = (id) => dispatch => {
     axios.get(`${axiosAddress}/api/regimen/find/${id}`)
     .then(res => {
-        console.log(res, "LOOKING FOR REGIMEN NAME")
+        // console.log(res, "LOOKING FOR REGIMEN NAME")
         const reggy = res.data
         const  names = []
         for (let i = 0; i < reggy.length; i++){

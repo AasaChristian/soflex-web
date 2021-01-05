@@ -13,7 +13,7 @@ const [reState, setRestate] = useState(false)
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
-    console.log(chosenRegimen, "chosenRegimen RUN")
+    // console.log(chosenRegimen, "chosenRegimen RUN")
 const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName
 const regsExercises = []
@@ -80,7 +80,7 @@ overflow-x: scroll;
 </RunHeader>
    <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "white"}} >
        {chosenRegimen.map((ex) => {
-           console.log(ex,'ex')
+        //    console.log(ex,'ex')
            
            
        return( 
