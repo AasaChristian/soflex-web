@@ -34,6 +34,7 @@ const useUpdatedNameAsTemp = e =>{
 
 return(
     <div >
+               <div style={{display: "flex", justifyContent: "center"}}> <p>Add Ecercise to Existing Regimen</p> </div>
         {regimenName.map((regimenName) => {
             return(
                 <div>
@@ -45,7 +46,10 @@ return(
                 
             )
         })}
+        <div style={{display: "flex", justifyContent: "center"}}><p>Create New Regimen</p></div>
+
     <form style={{display:"flex", flexDirection: "column", justifyContent: "center"}} onSubmit={submitTempName}>
+
     <input value={tempRegName}  style={{display: "flex", height: "60px", paddingLeft: "40%", marginLeft: "2%", borderRadius: "10%"}} type="text" name="tempRegName" placeholder="Name" onChange={handleChange}/>
     <button>Create</button>
     </form>
