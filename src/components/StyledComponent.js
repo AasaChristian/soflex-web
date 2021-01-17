@@ -35,7 +35,7 @@ export const Exbox = styled.section`
     flex-direction: column;
     justify-content; center;
     width: 100%;
-    height: 100%;
+    height: 77%;
     border-radius: 2%;
     ;`
 
@@ -59,7 +59,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     background-color: ${blackOrWhite};
     width: 100%;
-    height: 60%;
+    height: 80%;
     border-radius: 4%;
     border: solid #656176 5px;
     `;
