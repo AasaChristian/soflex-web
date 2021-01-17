@@ -99,7 +99,7 @@ const ComnfirmExercise = (e) => {
 
                 <Exbox style={regTempName.length === 0 ? {marginTop: "25px"} : {display: "none"} }>
                 <div >
-                    <ExName  onClick={SwapEdit}> Create Regimen + </ExName>
+                    <ExName  onClick={SwapEdit}> {newRegNameEditor === false? 'Create Regimen +' : 'Go Back'} </ExName>
                 </div>
    
             </Exbox>
