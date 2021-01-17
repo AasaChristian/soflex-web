@@ -80,7 +80,7 @@ setRegBoard={setRegBoard}
         </MainWall>
         <LeftWall>
         <BackButton 
-        onClick={SwapRun}>WORK</BackButton>
+        onClick={SwapRun}>Work</BackButton>
             <BackButton 
             onClick={SwapReg}> Regimen</BackButton>
             <BackButton
