@@ -6,6 +6,8 @@ import styled from 'styled-components'
 function Foot() {
 const FootCont = styled.section`
 background-color: black;
+height: 120px;
+max-height: 120px;
 
 
 `;
@@ -20,11 +22,10 @@ justify-content: center;
 
   return (
 <FootCont>
-  <section style={{display: "flex", justifyContent:"center"}}>
-  <div style={{display: "flex", flexDirection: "column"}}>
-        <FootText>Aasa Christian</FootText>
+  <section style={{display: "flex", justifyContent:"center", height: '120px'}}>
+  <div style={{display: "flex", flexDirection: "column", height: '120px'}}>
         <FootText>City Web Development</FootText>
-        <FootText>Richmond,Va</FootText>
+        <FootText>Ace Christian</FootText>
     </div>
   </section>
 
