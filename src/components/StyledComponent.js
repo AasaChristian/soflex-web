@@ -32,21 +32,23 @@ export const Exbox = styled.section`
 
     export const BoardCont = styled.div`
     display: flex;
-    width: inherit;
-    height: 90%;
+    flex-direction: column;
+    justify-content; center;
+    width: 100%;
+    height: 100%;
     border-radius: 2%;
     ;`
 
     export const LeftWall = styled.section`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-evenly;
     background-color: #F8F1FF;
-    border-left: solid #656176 7px;
-    border-bottom: solid #656176 5px;
-    border-top: solid #656176 5px;
-    
-    width: 20%;
+    border-left: solid #656176 1px;
+    border-bottom: solid #656176 1px;
+    border-top: solid #656176 1px;
+    height: 20%;
+    width: 100%;
 
 
     `;
@@ -56,7 +58,8 @@ export const Exbox = styled.section`
     flex-direction: column;
     justify-content: space-evenly;
     background-color: ${blackOrWhite};
-    width: 80%;
+    width: 100%;
+    height: 60%;
     border-radius: 4%;
     border: solid #656176 5px;
     `;
@@ -69,7 +72,6 @@ export const Exbox = styled.section`
     margin-top: 10%;
     `;
     export const BackButton = styled.button`
-    height: 20%;
     padding-top: 10%;
     background-color: white;
     font-size: 15px;

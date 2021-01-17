@@ -2,19 +2,24 @@
   box-sizing: border-box;
   height: auto;
 }
+#root {
+  height: 100%;
+}
 
 .App {
   height: 100%; 
   width: 100%;
   max-height: 100%;
   max-width: 100%;
+  position: relative;
+  overflow: scroll;
 }
 
 @media(max-width:450px){
 
   html {
-    height: 800px;
-    max-height: 780px;
+    height: 100%;
+    max-height: 100%;
   }
 
   body {
