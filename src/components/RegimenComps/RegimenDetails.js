@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {NavLink, Link} from "react-router-dom"
+import {NavLink} from "react-router-dom"
 import { connect } from 'react-redux';
-import {fetchRegimen} from '../../action/regimenActions'
+import {fetchRegimen, deleteRegimenEX} from '../../action/regimenActions'
 
 
 function RegimenDetails(props) {
@@ -11,7 +11,7 @@ function RegimenDetails(props) {
     const [index, setIndex] = useState(0)
     const [reState, setRestate] = useState(false)
 
-  const {match, regimen, history, fetchRegimen} = props
+  const {match, regimen, history, deleteRegimenEX} = props
 
   let chosenExercise = regimen.filter(x => x.regimenName === match.params.exName)
 
@@ -22,11 +22,13 @@ history.push('/board')
 
 // console.log(match.params.exName, "EXNAME")
 
-    console.log(regimen.length, "regimen Len")
+    // console.log(regimen.length, "regimen Len")
 
-    console.log(regimen, "regimen")
+    // console.log(regimen, "regimen")
 
-    console.log(curEx, "curEx")
+    // console.log(curEx, "curEx")
+
+    // console.log(chosenExercise, "chosenExercise")
 
 
 
@@ -52,6 +54,12 @@ const Swipe = e => {
     }
 
 
+}
+const RemoveExerciseFromRegimen = e => {
+  e.preventDefault()
+  deleteRegimenEX(curEx)
+  // console.log("Removers exdeercies Button", curEx)
+  history.push('/board')
 }
 const TitleCont = styled.div`
 display: flex;
@@ -160,6 +168,14 @@ height: 100%;
     </Exbox>
 
   </ExCont>
+  <section>
+    <div>
+
+      <button onClick={RemoveExerciseFromRegimen}>Remove Exercies</button>
+
+    </div>
+    <div></div>
+  </section>
 </PageScroll>
 
         
@@ -179,4 +195,4 @@ const mapStateToProps = state => {
 };
 
 
-export default connect(mapStateToProps, {fetchRegimen})(RegimenDetails);
+export default connect(mapStateToProps, {fetchRegimen, deleteRegimenEX})(RegimenDetails);

@@ -1,13 +1,11 @@
 import axios from 'axios'
-import {Fetch_Regimen, Create_Regimen, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId} from './index'
-
-const axiosAddress = "https://citysoflex.herokuapp.com"
-// const axiosAddress = "http://localhost:5000"
+import {Fetch_Regimen, Create_Regimen, Delete_RegimenEx, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId} from './index'
+import {axiosAddress} from '../AxiosAdress'
 
 export const fetchRegimen = (id) => dispatch => {
     axios.get(`${axiosAddress}/api/regimen/find/${id}`)
     .then(res => {
-        console.log(res, "LOOKING FOR REGIMEN NAME")
+        // console.log(res, "LOOKING FOR REGIMEN NAME")
         const reggy = res.data
         const  names = []
         for (let i = 0; i < reggy.length; i++){
@@ -36,6 +34,14 @@ export const updateRegimen = (update, regimenId) => dispatch => {
     .then(res => {
         dispatch({type: Update_Regimen, payload: res.data})
     }).catch(error => console.log(error, "createRegimen action error"))
+}
+
+export const deleteRegimenEX = (regimenID) => dispatch => {
+    axios.delete(`${axiosAddress}/api/regimen/remove/${regimenID}`)
+    .then(res => {
+        console.log(res)
+        dispatch({type: Delete_RegimenEx, payload: regimenID})
+    }).catch(error => console.log(error, "deleteRegimen action error"))
 }
 
 export const createTempRegName = (tempName) => {

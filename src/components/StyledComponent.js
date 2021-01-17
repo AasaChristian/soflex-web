@@ -2,7 +2,7 @@
 import styled from 'styled-components'
 
 
-
+const blackOrWhite = 'white'
 
 
 export const Exbox = styled.section`
@@ -55,7 +55,7 @@ export const Exbox = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: #F8F1FF;
+    background-color: ${blackOrWhite};
     width: 80%;
     border-radius: 4%;
     border: solid #656176 5px;

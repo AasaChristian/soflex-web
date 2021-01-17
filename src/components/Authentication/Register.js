@@ -13,7 +13,7 @@ const [credentials, setCredentials] = useState([{
     password: ''
 }])
 
-console.log(credentials)
+// console.log(credentials)
 const handleChange = e => {
     setCredentials({...credentials, [e.target.name]: e.target.value})
 }

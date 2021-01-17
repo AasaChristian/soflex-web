@@ -65,6 +65,7 @@ runBoard={runBoard}
 <div style={regBoard === false? {display: "none"}: {height: '100%'}}>
 <RegimenBoard
 regBoard={regBoard}
+setRegBoard={setRegBoard}
 />
 </div>
 
@@ -81,9 +82,9 @@ regBoard={regBoard}
         <BackButton 
         onClick={SwapRun}>WORK</BackButton>
             <BackButton 
-            onClick={SwapReg}>Create Regimen</BackButton>
+            onClick={SwapReg}> Regimen</BackButton>
             <BackButton
-            onClick={SwapEx}>Create Exercise</BackButton>
+            onClick={SwapEx}> Exercise</BackButton>
             <BackButton
             onClick={SendBack}
             >Back</BackButton>

@@ -1,22 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import NewExForm from './NewExForm'
 import ExList from './ExerciesList';
-import {fetchExercise, createExercise} from '../../action/exerciseActions'
+import {fetchExercise, createExercise, deleteExercise} from '../../action/exerciseActions'
 import { connect } from 'react-redux';
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 
 
 function ExerciseBoard(props) {
-    const {history, exercises, regimen, exBoard} = props
+    const {history, exercises, regimen, exBoard, deleteExercise} = props
 //////////////////////////////////////////////////////////////////////////
 const [edit, setEdit] = useState(false)
 const [reEdit, setRegEdit] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
-
+// console.log(selectedExercise, "selectedExercise")
 useEffect(() => {
     props.fetchExercise()
 }, [exBoard])
-    
+    const DeleteExercis = (e) => {
+        e.preventDefault()
+        deleteExercise(selectedExercise)
+        setSelectedExercise(null)
+    }
   return (
     <div style={{width: "100%"}}>
 
@@ -27,7 +31,7 @@ useEffect(() => {
 
             <div style={{height: "50%"}}>
 
-                <section style={{overflow: "scroll", height: "200px", marginTop: "10%", borderBottom: "solid black 1px"}}>
+                <section style={ edit=== true?{ display: "none"}:  {overflow: "scroll", height: "200px", marginTop: "10%", borderBottom: "solid black 1px"}}>
             {exercises.map((e) => {
                        return(
                         <ExList
@@ -42,6 +46,10 @@ useEffect(() => {
                    })}
                    </section>
             </div>
+
+            <section style={selectedExercise > 0? {display: "inherit"}: {display: "none"}}>
+                <button onClick={DeleteExercis}>Delete</button>
+            </section>
 
             <Exbox style={{marginTop: "15px", }}>
                 <div >
@@ -72,4 +80,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {fetchExercise, createExercise})(ExerciseBoard);
+export default connect(mapStateToProps, {fetchExercise, createExercise, deleteExercise})(ExerciseBoard);

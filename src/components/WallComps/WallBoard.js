@@ -7,27 +7,27 @@ import WallPost from './WallPost';
 
 
 function WallBoard(props) {
-    const {history, regimen, regTempName,logs, createLog,  clearTempRegName, fetchLogs, exercises, regBoard, regimenName, userIdState} = props
+    const {logs, createLog, fetchLogs, userIdState} = props
 //////////////////////////////////////////////////////////////////////////
 
 
-console.log(logs, "logs")
+// console.log(logs, "logs")
 
 useEffect(() => {
     const userIdLocalStorage = localStorage.getItem('key')
 
     if (userIdState === null){
 
-        console.log(userIdLocalStorage, 'userIdLocalStorage')
+        // console.log(userIdLocalStorage, 'userIdLocalStorage')
         fetchLogs(userIdLocalStorage)
 
-        console.log(logs, "logs")
+        // console.log(logs, "logs")
 
     } else{
-        console.log(userIdState[0], 'userIdState  Attempted Regimen get')
+        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
     fetchLogs(userIdState)
     }
-    console.log(logs, "logs")
+    // console.log(logs, "logs")
 
   },[createLog])
 
