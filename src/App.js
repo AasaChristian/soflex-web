@@ -57,7 +57,7 @@ function App() {
       render={props => <ExForm {...props} axiosAddress={axiosAddress} />  }
       />
     </Switch>
-      <section style={{ bottom: "0", width: "100%", position: "fixed"}}>
+      <section style={{ bottom: "0", width: "100%", position: "sticky"}}>
         <Foot/>
       </section>
     </div>
