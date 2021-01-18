@@ -33,23 +33,24 @@ export const Exbox = styled.section`
     export const BoardCont = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content; center;
+    justify-content: center;
     width: 100%;
     height: 77%;
     border-radius: 2%;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-x: hidden;
     ;`
 
     export const LeftWall = styled.section`
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #F8F1FF;
+    background-color: ;
     border-left: solid #656176 1px;
     border-bottom: solid #656176 1px;
     border-top: solid #656176 1px;
     height: 20%;
     width: 100%;
+    overflow-x: scroll;
 
 
     `;
@@ -60,7 +61,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     background-color: ${blackOrWhite};
     width: 100%;
-    height: 100%;
+    height: 80%;
     border-radius: 4%;
     border: solid #656176 5px;
     `;
@@ -73,10 +74,21 @@ export const Exbox = styled.section`
     margin-top: 2%;
     `;
     export const BackButton = styled.button`
-    padding-top: 10%;
-    background-color: white;
-    font-size: 15px;
-    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 14%;
+    background-color: black;
+    font-size: 35px;
+    width: 177px;
+    border-radius: 40%;
+    color: white;
+    box-shadow: 2px 1px white;
+
+    `;
+
+    export const BackButtonCont = styled.div`
+    display: flex;
+    justify-content: center;
     `;
 
 // Login 
