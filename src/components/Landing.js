@@ -7,7 +7,7 @@ import Logo from "../img/logo.jpg"
 function Landing() {
 
   return (
-   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "85%"}}>
+   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "85%", overflow: 'scroll'}}>
        <div style={{display: "flex", justifyContent: "center"}}>
            <h1>CITY SO FLEX</h1>
        </div>

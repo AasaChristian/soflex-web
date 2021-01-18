@@ -78,7 +78,7 @@ flex-direction: row;
 justify-content: center;
 background-color: white;
 width: 200px;
-height: 250px;
+height: 200px;
 border: solid black 4px ;
 border-radius: 10%;
 
@@ -94,7 +94,7 @@ const InnerBox = styled.div`
 display: flex;
 flex-direction: column;
 width: 300px;
-height: 250px;
+height: 200px;
 border: solid red 4px ;
 `;
 
