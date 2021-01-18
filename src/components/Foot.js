@@ -25,7 +25,6 @@ justify-content: center;
   <section style={{display: "flex", justifyContent:"center", height: '60px'}}>
   <div style={{display: "flex", flexDirection: "column", height: '60px'}}>
         <FootText>City Web Development</FootText>
-        <FootText>Ace Christian</FootText>
     </div>
   </section>
 
