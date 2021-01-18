@@ -37,6 +37,7 @@ export const Exbox = styled.section`
     width: 100%;
     height: 77%;
     border-radius: 2%;
+    overflow: scroll;
     ;`
 
     export const LeftWall = styled.section`
@@ -59,7 +60,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     background-color: ${blackOrWhite};
     width: 100%;
-    height: 80%;
+    height: 100%;
     border-radius: 4%;
     border: solid #656176 5px;
     `;
@@ -69,7 +70,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     height: 80%;
     overflow: scroll;
-    margin-top: 10%;
+    margin-top: 2%;
     `;
     export const BackButton = styled.button`
     padding-top: 10%;
