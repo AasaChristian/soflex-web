@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
-import {MainWall, LeftWall, BoardCont, ExboxCont, BackButton} from './StyledComponent'
+import {MainWall, LeftWall, BoardCont, ExboxCont, BackButton, BackButtonCont} from './StyledComponent'
 import RegimenBoard from './RegimenComps/RegimenBoard';
 import ExerciseBoard from './ExerciseComps/ExerciseBoard';
 import RunBoard from './RunComps/RunBoard';
@@ -79,15 +79,17 @@ setRegBoard={setRegBoard}
             </ExboxCont>
         </MainWall>
         <LeftWall>
-        <BackButton 
-        onClick={SwapRun}>Work</BackButton>
-            <BackButton 
-            onClick={SwapReg}> Regimen</BackButton>
-            <BackButton
-            onClick={SwapEx}> Exercise</BackButton>
-            <BackButton
+            <BackButtonCont>        <BackButton
+        onClick={SwapRun}>Work</BackButton></BackButtonCont>
+<BackButtonCont>            <BackButton  
+            onClick={SwapReg}> Regimen</BackButton></BackButtonCont>
+
+            <BackButtonCont>            <BackButton
+            onClick={SwapEx}> Exercise</BackButton></BackButtonCont>
+
+            <BackButtonCont>            <BackButton
             onClick={SendBack}
-            >Back</BackButton>
+            >Back</BackButton></BackButtonCont>
         </LeftWall>
 
       

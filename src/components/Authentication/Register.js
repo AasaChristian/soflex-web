@@ -23,6 +23,7 @@ const register = (e) => {
     e.preventDefault()
     axios.post(`${axiosAddress}/api/users/register`, {username: credentials.username, password: credentials.password})
     .then(res => {
+        console.log(res.data)
         const {id, username, token} = res.data
         setUserId(id)
         localStorage.setItem('username', username)
