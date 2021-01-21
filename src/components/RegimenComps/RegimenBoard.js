@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import RegimenList from './RegimenList';
 import RegInput from './RegimenInpute'
 import { connect } from 'react-redux';
-import {fetchRegimen, clearTempRegName, createRegimen,updateRegimen, deleteRegimenEX} from '../../action/regimenActions'
+import {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegimenEX} from '../../action/regimenActions'
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
