@@ -4,7 +4,7 @@ import {fetchLogs, createLog} from '../../action/runActions'
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import ExList from '../ExerciseComps/ExerciesList';
 import WallPost from './WallPost';
-
+import logo from '../../img/logo.jpg'
 
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState} = props
@@ -62,4 +62,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {fetchLogs})(WallBoard);
+export default connect(mapStateToProps, {fetchLogs, createLog})(WallBoard);
