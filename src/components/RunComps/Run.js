@@ -8,16 +8,23 @@ import RunSets from './RunSets';
 function Run(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
-  const { match, regimen} = props
+  const { match, regimen, logs} = props
 // console.log(match.params.regimenName, "match.params.regimenName")
+// console.log(regimen, "regimen")
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
-    // console.log(chosenRegimen, "chosenRegimen RUN")
+
+  const chosenLogs = logs.filter(
+      filterFor => filterFor.regimenName === match.params.regimenName
+  )
+    console.log(chosenRegimen, "chosenRegimen RUN")
+    // console.log(chosenLogs, 'chosenLogs')
 const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName
 const regsExercises = []
 let chosenLen = chosenRegimen.length
+
 useEffect(() => {
     chosenRegimen.map((exs) => {
         regsExercises.push(exs.regimenID)
@@ -85,7 +92,7 @@ overflow-x: scroll;
            
        return( 
        
-       <RunCardCont style={showReg == ex.regimenID? {display: "initial"}: {display: "none"}}>
+       <RunCardCont style={showReg === ex.regimenID? {display: "initial"}: {display: "none"}}>
 
         <section>
         <RunExerciseNameCont onClick={Swipe}>
@@ -102,8 +109,12 @@ overflow-x: scroll;
         runSets={ex.sets}
         reps={ex.reps}
         weight={ex.regimenWeight}
+        name={ex.name}
         regimenId={ex.regimenID}
-
+        completion={ex.completion}
+        chosenLogs={chosenLogs}
+        showReg={showReg}
+    Swipe={Swipe}
         />
             </div>
         </SetsCont>
@@ -118,7 +129,8 @@ overflow-x: scroll;
 const mapStateToProps = state => {
 	return {
         exercises: state.exercises,
-        regimen: state.regimen
+        regimen: state.regimen,
+        logs: state.logs
 	};
 };
 

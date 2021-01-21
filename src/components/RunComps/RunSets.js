@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import {createLog} from '../../action/runActions'
+import {createLog, fetchLogs} from '../../action/runActions'
+import {updateRegimen} from '../../action/regimenActions'
 import { connect } from 'react-redux';
-import {ExboxCont} from '../StyledComponent'
+
 
 
 
 function RunSets(props) {
-  const {runSets,  reps, weight, createLog, userIdState, regimenId} = props
+  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe} = props
 
   const [repInput, setRepInput] = useState(reps)
 
@@ -15,21 +16,19 @@ function RunSets(props) {
 
   const [postInput, setPostInput] = useState('')
 
-  const [setInput, setSetInput] = useState(1)
-
   const [shownRep, setShownRep] = useState(0)
-  // console.log(runSets, "runSets")
+
+
+
+  const chosenLogsEx = chosenLogs.filter(
+    filterFor => filterFor.name === name
+)
 
   let setsArr = []
 
   for (let i = 0; i < runSets; i++){
       setsArr.push(i)
   }
-  // console.log(setsArr, "setsArr")
-
-//   console.log(postInput, "postInput")
-// console.log(setsArr.length, "setsArr.length")
-// console.log(shownRep, "shownRep")
 
 const handleChange = e => {
   setPostInput(e.target.value)
@@ -51,15 +50,21 @@ const sendNewLog = (e) => {
     type: "regimenlog",
     userId: userIdInput,
     regimenId: regimenId,
-    set: setInput,
+    set: shownRep + 1,
     reps: repInput,
     weight: weightInput,
     post: postInput
   }
 
   createLog(newLogObj)
-  setSetInput(setInput + 1)
+
+  setShownRep(shownRep + 1)
+
+
+
+
 }
+
 
 const repUp = e => {
   e.preventDefault()
@@ -84,7 +89,7 @@ const RunDetailCont = styled.div`
 display: flex;
 justify-content: space-evenly;
 border: solid green 5px;
-height: 200px;
+height: 150px;
 width: 100%;
 `;
 
@@ -147,19 +152,19 @@ margin: 5px;
             <RunInputeCont>
             <RunInputDiv>
             <p>Reps</p>
-            <button onClick={repUp}>+1</button>
-      <RunInputText>{repInput}</RunInputText>
-      <button onClick={repDown} >-1</button>
+            <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={repUp}>+1</button>
+      <RunInputText>{ chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? chosenLogsEx[shownRep].LoggedReps: repInput}</RunInputText>
+      <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={repDown} >-1</button>
             </RunInputDiv>
             <RunInputDiv>
             <p>Weight</p>
-            <button onClick={weightUp}>+5</button>
-            <RunInputText>{weightInput}</RunInputText>
-            <button  onClick={weightDown}>-5</button>
+            <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={weightUp}>+5</button>
+            <RunInputText>{ chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? chosenLogsEx[shownRep].LoggedWeight: weightInput}</RunInputText>
+            <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={weightDown}>-5</button>
             </RunInputDiv>
             </RunInputeCont>
 
-            <form>
+            <form style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} >
               <input
               type="text"
               name="postInput"
@@ -167,7 +172,7 @@ margin: 5px;
               onChange={handleChange}
               />
             </form>
-                        <button style={{width: "100%", height:"45px"}}
+                        <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display: 'none'} :{width: "100%", height:"45px"}}
             onClick={sendNewLog}
             >Submit</button>
         </section>
@@ -187,4 +192,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {createLog})(RunSets);
+export default connect(mapStateToProps, {createLog, updateRegimen, fetchLogs})(RunSets);
