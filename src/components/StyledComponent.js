@@ -76,19 +76,21 @@ export const Exbox = styled.section`
     export const BackButton = styled.button`
     display: flex;
     justify-content: center;
-    padding-top: 14%;
+    padding-top: 25%;
     background-color: black;
     font-size: 35px;
     width: 177px;
     border-radius: 40%;
     color: white;
     box-shadow: 2px 1px white;
+    margin-right: 10px;
 
     `;
 
     export const BackButtonCont = styled.div`
     display: flex;
     justify-content: center;
+    
     `;
 
 // Login 
