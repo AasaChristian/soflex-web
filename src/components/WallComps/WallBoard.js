@@ -35,7 +35,7 @@ useEffect(() => {
 
   return (
 
-    <section style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
+    <section style={{display: "flex", flexDirection: "column", justifyContent: "center", overflow: 'scroll'}}>
 <p>Main Wall</p>
 
 {logs.map((submission, i) => {
