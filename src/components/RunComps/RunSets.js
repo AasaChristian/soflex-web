@@ -164,7 +164,7 @@ margin: 5px;
             </RunInputDiv>
             </RunInputeCont>
 
-            <form>
+            <form style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} >
               <input
               type="text"
               name="postInput"
@@ -172,7 +172,7 @@ margin: 5px;
               onChange={handleChange}
               />
             </form>
-                        <button style={{width: "100%", height:"45px"}}
+                        <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display: 'none'} :{width: "100%", height:"45px"}}
             onClick={sendNewLog}
             >Submit</button>
         </section>
