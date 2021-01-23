@@ -18,7 +18,7 @@ const [reState, setRestate] = useState(false)
   const chosenLogs = logs.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
-    console.log(chosenRegimen, "chosenRegimen RUN")
+    // console.log(chosenRegimen, "chosenRegimen RUN")
     // console.log(chosenLogs, 'chosenLogs')
 const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName

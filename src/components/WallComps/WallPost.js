@@ -3,16 +3,22 @@ import { connect } from 'react-redux';
 import styled from 'styled-components'
 
 function WallPost(props) {
-    const {logs, userIdState, submission, subIndex} = props
+    const {logs, userIdState, submission, subIndex } = props
 //////////////////////////////////////////////////////////////////////////
 
-const {LoggedReps, LoggedSet, LoggedWeight, name, post, dateAdded} = submission
+
+
+// const {LoggedReps, LoggedSet, LoggedWeight, name, post, dateAdded} = submission
 // console.log(subIndex, "subIndex")
 // console.log(dateAdded, "dateAdded")
 
 const [curEx, setCurEx] = useState(null)
 
-// console.log(curEx,"curEx")
+
+
+
+
+
 const PostCont = styled.section`
 display: flex;
 flex-direction: column;
@@ -36,13 +42,17 @@ font-size: 25px;
 
 <PostCont>
 
+
+
+
+{/* 
   <HeadPair 
   onClick={(e) => {
     e.preventDefault()
     setCurEx(subIndex)
 }}> Date: {String(dateAdded[5]) + String(dateAdded[6])} / {String(dateAdded[8]) + String(dateAdded[9])}   {name} </HeadPair>
 
-<div style={curEx === subIndex? {display: "initial"} : {display: "none"}}>
+<div style={curEx === subIndex? {display: "flex", border: ' 5px solid black'} : {display: "none"}}>
     <PostPair>
   <p>Exercise </p>
   <p>{name}</p>
@@ -66,7 +76,7 @@ font-size: 25px;
     </div>
 
     <p>{post}</p>
-</div>
+</div> */}
 </PostCont>
   )
   }
