@@ -62,6 +62,7 @@ export const Exbox = styled.section`
     background-color: ${blackOrWhite};
     width: 100%;
     height: 80%;
+    max-height: 80%;
     border-radius: 4%;
     border: solid #656176 5px;
     `;
@@ -69,7 +70,8 @@ export const Exbox = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 80%;
+    height: 100%;
+
     overflow: scroll;
     margin-top: 2%;
     `;

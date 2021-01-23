@@ -49,7 +49,7 @@ const SwapEx = (e) => {
             </div>
             <ExboxCont>
 
-<div style={runBoard === true || regBoard === true || exBoard === true ? {display: "none"}: {display: "initial"}}>
+<div style={runBoard === true || regBoard === true || exBoard === true ? {display: "none"}: {display: "initial", height: "100%"}}>
 <WallBoard/>
 </div>
 

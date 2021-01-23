@@ -5,13 +5,32 @@ import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import ExList from '../ExerciseComps/ExerciesList';
 import WallPost from './WallPost';
 import logo from '../../img/logo.jpg'
+import ExerciesFilter from './ExerciesFilter';
 
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState} = props
 //////////////////////////////////////////////////////////////////////////
 
+const [filterParams, setFilterParams] = useState(null)
+const loggedExName = []
+const loggedRegName = []
 
-// console.log(logs, "logs")
+{logs.map((submission, i) => {
+    if (  loggedExName.includes(submission.name)){
+    
+    }else{
+        loggedExName.push(submission.name)
+    }
+    
+    if (  loggedRegName.includes(submission.regimenName)){
+    
+        }else{
+            loggedRegName.push(submission.regimenName)
+        }        
+    })}
+
+console.log(logs.filter(entry => entry.completion), "logs")
+
 
 useEffect(() => {
     const userIdLocalStorage = localStorage.getItem('key')
@@ -35,18 +54,51 @@ useEffect(() => {
 
   return (
 
-    <section style={{display: "flex", flexDirection: "column", justifyContent: "center", overflow: 'scroll', height: '100%'}}>
+    <section style={{display: "flex", flexDirection: "column", overflow: 'scroll', height: '100%', maxHeight: "90%"}}>
 <p>Main Wall</p>
 
-{logs.map((submission, i) => {
+<div display={{height: '100%'}}>
+{loggedExName.map((ex1 => {
+    return(
+        <section>
+<div style={{display: 'flex', justifyContent: "center"}}>
+<p>{ex1}</p>
+</div>
+            <div>
+            <ExerciesFilter
+
+            ex1={ex1}
+            logs={logs}
+/>
+            </div>
+        </section>
+
+
+    )
+}))}
+</div>
+<div>
+{loggedRegName.map((regimen => {
+    return(
+        <div>
+            <h1>{regimen}</h1>
+        </div>
+    )
+}))}
+</div>
+
+
+{/* {logs.map((submission, i) => {
     return(
     <WallPost
     submission={submission}
     subIndex={i}
+    loggedRegName={loggedRegName}
+    loggedExName={loggedExName}
         /> )
       
     
-})}
+})} */}
     </section>
   );
 }
