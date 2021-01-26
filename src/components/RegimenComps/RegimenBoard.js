@@ -6,7 +6,7 @@ import {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegi
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
-import styled from 'styled-components';
+
 
 function RegimenBoard(props) {
     const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState} = props
