@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
 import { connect } from 'react-redux';
 import {fetchRegimen, deleteRegimenEX} from '../../action/regimenActions'
+import {CenterTextREGDE, ExContREGDE, ExboxREGDE, TitleCont, TitleInner, PageScroll, InnerBox} from '../StyledComponent'
 
 
 function RegimenDetails(props) {
@@ -61,65 +62,20 @@ const RemoveExerciseFromRegimen = e => {
   // console.log("Removers exdeercies Button", curEx)
   history.push('/board')
 }
-const TitleCont = styled.div`
-display: flex;
-justify-content: center;
-margin-bottom: 20px;
-border: solid red 4px ;
-`;
-const TitleInner = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-`;
-const Exbox = styled.section`
-display: flex;
-flex-direction: row;
-justify-content: center;
-background-color: white;
-width: 200px;
-height: 200px;
-border: solid black 4px ;
-border-radius: 10%;
-
-@media (max-width: 750px) {
-
-  padding-bottom: 15px;
 
 
-}
-`;
 
-const InnerBox = styled.div`
-display: flex;
-flex-direction: column;
-width: 300px;
-height: 200px;
-border: solid red 4px ;
-`;
 
-const ExCont = styled.section`
-overflow-x: scroll;
-width: 100%;
-display: flex;
-border: solid black 4px ;
-`;
 
-const CenterText = styled.h4`
-  padding-left: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  font-size: 30px;
-`;
 
-const PageScroll = styled.div`
-height: 100%;
-`;
+
+
+
   return (
 <div >
   <TitleCont>
     <TitleInner >
-    <CenterText>{chosenExercise[0].regimenName}</CenterText>
+    <CenterTextREGDE>{chosenExercise[0].regimenName}</CenterTextREGDE>
     </TitleInner>
 
   </TitleCont>
@@ -135,39 +91,39 @@ height: 100%;
           <PageScroll 
           onClick={Swipe}
           style={curEx === regimenID? {display: "initial"}: {display: "none"}}>
-        <CenterText>{name}</CenterText>
-      <CenterText>{index+1} of {arrLen}</CenterText>
-        <ExCont>
+        <CenterTextREGDE>{name}</CenterTextREGDE>
+      <CenterTextREGDE>{index+1} of {arrLen}</CenterTextREGDE>
+        <ExContREGDE>
   
 
-    <Exbox>
+    <ExboxREGDE>
       <InnerBox>
         <NavLink to = {`/board/update/reps/${regimenID}`}>
-      <CenterText>Reps</CenterText>
-      <CenterText>{reps}</CenterText>
+      <CenterTextREGDE>Reps</CenterTextREGDE>
+      <CenterTextREGDE>{reps}</CenterTextREGDE>
       </NavLink>
       </InnerBox>
-    </Exbox>
+    </ExboxREGDE>
 
-    <Exbox>
+    <ExboxREGDE>
     <InnerBox>
     <NavLink to = {`/board/update/weight/${regimenID}`}>
-  <CenterText  >Weight</CenterText >
-  <CenterText>{regimenWeight}</CenterText>
+  <CenterTextREGDE  >Weight</CenterTextREGDE >
+  <CenterTextREGDE>{regimenWeight}</CenterTextREGDE>
   </NavLink>
   </InnerBox>
-    </Exbox>
+    </ExboxREGDE>
 
-    <Exbox>
+    <ExboxREGDE>
       <InnerBox>
       <NavLink to = {`/board/update/sets/${regimenID}`}>
-      <CenterText>Sets</CenterText>
-      <CenterText>{sets}</CenterText>
+      <CenterTextREGDE>Sets</CenterTextREGDE>
+      <CenterTextREGDE>{sets}</CenterTextREGDE>
       </NavLink>
       </InnerBox>
-    </Exbox>
+    </ExboxREGDE>
 
-  </ExCont>
+  </ExContREGDE>
   <section>
     <div>
 
