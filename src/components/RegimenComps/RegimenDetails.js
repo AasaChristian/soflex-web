@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
 import { connect } from 'react-redux';
 import {fetchRegimen, deleteRegimenEX} from '../../action/regimenActions'

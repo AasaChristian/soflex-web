@@ -1,23 +1,23 @@
 
 import React from 'react'
-import styled from 'styled-components'
+import {FootCont, FootText} from './StyledComponent'
 
 
 function Foot() {
-const FootCont = styled.section`
-background-color: black;
-height: 60px;
-max-height: 60px;
+// const FootCont = styled.section`
+// background-color: black;
+// height: 60px;
+// max-height: 60px;
 
 
-`;
+// `;
 
-const FootText = styled.h4`
-color: white;
-margin-bottom: 0;
-display:flex;
-justify-content: center;
-`;
+// const FootText = styled.h4`
+// color: white;
+// margin-bottom: 0;
+// display:flex;
+// justify-content: center;
+// `;
 
 
   return (
