@@ -14,14 +14,14 @@ console.log(chosenLogs, "chosenLogs")
 
 const [curEx, setCurEx] = useState(null)
 const {} = chosenLogs
-const display1 = {display: "flex", flexDirection: 'column', justifyContent: 'center', height: '40px'}
+const display1 = {display: "flex", flexDirection: 'column'}
 
   return (
 
-<section display={{height: '500px', overflow:'scroll'}}>
+<section style={{height: '150px', overflow:'scroll'}}>
 {chosenLogs.map((ex) => {
 return(
-    <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+    <div style={{display: 'flex', justifyContent: 'space-evenly', border: "black solid 1px", width: "100%"}}>
 <div style={display1}>
     <h1>SET</h1>
 <h1>{ex.LoggedSet}</h1>

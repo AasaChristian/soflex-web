@@ -61,10 +61,10 @@ useEffect(() => {
 {loggedExName.map((ex1 => {
     return(
         <section>
-<div style={{display: 'flex', justifyContent: "center"}}>
+<div style={{display:'flex', justifyContent: 'center'}}>
 <p>{ex1}</p>
 </div>
-            <div>
+            <div >
             <ExerciesFilter
 
             ex1={ex1}
