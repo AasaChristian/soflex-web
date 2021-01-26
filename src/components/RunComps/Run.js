@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
-
+import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont } from '../StyledComponent'
 
 function Run(props) {
 const [showReg, setShowReg] = useState(null)
@@ -50,34 +50,11 @@ const Swipe = e => {
     }
 }
 
-const RunHeader = styled.div`
-display: flex;
-justify-Content: center;
-border: solid 5px black;
-`;
 
-const RunCardCont = styled.div`
-display: flex;
-flex-direction: column;
-height: 500px;
-`;
 
-const RunExerciseNameCont = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: center;
-border: solid 5px red;
-`;
 
-const RenExerciseName = styled.h1`
-font-size: 30px;
-`;
 
-const SetsCont = styled.section`
-height: 100%;
-width: 100%;
-overflow-x: scroll;
-`;
+
    return(
        <div style={{ width: "100%"}}>
     <RunHeader onClick={Swipe}>
@@ -96,9 +73,9 @@ overflow-x: scroll;
 
         <section>
         <RunExerciseNameCont onClick={Swipe}>
-            <RenExerciseName>
+            <RunExerciseName>
                 {ex.name}
-            </RenExerciseName>
+            </RunExerciseName>
         </RunExerciseNameCont>
         
         </section>
