@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux';
-import styled from 'styled-components'
+import {PostCont} from '../StyledComponent'
 
 function WallPost(props) {
     const {logs, userIdState, submission, subIndex } = props
@@ -19,25 +19,25 @@ const [curEx, setCurEx] = useState(null)
 
 
 
-const PostCont = styled.section`
-display: flex;
-flex-direction: column;
-justify-content: center;
-`;
+// const PostCont = styled.section`
+// display: flex;
+// flex-direction: column;
+// justify-content: center;
+// `;
 
-const PostPair = styled.div`
-display: flex;
-justify-content: space-evenly;
-height: 20px;
-`;
+// const PostPair = styled.div`
+// display: flex;
+// justify-content: space-evenly;
+// height: 20px;
+// `;
 
 
-const HeadPair = styled.div`
-display: flex;
-justify-content: space-evenly;
-height: 20px;
-font-size: 25px;
-`;
+// const HeadPair = styled.div`
+// display: flex;
+// justify-content: space-evenly;
+// height: 20px;
+// font-size: 25px;
+// `;
   return (
 
 <PostCont>

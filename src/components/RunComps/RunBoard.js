@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchRegimen, clearTempRegName, createRegimen,updateRegimen} from '../../action/regimenActions'
-import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import RunList from './RunList';
 
 function RunBoard(props) {

@@ -146,7 +146,92 @@ margin-left: 15px;
 border-radius: 5%;
 height: 3.5pc;
 `;
+// Regimen Details
 
+export const TitleCont = styled.div`
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+border: solid red 4px ;
+`;
+export const TitleInner = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+`;
+export const ExboxREGDE = styled.section`
+display: flex;
+flex-direction: row;
+justify-content: center;
+background-color: white;
+width: 200px;
+height: 200px;
+border: solid black 4px ;
+border-radius: 10%;
+
+@media (max-width: 750px) {
+
+  padding-bottom: 15px;
+
+
+}
+`;
+
+export const InnerBox = styled.div`
+display: flex;
+flex-direction: column;
+width: 300px;
+height: 200px;
+border: solid red 4px ;
+`;
+
+export const ExContREGDE = styled.section`
+overflow-x: scroll;
+width: 100%;
+display: flex;
+border: solid black 4px ;
+`;
+
+export const CenterTextREGDE = styled.h4`
+  padding-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 30px;
+`;
+
+export const PageScroll = styled.div`
+height: 100%;
+`;
+
+// Run.js 
+export const RunHeader = styled.div`
+display: flex;
+justify-Content: center;
+border: solid 5px black;
+`;
+
+export const RunCardCont = styled.div`
+display: flex;
+flex-direction: column;
+height: 500px;
+`;
+
+export const RunExerciseNameCont = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+border: solid 5px red;
+`;
+
+export const RunExerciseName = styled.h1`
+font-size: 30px;
+`;
+
+export const SetsCont = styled.section`
+height: 100%;
+width: 100%;
+overflow-x: scroll;
+`;
 // RunList 
 export const RunListExbox = styled.section`
     background-color: white;
@@ -172,4 +257,85 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 font-size: 30px;
+`;
+
+// RUNSETS 
+
+
+export const RunDetailCont = styled.div`
+display: flex;
+justify-content: space-evenly;
+border: solid green 5px;
+height: 150px;
+width: 100%;
+`;
+
+export const RunInputeCont = styled.div`
+display: flex;
+justify-content: space-evenly;
+border: solid red 5px;
+height: 200px;
+width: 100%;
+`;
+
+export const SetSection = styled.section`
+display: flex;
+flex-direction: column;
+`;
+
+export const RunInputDiv = styled.div`
+height: 100px;
+`;
+
+export const RunText = styled.p`
+font-size: 50px;
+margin: 0 0 0 0;
+`;
+
+export const RunInputText = styled.p`
+font-size: 50px;
+margin: 5px;
+`;// WallPost 
+
+export const PostCont = styled.section`
+display: flex;
+flex-direction: column;
+justify-content: center;
+`;
+
+// Exdetail 
+
+export const ExCont = styled.section`
+overflow-x: scroll;
+width: 100%;
+display: flex;
+border: solid black 4px ;
+`;
+
+// Foot
+
+export const FootCont = styled.section`
+background-color: black;
+height: 60px;
+max-height: 60px;
+
+
+`;
+
+export const FootText = styled.h4`
+color: white;
+margin-bottom: 0;
+display:flex;
+justify-content: center;
+`;
+
+//Head
+
+export const HeadCont = styled.section`
+background-color: #F8F1FF;
+display: flex;
+justify-content: space-around;
+border-radius: 10%;
+border: solid #656176 5px;
+border-bottom: solid #656176 5px;
 `;
