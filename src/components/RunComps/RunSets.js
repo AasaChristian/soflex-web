@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import {RunInputText, RunText, RunInputDiv, SetSection, RunInputeCont, RunDetailCont} from '../StyledComponent'
 import {createLog, fetchLogs} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
 import { connect } from 'react-redux';
@@ -84,41 +84,6 @@ const weightDown = e => {
   e.preventDefault()
   setWeightInput(weightInput - 5)
 }
-
-const RunDetailCont = styled.div`
-display: flex;
-justify-content: space-evenly;
-border: solid green 5px;
-height: 150px;
-width: 100%;
-`;
-
-const RunInputeCont = styled.div`
-display: flex;
-justify-content: space-evenly;
-border: solid red 5px;
-height: 200px;
-width: 100%;
-`;
-
-const SetSection = styled.section`
-display: flex;
-flex-direction: column;
-`;
-
-const RunInputDiv = styled.div`
-height: 100px;
-`;
-
-const RunText = styled.p`
-font-size: 50px;
-margin: 0 0 0 0;
-`;
-
-const RunInputText = styled.p`
-font-size: 50px;
-margin: 5px;
-`;
    return(
  <div style={{display: "flex", flexDirection: "row", overflowX: "scroll"}}>
 {setsArr.map((sets, key) => {
