@@ -11,7 +11,7 @@ const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
 
-// console.log(chosenExercise, 'chosenExercise')
+console.log(chosenExercise, 'chosenExercise')
 const sendNewReg = (e) => {
     e.preventDefault()
     let userIdInput = null
@@ -92,10 +92,19 @@ const displayNone = {display: 'none'}
 const SpacedEven = {display: "flex", justifyContent: 'space-evenly'}
 return(
 <section>
-    <div>
-<p>{newReg.weight}</p>
-<p>{newReg.sets}</p>
-<p>{newReg.reps}</p>
+    <div style={{display: 'flex', justifyContent: 'center'}} >
+        <h4> {selectedExercise == null? '' : chosenExercise.name} </h4>
+    </div>
+    <div style={{display: 'flex', justifyContent: 'space-evenly', borderBottom: "black solid 2px"}}>
+        <div>    <p>Weight</p>
+<p>{newReg.weight}</p></div>
+
+<div><p>Sets</p>
+<p>{newReg.sets}</p></div>
+
+<div><p>Reps</p>
+<p>{newReg.reps}</p></div>
+
 <p></p>
     </div>
     <form onSubmit={sendNewReg}>
