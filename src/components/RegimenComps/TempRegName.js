@@ -40,6 +40,7 @@ return(
                 <div>
                     <button onClick={(e) => {
                     e.preventDefault()
+                    setNewRegNameEditor(false)
                     createTempRegName(regimenName)   
                     }}>{regimenName}</button>
                 </div>
