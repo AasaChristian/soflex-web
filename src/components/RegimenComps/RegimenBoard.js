@@ -170,6 +170,7 @@ const ComnfirmExercise = (e) => {
                 regBoard={regBoard}
                 setRegBoard={setRegBoard}
                 setHideRegimen={setHideRegimen}
+                setHideExList={setHideExList}
                 />
             </div>
             </ExboxCont>
