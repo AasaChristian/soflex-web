@@ -17,6 +17,9 @@ const [confEx, setConfEx] = useState(false)
 const [compSet, setCompSet] = useState(false)
 const [compRep, setCompRep] = useState(false)
 const [compWeight, setCompWeight] = useState(false)
+const [hideRegimen, setHideRegimen] = useState(false)
+const [hideExList, setHideExList] = useState(false)
+
 // console.log(userIdState, "userIdState")
 // console.log(regimenName, "regimenName")
 // console.log(newRegNameEditor, "newRegNameEditor")
@@ -51,6 +54,7 @@ useEffect(() => {
 const SwapEdit = (e) => {
     e.preventDefault()
     setNewRegNameEditor(!newRegNameEditor)
+    setHideRegimen(!newRegNameEditor)
 }
 
 const ClearTempName = (e) => {
@@ -74,6 +78,7 @@ const chosenExercise = exercises.find(
 const ComnfirmExercise = (e) => {
     e.preventDefault()
     setConfEx(!confEx)
+    setHideExList(!hideExList)
 }
 
 
@@ -87,7 +92,7 @@ const ComnfirmExercise = (e) => {
                 {/* ExstatBox is a list or regimen */}
                
             <ExboxCont> 
-                <div style={newRegNameEditor === true ? {display: "none"}: {display: "initial"}} >
+                <div style={hideRegimen === true ? {display: "none"}: {display: "initial"}} >
             {regimenName.map((e, i) => {
                 return(
                     <RegimenList
@@ -107,10 +112,11 @@ const ComnfirmExercise = (e) => {
             <div style={newRegNameEditor === false? {display: "none"}: {display: "initial"}}>
             <TempRegName
             setNewRegNameEditor={setNewRegNameEditor}
+
             />
             </div>
 
-            <div style={{display: "flex", justifyContent: "center"}}>
+            <div style={hideExList === true? {display: 'none'}: {display: "flex", justifyContent: "center"}}>
                 <section style={{display: "flex", flexDirection: "column", justifyContent: "center"}}>
 
                 <h4 style={{fontSize: "35px"}}>{regTempName}</h4>
@@ -163,6 +169,7 @@ const ComnfirmExercise = (e) => {
                 chosenExercise={chosenExercise}
                 regBoard={regBoard}
                 setRegBoard={setRegBoard}
+                setHideRegimen={setHideRegimen}
                 />
             </div>
             </ExboxCont>
