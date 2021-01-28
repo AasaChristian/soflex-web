@@ -12,6 +12,7 @@ function WallBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 
 const [filterParams, setFilterParams] = useState(null)
+const [openEx, setOpenEx] = useState(null)
 const loggedExName = []
 const loggedRegName = []
 
@@ -50,21 +51,34 @@ useEffect(() => {
 
   },[createLog])
 
+// const selectEx = (e) => {
+//     e.preventDefault()
+//     if (openEx === null){
 
+//     }
+// }
 
   return (
 
-    <section style={{display: "flex", flexDirection: "column", overflow: 'scroll', height: '100%', maxHeight: "90%"}}>
-<p>Main Wall</p>
+    <section style={{display: "flex", flexDirection: "column",justifyContent: "space-evenly", overflow: 'scroll', height: '100%', maxHeight: "90%"}}>
+        <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div>
+
 
 <div display={{height: '100%'}}>
 {loggedExName.map((ex1 => {
     return(
         <section>
-<div style={{display:'flex', justifyContent: 'center'}}>
+<div style={{display:'flex', justifyContent: 'center'}} onClick={(e) => {
+    e.preventDefault()
+    if (openEx === null){
+        setOpenEx(ex1)
+    } else {
+        setOpenEx(null)
+    }
+}}>
 <p>{ex1}</p>
 </div>
-            <div >
+            <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
             <ExerciesFilter
 
             ex1={ex1}
@@ -77,7 +91,7 @@ useEffect(() => {
     )
 }))}
 </div>
-<div>
+{/* <div>
 {loggedRegName.map((regimen => {
     return(
         <div>
@@ -85,7 +99,7 @@ useEffect(() => {
         </div>
     )
 }))}
-</div>
+</div> */}
 
 
 {/* {logs.map((submission, i) => {

@@ -45,7 +45,7 @@ const SwapEx = (e) => {
 
         <MainWall>
             <div style={{display: "flex", justifyContent: "space-evenly"}}>
-            <h1>{userName}'s Main Wall</h1>
+            <h1>{userName}'s World</h1>
             </div>
             <ExboxCont>
 
