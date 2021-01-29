@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 
 
 
-function RegimenList({name, regimenID}) {
+function RegimenList({name, regimenID,  completed   }) {
 
     // const Exbox = styled.section`
     // background-color: white;
@@ -47,7 +47,7 @@ function RegimenList({name, regimenID}) {
         </div>
       </NavLink>
 
-        <NavSection>
+        <NavSection style={completed === true? {display: 'none'}: {display: 'flex'}}>
           <NavLink   to = {`/run/${name}`}> Start</NavLink>
           <NavLink  to = {`/board/${name}`}>Edit</NavLink>
         </NavSection>

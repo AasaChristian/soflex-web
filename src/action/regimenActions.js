@@ -8,15 +8,20 @@ export const fetchRegimen = (id) => dispatch => {
         // console.log(res, "LOOKING FOR REGIMEN NAME")
         const reggy = res.data
         const  names = []
+        const completedNames = []
         for (let i = 0; i < reggy.length; i++){
-          if (names.includes(reggy[i].regimenName)){
+          if (names.includes(reggy[i].regimenName) || reggy[i].completion === true){
 
         } else {
             names.push(reggy[i].regimenName)
         }  
+
+        if (!completedNames.includes(reggy[i].regimenName) && reggy[i].completion === true){
+            completedNames.push(reggy[i].regimenName)
+        }
         }
         
-         dispatch({type: Fetch_Regimen, payload: [res.data, names] })
+         dispatch({type: Fetch_Regimen, payload: [res.data, names, completedNames] })
          
     })
     .catch(error => console.log(error, "fetchRegimen action error"))
