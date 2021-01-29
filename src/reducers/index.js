@@ -4,6 +4,7 @@ const initialState = {
 exercises: [],
 regimen: [],
 regimenName:[],
+completedNames: [],
 regTempName: [],
 userIdState: null,
 logs: []
@@ -17,7 +18,8 @@ logs: []
         return{
           ...state,
           regimen: action.payload[0],
-          regimenName: action.payload[1]
+          regimenName: action.payload[1],
+          completedNames: action.payload[2]
         };
       case Fetch_Exercise:
         return {

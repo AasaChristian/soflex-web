@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchLogs, createLog} from '../../action/runActions'
+import {updateRegimen} from '../../action/regimenActions'
 import {Exbox, ExName, ExboxCont} from '../StyledComponent'
 import ExList from '../ExerciseComps/ExerciesList';
 import WallPost from './WallPost';
@@ -8,7 +9,7 @@ import logo from '../../img/logo.jpg'
 import ExerciesFilter from './ExerciesFilter';
 
 function WallBoard(props) {
-    const {logs, createLog, fetchLogs, userIdState} = props
+    const {logs, createLog, fetchLogs, userIdState, updateRegimen} = props
 //////////////////////////////////////////////////////////////////////////
 
 const [filterParams, setFilterParams] = useState(null)
@@ -27,10 +28,32 @@ const loggedRegName = []
     
         }else{
             loggedRegName.push(submission.regimenName)
-        }        
-    })}
+        }    
+        // console.log(submission, "submissions")    
+    })
+}
 
-console.log(logs.filter(entry => entry.completion), "logs")
+useEffect(() => {
+
+    {logs.map((submission, i) => {
+ 
+        if (submission.LoggedSet === submission.sets && submission.completion === false){
+            const updatedObj = {
+                completion : true
+            }
+            updateRegimen(updatedObj, submission.regimenId)
+            console.log(submission.regimenId, submission.name, submission.userId, "completed")
+        }
+        })
+    
+    
+    }
+
+},[fetchLogs])
+
+// console.log(logs.filter(entry => entry.completion), "logs")
+
+
 
 
 useEffect(() => {
@@ -128,4 +151,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {fetchLogs, createLog})(WallBoard);
+export default connect(mapStateToProps, {fetchLogs, createLog, updateRegimen})(WallBoard);

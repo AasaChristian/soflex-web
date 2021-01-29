@@ -9,7 +9,7 @@ import ExList from '../ExerciseComps/ExerciesList';
 
 
 function RegimenBoard(props) {
-    const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState} = props
+    const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState, completedNames} = props
 //////////////////////////////////////////////////////////////////////////
 const [newRegNameEditor, setNewRegNameEditor] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
@@ -19,12 +19,13 @@ const [compRep, setCompRep] = useState(false)
 const [compWeight, setCompWeight] = useState(false)
 const [hideRegimen, setHideRegimen] = useState(false)
 const [hideExList, setHideExList] = useState(false)
+const [hideCompleted, setHideCompleted] = useState(true)
 
 // console.log(userIdState, "userIdState")
 // console.log(regimenName, "regimenName")
 // console.log(newRegNameEditor, "newRegNameEditor")
 
-
+// console.log(completedNames,"completedNames")
 
 
 
@@ -82,6 +83,11 @@ const ComnfirmExercise = (e) => {
 }
 
 
+const toggleCompletedReg = (e) => {
+    e.preventDefault()
+    setHideCompleted(!hideCompleted)
+}
+
   return (
 
     <div style={{width: "100%"}}>
@@ -90,7 +96,9 @@ const ComnfirmExercise = (e) => {
                     <h>Regimen</h>
                 </div>
                 {/* ExstatBox is a list or regimen */}
-               
+               <div>
+                   <button style={{width: "100%"}} onClick={toggleCompletedReg}>{ hideCompleted === true?   "Show Completed Regimen" : "Hide Completed Regimen"}</button>
+               </div>
             <ExboxCont> 
                 <div style={hideRegimen === true ? {display: "none"}: {display: "initial"}} >
             {regimenName.map((e, i) => {
@@ -98,6 +106,18 @@ const ComnfirmExercise = (e) => {
                     <RegimenList
                 name = {e}
                 regimenID = {i}
+                completed = {false}    
+                />
+                )
+            })}</div>
+
+<div style={hideRegimen === true || hideCompleted === true ? {display: "none"}: {display: "initial"}} >
+            {completedNames.map((e, i) => {
+                return(
+                    <RegimenList
+                name = {e}
+                regimenID = {i}
+                completed = {true}    
                 />
                 )
             })}</div>
@@ -184,6 +204,7 @@ const mapStateToProps = state => {
         regimen: state.regimen,
         regTempName: state.regTempName,
         regimenName: state.regimenName,
+        completedNames: state.completedNames,
         userIdState: state.userIdState
 	};
 };
