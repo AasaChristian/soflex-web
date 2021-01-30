@@ -51,7 +51,7 @@ return(
 
     <form style={{display:"flex", flexDirection: "column", justifyContent: "center"}} onSubmit={submitTempName}>
 
-    <input value={tempRegName}  style={{display: "flex", height: "60px", paddingLeft: "40%", marginLeft: "2%", borderRadius: "10%"}} type="text" name="tempRegName" placeholder="Name" onChange={handleChange}/>
+    <input value={tempRegName}  style={{fontSize:"50px", display: "flex", height: "60px", paddingLeft: "30%",  borderRadius: "5%"}} type="text" name="tempRegName" placeholder="Name" onChange={handleChange}/>
     <button>Create</button>
     </form>
 </div>

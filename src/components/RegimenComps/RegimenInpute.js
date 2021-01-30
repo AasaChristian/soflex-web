@@ -123,7 +123,7 @@ return(
 
         </div>
 
-    <input  value={newReg.weight} style={ compWeight === false? inputStyle : displayNone} type="text" name="weight" placeholder="Weight"  onChange={handleChange}/>
+    <input type="number"  value={newReg.weight} style={ compWeight === false? inputStyle : displayNone} type="text" name="weight" placeholder="Weight"  onChange={handleChange}/>
 
     <div style={ compWeight === true && compSet === false? {display: 'initial'} : displayNone}>
         <p>How Many Sets?</p>
@@ -133,7 +133,7 @@ return(
         </div>
         </div>
 
-    <input value={newReg.sets} style={compWeight === true && compSet === false ? inputStyle: displayNone} type="text" name="sets" placeholder="Sets"  onChange={handleChange}/>
+    <input type="number" value={newReg.sets} style={compWeight === true && compSet === false ? inputStyle: displayNone} type="text" name="sets" placeholder="Sets"  onChange={handleChange}/>
 
     <div  style={ compWeight === true && compSet === true && compRep === false? {display: 'initial'} : displayNone}>
 
@@ -144,7 +144,7 @@ return(
         </div>
         </div>
 
-    <input value={newReg.reps} style={compWeight === true && compSet === true && compRep === false? inputStyle : displayNone} type="text" name="reps" placeholder="Reps"  onChange={handleChange}/>
+    <input  type="number"  value={newReg.reps} style={compWeight === true && compSet === true && compRep === false? inputStyle : displayNone} type="text" name="reps" placeholder="Reps"  onChange={handleChange}/>
 
     <button>Create</button>
     </form>
