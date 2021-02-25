@@ -152,7 +152,8 @@ export const TitleCont = styled.div`
 display: flex;
 justify-content: center;
 margin-bottom: 20px;
-border: solid red 4px ;
+border: solid white 1px ;
+border-radius: 3%;
 `;
 export const TitleInner = styled.div`
 display: flex;
@@ -182,7 +183,6 @@ display: flex;
 flex-direction: column;
 width: 300px;
 height: 200px;
-border: solid red 4px ;
 `;
 
 export const ExContREGDE = styled.section`
@@ -220,7 +220,8 @@ export const RunExerciseNameCont = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: center;
-border: solid 5px red;
+border: solid 1px black;
+border-radius: 2%;
 `;
 
 export const RunExerciseName = styled.h1`
@@ -265,15 +266,18 @@ font-size: 30px;
 export const RunDetailCont = styled.div`
 display: flex;
 justify-content: space-evenly;
-border: solid green 5px;
-height: 150px;
+border: solid black 2px;
+border-radius: 2%;
+height: 120px;
 width: 100%;
+margin-bottom: 1%;
 `;
 
 export const RunInputeCont = styled.div`
 display: flex;
 justify-content: space-evenly;
-border: solid red 5px;
+border: solid black 2px;
+border-radius: 2%;
 height: 200px;
 width: 100%;
 `;
@@ -281,6 +285,7 @@ width: 100%;
 export const SetSection = styled.section`
 display: flex;
 flex-direction: column;
+justify-content: center;
 `;
 
 export const RunInputDiv = styled.div`
@@ -288,6 +293,8 @@ height: 100px;
 `;
 
 export const RunText = styled.p`
+display: flex;
+justify-content: center;
 font-size: 50px;
 margin: 0 0 0 0;
 `;

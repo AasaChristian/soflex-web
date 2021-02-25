@@ -104,28 +104,28 @@ const weightDown = e => {
                 </section>
             <RunDetailCont>
                 <SetSection>
-                <p>Reps</p>
+                <p style={{marginBottom: "0%", fontSize: '20px', display: 'flex', justifyContent: 'center'}}>Reps</p>
     <RunText>{reps}</RunText>
 
                 </SetSection>
 
                 <SetSection>
-                <p>Weight</p>
+                <p style={{marginBottom: "0%", fontSize: '20px', display: 'flex', justifyContent: 'center'}}>Weight</p>
     <RunText>{weight}</RunText>
                 </SetSection>
             </RunDetailCont>
             <RunInputeCont>
             <RunInputDiv>
-            <p>Reps</p>
-            <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={repUp}>+1</button>
+            <p style={{marginBottom: "0%", fontSize: '20px', display: 'flex', justifyContent: 'center'}}>Reps</p>
+            <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'flex', justifyContent: 'center', width: '100%', marginLeft: '0px' }} onClick={repUp}>+1</button>
       <RunInputText>{ chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? chosenLogsEx[shownRep].LoggedReps: repInput}</RunInputText>
-      <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={repDown} >-1</button>
+      <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'flex', justifyContent: 'center', width: '100%' }} onClick={repDown} >-1</button>
             </RunInputDiv>
             <RunInputDiv>
-            <p>Weight</p>
-            <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={weightUp}>+5</button>
+            <p style={{marginBottom: "0%", fontSize: '20px', display: 'flex', justifyContent: 'center'}}>Weight</p>
+            <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'flex', justifyContent: 'center', width: '100%' }} onClick={weightUp}>+5</button>
             <RunInputText>{ chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? chosenLogsEx[shownRep].LoggedWeight: weightInput}</RunInputText>
-            <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'initial'}} onClick={weightDown}>-5</button>
+            <button  style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display:'none'}: {display: 'flex', justifyContent: 'center', width: '100%' }} onClick={weightDown}>-5</button>
             </RunInputDiv>
             </RunInputeCont>
 
@@ -137,7 +137,7 @@ const weightDown = e => {
               onChange={handleChange}
               />
             </form>
-                        <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display: 'none'} :{width: "100%", height:"45px"}}
+                        <button style={chosenLogsEx.length >= shownRep + 1 && chosenLogsEx[shownRep].name === name? {display: 'none'} :{width: "100%", height:"65px"}}
             onClick={sendNewLog}
             >Submit</button>
         </section>
