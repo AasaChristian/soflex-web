@@ -98,7 +98,7 @@ export const Exbox = styled.section`
 // Login 
 export const SubmitButton = styled.button`
 height: 10pc;
-margin-top: 20%;
+margin-top: 10%;
 font-size: 50px;
 `;
 
