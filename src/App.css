@@ -15,6 +15,12 @@
   overflow: scroll;
 }
 
+.city {
+  font-family: 'Big Shoulders Stencil Text', cursive;
+  font-size: 80px;
+  border-bottom:3px solid black;
+}
+
 @media(max-width:450px){
 
   html {
