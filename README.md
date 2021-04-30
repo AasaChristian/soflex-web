@@ -6,34 +6,36 @@ This is a fitness app that allows users to create exercise regimen and track exe
 
 Not only am I a web developer, I'm also a fitness junkie and I wanted to create an app that makes my own life easier and my workouts more productive.
 
-## Build status|
+<!-- ## Build status| -->
 
 <!-- ## Code style| -->
 
-## ScreenShot|
+<!-- ## ScreenShot| -->
 
 ## Stack|
 
--React -- Fast and allows reuseable componenets
+- React -- Fast and allows reuseable componenets
 
--Axios -- Allows connection with backend
+- Axios -- Allows connection with backend
 
--Redux -- Centralized state management
+- Redux -- Centralized state management
 
--Styled-components -- Cebntralized and reuseable styling
+- Styled-components -- Cebntralized and reuseable styling
 
 ## Features|
 
 · User authentication
 · Responsive UI
 
-## Code Example|
+<!-- ## Code Example| -->
 
-## Installation|
+<!-- ## Installation| -->
 
 ## API Rerference|
 
-## Test|
+- CitySoFlex Back end(https://citysoflex.herokuapp.com)
+
+<!-- ## Test| -->
 
 ## How to use|
 
