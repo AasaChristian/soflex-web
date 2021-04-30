@@ -41,4 +41,4 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 ## License|
 
-SoFlex is [MIT licensed](./license).
+SoFlex is [MIT licensed](./LICENSE).
