@@ -33,7 +33,7 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 ## API Rerference|
 
-- [CitySoFlex Back end](https://citysoflex.herokuapp.com)
+- [CitySoFlex (back end)](https://citysoflex.herokuapp.com) The backend is currently down due to maintenance. 
 
 <!-- ## Test| -->
 
