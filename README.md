@@ -4,17 +4,23 @@ This is a fitness app that allows users to create exercise regimen and track exe
 
 ## Motivation|
 
-Not only am I a web developer, I'm also a fitness junkie and I wanted to create an app that makes my own life easier and my workjouts more productive.
+Not only am I a web developer, I'm also a fitness junkie and I wanted to create an app that makes my own life easier and my workouts more productive.
 
 ## Build status|
 
-## Code style|
+<!-- ## Code style| -->
 
 ## ScreenShot|
 
 ## Stack|
 
-React - Axios - Redux - styled-components 
+-React -- Fast and allows reuseable componenets
+
+-Axios -- Allows connection with backend
+
+-Redux -- Centralized state management
+
+-Styled-components -- Cebntralized and reuseable styling
 
 ## Features|
 
