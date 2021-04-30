@@ -2,9 +2,14 @@
 
 This is a fitness app that allows users to create exercise regimen and track exercise progress.
 
-## Motivation|
+## Motivation |
 
 Not only am I a web developer, I'm also a fitness junkie and I wanted to create an app that makes my own life easier and my workouts more productive.
+
+## Installation |
+
+1. Once you have cloned the repository, download the dependencies with `npm install`.
+2. Start the server with `npm start`.
 
 <!-- ## Build status| -->
 
@@ -12,7 +17,7 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 <!-- ## ScreenShot| -->
 
-## Stack|
+## Stack |
 
 - React -- Fast and allows reuseable componenets
 
@@ -22,7 +27,7 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 - Styled-components -- Cebntralized and reuseable styling
 
-## Features|
+## Features |
 
 • User authentication
 • Mobile first design
@@ -31,13 +36,13 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 <!-- ## Installation| -->
 
-## API Rerference|
+## API Rerference |
 
 - [CitySoFlex (back end)](https://citysoflex.herokuapp.com) The backend is currently down due to maintenance. 
 
 <!-- ## Test| -->
 
-## How to use|
+<!-- ## How to use| -->
 
 ## License|
 
