@@ -37,8 +37,8 @@ const register = (e) => {
   return (
 <div>
 <form onSubmit={register} style={{display: "flex", flexDirection: "column"}}>
-    <input style={{display: "flex", paddingLeft: "20%", marginTop: "20%", height: "10pc", fontSize: "50px"}} type="text" name="username" onChange={handleChange} placeholder="UserName" />
-    <input style={{display: "flex", paddingLeft: "20%", marginTop: "20%", height: "10pc", fontSize: "50px"}} type="text" name="password" onChange={handleChange} placeholder="PassWord"/>
+    <input style={{display: "flex", paddingLeft: "20%", marginTop: "10%", height: "10pc", fontSize: "50px"}} type="text" name="username" onChange={handleChange} placeholder="UserName" />
+    <input style={{display: "flex", paddingLeft: "20%", marginTop: "10%", height: "10pc", fontSize: "50px"}} type="text" name="password" onChange={handleChange} placeholder="PassWord"/>
     <SubmitButton type="submit">Register</SubmitButton>
 </form> 
 </div>
