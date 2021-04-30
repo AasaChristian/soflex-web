@@ -1,4 +1,4 @@
-# CitySoFlex|
+# [CitySoFlex](https://citysoflex.netlify.app/)|
 
 This is a fitness app that allows users to create exercise regimen and track exercise progress.
 
