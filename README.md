@@ -24,8 +24,8 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 ## Features|
 
-· User authentication
-· Responsive UI
+• User authentication
+• Mobile first design
 
 <!-- ## Code Example| -->
 
@@ -41,6 +41,4 @@ Not only am I a web developer, I'm also a fitness junkie and I wanted to create 
 
 ## License|
 
-
-
-
+SoFlex is [MIT licensed](./license).
