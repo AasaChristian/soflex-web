@@ -15,7 +15,7 @@ function Landing() {
        <div display={{height: "50%"}}>
        <NavLink to={"/login"} style={{display: "flex", justifyContent: "center"}}> 
        <div style={{display: "flex", justifyContent: "center"}}>
-           <img src={Logo} alt="picture of weight room"  style={{width: '90%', height: '100%', objectFit: "cover"}}/>
+           <img src={Logo} alt="picture of weight room"  style={{width: '90%', height: '100%', objectFit: "cover", borderRadius: '5%', boxShadow: "13px 13px 15px #292833, -13px -13px 15px #7d7b8a "}}/>
        </div>
        
 
