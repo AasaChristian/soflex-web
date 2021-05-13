@@ -35,7 +35,7 @@ export const Exbox = styled.section`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 77%;
+    height: 100%;
     border-radius: 2%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -44,11 +44,11 @@ export const Exbox = styled.section`
     export const LeftWall = styled.section`
     display: flex;
     flex-direction: row;
-    background-color: ;
+    background-color: white ;
     border-left: solid #656176 1px;
     border-bottom: solid #656176 1px;
     border-top: solid #656176 1px;
-    height: 20%;
+    height: 8%;
     width: 100%;
     overflow-x: scroll;
 
@@ -75,23 +75,34 @@ export const Exbox = styled.section`
     overflow: scroll;
     margin-top: 2%;
     `;
-    export const BackButton = styled.button`
+    export const BackButton = styled.h1`
     display: flex;
     justify-content: center;
-    padding-top: 25%;
-    background-color: black;
-    font-size: 35px;
-    width: 177px;
-    border-radius: 40%;
-    color: white;
-    box-shadow: 2px 1px white;
-    margin-right: 10px;
-
+    // padding-top: 25%;
+    // background-color: black;
+    // width: 177px;
+    // border-radius: 40%;
+    // color: white;
+    // box-shadow: 2px 1px white;
+    // margin-right: 10px;
+    background-color: white;
+    outline: none;
+    border: none;
+    flex-direction: column;
     `;
+    export const BackButtonText = styled.button`
+        font-size: 35px;
+        outline: none;
+        border: none;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+    `
 
     export const BackButtonCont = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
     
     `;
 
