@@ -45,10 +45,10 @@ export const Exbox = styled.section`
     display: flex;
     flex-direction: row;
     background-color: white ;
-    border-left: solid #656176 1px;
-    border-bottom: solid #656176 1px;
-    border-top: solid #656176 1px;
-    height: 8%;
+    // border-left: solid #656176 1px;
+    // border-bottom: solid #656176 1px;
+    // border-top: solid #656176 1px;
+    height: 20%;
     width: 100%;
     overflow-x: scroll;
 
@@ -63,7 +63,7 @@ export const Exbox = styled.section`
     width: 100%;
     height: 80%;
     max-height: 80%;
-    border-radius: 4%;
+    // border-radius: 4%;
     border: solid #656176 5px;
     `;
     export const ExboxCont = styled.section`
