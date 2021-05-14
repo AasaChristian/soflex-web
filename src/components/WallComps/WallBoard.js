@@ -7,6 +7,9 @@ import ExList from '../ExerciseComps/ExerciesList';
 import WallPost from './WallPost';
 import logo from '../../img/logo.jpg'
 import ExerciesFilter from './ExerciesFilter';
+import Pulse from 'react-reveal/Pulse';
+import Flash from 'react-reveal/Flash';
+import Flip from 'react-reveal/Flip';
 
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState, updateRegimen} = props
@@ -99,7 +102,8 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-<p>{ex1}</p>
+    <Flash top cascade><p style={{color: "white", fontSize: "300%",letterSpacing: "3px"}}>{ex1}</p>
+</Flash>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
             <ExerciesFilter
