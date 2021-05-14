@@ -1,5 +1,5 @@
 import React from 'react'
-import { CenterText, ExListConstainer} from '../StyledComponent'
+import { CenterText, ExListConstainer, blackOrWhite} from '../StyledComponent'
 
 
 function ExList(props){
@@ -18,7 +18,7 @@ return(
     <div onClick={selectExercise} value={exid} key={exid} style={{height: "50px"}}>
     <ExListConstainer style={selectedExercise === exid? {backgroundColor: "red"}: {backgroundColor: "inherit"}} >
 
-    <CenterText>{exName}</CenterText>
+    <CenterText style={{color: `${blackOrWhite[1]}`}}>{exName.substr(0,14)}</CenterText>
 
     </ExListConstainer>
     </div>

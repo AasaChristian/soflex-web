@@ -2,11 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchLogs, createLog} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
-import {Exbox, ExName, ExboxCont} from '../StyledComponent'
+import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
 import ExList from '../ExerciseComps/ExerciesList';
 import WallPost from './WallPost';
 import logo from '../../img/logo.jpg'
 import ExerciesFilter from './ExerciesFilter';
+import Pulse from 'react-reveal/Pulse';
+import Flash from 'react-reveal/Flash';
+import Flip from 'react-reveal/Flip';
+import Jump from 'react-reveal/Jump';
 
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState, updateRegimen} = props
@@ -83,12 +87,13 @@ useEffect(() => {
 
   return (
 
-    <section style={{display: "flex", flexDirection: "column",justifyContent: "space-evenly", overflow: 'scroll', height: '100%', maxHeight: "90%"}}>
-        <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div>
+    <section style={{display: "flex", flexDirection: "column", overflow: 'scroll', height: '100%', maxHeight: "100%"}}>
+        {/* <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div> */}
 
 
 <div display={{height: '100%'}}>
 {loggedExName.map((ex1 => {
+    console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
 <div style={{display:'flex', justifyContent: 'center'}} onClick={(e) => {
@@ -99,7 +104,8 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-<p>{ex1}</p>
+    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,12)}</p>
+</Jump>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
             <ExerciesFilter

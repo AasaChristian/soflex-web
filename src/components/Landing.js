@@ -9,14 +9,14 @@ import Bounce from 'react-reveal/Bounce';
 function Landing() {
 
   return (
-   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "100%", overflow: 'scroll'}}>
+   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "100%", overflow: 'scroll', backgroundColor:'#5f5c67'}}>
         <Bounce cascade> <div style={{display: "flex", justifyContent: "center"}}>
                     <h1 className="city"> CITY SO FLEX</h1>
 
        </div>
        </Bounce>
        <div display={{height: "50%"}}>
-       <NavLink to={"/login"} style={{display: "flex", justifyContent: "center"}}> 
+       <NavLink to={"/board"} style={{display: "flex", justifyContent: "center"}}> 
        <div style={{display: "flex", justifyContent: "center"}}>
            <Bounce top>           <img src={Logo} alt="picture of weight room"  style={{width: '90%', height: '90%', objectFit: "cover", borderRadius: '5%', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}}/>
 </Bounce >

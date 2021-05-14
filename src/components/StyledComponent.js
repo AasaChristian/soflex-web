@@ -2,7 +2,10 @@
 import styled from 'styled-components'
 
 
-const blackOrWhite = 'white'
+export const blackOrWhite = ['black','white']
+
+// export const blackOrWhite = ['white','black']
+
 
 
 export const Exbox = styled.section`
@@ -59,7 +62,7 @@ export const Exbox = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    background-color: ${blackOrWhite};
+    background-color: ${blackOrWhite[0]};
     width: 100%;
     height: 80%;
     max-height: 80%;
@@ -322,6 +325,10 @@ flex-direction: column;
 justify-content: center;
 `;
 
+export const swapwallText = styled.h1`
+color: ${blackOrWhite[1]};
+`
+
 // Exdetail 
 
 export const ExCont = styled.section`
@@ -351,7 +358,7 @@ justify-content: center;
 //Head
 
 export const HeadCont = styled.section`
-background-color: #F8F1FF;
+background-color: #cbc5da;
 display: flex;
 justify-content: space-around;
 border-radius: 10%;

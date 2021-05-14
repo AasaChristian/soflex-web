@@ -3,7 +3,7 @@ import NewExForm from './NewExForm'
 import ExList from './ExerciesList';
 import {fetchExercise, createExercise, deleteExercise} from '../../action/exerciseActions'
 import { connect } from 'react-redux';
-import {Exbox, ExName, ExboxCont} from '../StyledComponent'
+import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
 
 
 function ExerciseBoard(props) {
@@ -26,7 +26,7 @@ useEffect(() => {
 
             <ExboxCont >
             <div style={{display: "flex", justifyContent: "center", fontSize: "40px"}}>
-                    <h>Exercises</h>
+                    <h1 style={{color: `${blackOrWhite[1]}`}}>Exercises</h1>
                 </div>
 
             <div style={{height: "50%"}}>
