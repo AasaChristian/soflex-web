@@ -21,7 +21,7 @@ const display1 = {display: "flex", flexDirection: 'column'}
 <section style={{height: '150px', overflow:'scroll'}}>
 {chosenLogs.map((ex) => {
 return(
-    <div style={{display: 'flex', justifyContent: 'space-evenly', border: "black solid 1px", width: "100%"}}>
+    <div style={{display: 'flex', justifyContent: 'space-evenly', width: "100%"}}>
 <div style={display1}>
     <h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>SET</h1>
 <h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>{ex.LoggedSet}</h1>

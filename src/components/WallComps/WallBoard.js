@@ -93,7 +93,7 @@ useEffect(() => {
 
 <div display={{height: '100%'}}>
 {loggedExName.map((ex1 => {
-    console.log(ex1.substr(0,10), "ex1")
+    console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
 <div style={{display:'flex', justifyContent: 'center'}} onClick={(e) => {
@@ -104,7 +104,7 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,10)}</p>
+    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,12)}</p>
 </Jump>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
