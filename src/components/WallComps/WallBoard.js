@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchLogs, createLog} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
-import {Exbox, ExName, ExboxCont} from '../StyledComponent'
+import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
 import ExList from '../ExerciseComps/ExerciesList';
 import WallPost from './WallPost';
 import logo from '../../img/logo.jpg'
@@ -88,7 +88,7 @@ useEffect(() => {
   return (
 
     <section style={{display: "flex", flexDirection: "column",justifyContent: "space-evenly", overflow: 'scroll', height: '100%', maxHeight: "100%"}}>
-        <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div>
+        {/* <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div> */}
 
 
 <div display={{height: '100%'}}>
@@ -104,7 +104,7 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-    <Jump top ><p style={{color: "white", fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,10)}</p>
+    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,10)}</p>
 </Jump>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>

@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { connect } from 'react-redux';
-import styled from 'styled-components'
+import {blackOrWhite} from '../StyledComponent'
 
 function ExerciseFilter(props) {
     const { ex1, logs } = props
@@ -23,23 +23,23 @@ const display1 = {display: "flex", flexDirection: 'column'}
 return(
     <div style={{display: 'flex', justifyContent: 'space-evenly', border: "black solid 1px", width: "100%"}}>
 <div style={display1}>
-    <h1>SET</h1>
-<h1>{ex.LoggedSet}</h1>
+    <h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>SET</h1>
+<h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>{ex.LoggedSet}</h1>
 </div>
 
 <div style={display1}>
-    <h1>Reps</h1>
-<h1>{ex.LoggedReps}</h1>
+    <h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>Reps</h1>
+<h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>{ex.LoggedReps}</h1>
 </div>
 
 <div style={display1}>
-    <h1>Weight</h1>
-<h1>{ex.LoggedWeight}</h1>
+    <h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>Weight</h1>
+<h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>{ex.LoggedWeight}</h1>
 </div>
 
 <div style={display1}>
-    <h1>Date</h1>
-<h1>{ex.dateAdded}</h1>
+    <h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>Date</h1>
+<h1 style={{color: `${blackOrWhite[1]}`, fontSize: "100%"}}>{ex.dateAdded.substr(0,10)}</h1>
 </div>
 
 </div>

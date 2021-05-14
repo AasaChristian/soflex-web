@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
-import {MainWall, LeftWall, BoardCont, ExboxCont, BackButton, BackButtonCont, BackButtonText} from './StyledComponent'
+import {MainWall, LeftWall, BoardCont, ExboxCont, BackButton, BackButtonCont, BackButtonText, blackOrWhite} from './StyledComponent'
 import RegimenBoard from './RegimenComps/RegimenBoard';
 import ExerciseBoard from './ExerciseComps/ExerciseBoard';
 import RunBoard from './RunComps/RunBoard';
 import WallBoard from './WallComps/WallBoard';
+
 
 
 function Board(props) {
@@ -45,11 +46,11 @@ const SwapEx = (e) => {
 
         <MainWall>
             <div style={{display: "flex", justifyContent: "space-evenly"}}>
-            <h1>{userName}'s World</h1>
+            < h1 style={{color: `${blackOrWhite[1]}`}}>{userName}'s World</h1>
             </div>
             <ExboxCont>
 
-<div style={runBoard === true || regBoard === true || exBoard === true ? {display: "none"}: {display: "initial", height: "100%", backgroundColor: "black"}}>
+<div style={runBoard === true || regBoard === true || exBoard === true ? {display: "none"}: {display: "initial", height: "100%"}}>
 <WallBoard/>
 </div>
 
