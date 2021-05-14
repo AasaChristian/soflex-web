@@ -10,6 +10,7 @@ import ExerciesFilter from './ExerciesFilter';
 import Pulse from 'react-reveal/Pulse';
 import Flash from 'react-reveal/Flash';
 import Flip from 'react-reveal/Flip';
+import Jump from 'react-reveal/Jump';
 
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState, updateRegimen} = props
@@ -103,8 +104,8 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-    <Flash top cascade><p style={{color: "white", fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,10)}</p>
-</Flash>
+    <Jump top ><p style={{color: "white", fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,10)}</p>
+</Jump>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
             <ExerciesFilter
