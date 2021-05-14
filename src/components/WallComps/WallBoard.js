@@ -92,6 +92,7 @@ useEffect(() => {
 
 <div display={{height: '100%'}}>
 {loggedExName.map((ex1 => {
+    console.log(ex1.substr(0,10), "ex1")
     return(
         <section>
 <div style={{display:'flex', justifyContent: 'center'}} onClick={(e) => {
@@ -102,7 +103,7 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-    <Flash top cascade><p style={{color: "white", fontSize: "300%",letterSpacing: "3px"}}>{ex1}</p>
+    <Flash top cascade><p style={{color: "white", fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,10)}</p>
 </Flash>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
