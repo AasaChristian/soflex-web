@@ -358,7 +358,7 @@ justify-content: center;
 //Head
 
 export const HeadCont = styled.section`
-background-color: #F8F1FF;
+background-color: #cbc5da;
 display: flex;
 justify-content: space-around;
 border-radius: 10%;
