@@ -53,7 +53,7 @@ height: 100%;
     font-family: 'Big Shoulders Stencil Text', cursive;
     font-size: 50px;
     border-bottom:3px solid black;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    /* margin-top: 20px; */
+    /* margin-bottom: 20px; */
   }
 }
