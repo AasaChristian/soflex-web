@@ -16,7 +16,7 @@ function Landing() {
        </div>
        </Bounce>
        <div display={{height: "50%"}}>
-       <NavLink to={"/login"} style={{display: "flex", justifyContent: "center"}}> 
+       <NavLink to={"/board"} style={{display: "flex", justifyContent: "center"}}> 
        <div style={{display: "flex", justifyContent: "center"}}>
            <Bounce top>           <img src={Logo} alt="picture of weight room"  style={{width: '90%', height: '90%', objectFit: "cover", borderRadius: '5%', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}}/>
 </Bounce >
