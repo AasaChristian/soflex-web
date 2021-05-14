@@ -86,7 +86,7 @@ useEffect(() => {
 
   return (
 
-    <section style={{display: "flex", flexDirection: "column",justifyContent: "space-evenly", overflow: 'scroll', height: '100%', maxHeight: "90%"}}>
+    <section style={{display: "flex", flexDirection: "column",justifyContent: "space-evenly", overflow: 'scroll', height: '100%', maxHeight: "100%"}}>
         <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div>
 
 
