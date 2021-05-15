@@ -75,12 +75,12 @@ const Swipe = e => {
            if(chosenLogsEx.length > 0){
             lastSet = chosenLogsEx[ chosenLogsEx.length -1].LoggedSet
             lastWeight = chosenLogsEx[ chosenLogsEx.length -1].LoggedWeight
-            lastReps = chosenLogsEx[ chosenLogsEx.length -1].lastReps
+            lastReps = chosenLogsEx[ chosenLogsEx.length -1].LoggedReps
 
            } else {
             lastSet = 0
             lastWeight = 0
-            lastSet = 0
+            lastReps = 0
            }
        return ( 
        
