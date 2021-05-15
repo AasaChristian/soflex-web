@@ -11,7 +11,7 @@ const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
 
-console.log(chosenExercise, 'chosenExercise')
+// console.log(chosenExercise, 'chosenExercise')
 const sendNewReg = (e) => {
     e.preventDefault()
     let userIdInput = null
@@ -36,7 +36,7 @@ const newRegimenObj = {
     completion: false
 }
 
-console.log(newRegimenObj, "newRegimenObj")
+// console.log(newRegimenObj, "newRegimenObj")
 createRegimen(newRegimenObj)
 
 setNewReg({
@@ -72,7 +72,7 @@ const confirmSets = (e) => {
 }
 
 const unSets = (e) => {
-    console.log('here')
+    // console.log('here')
     e.preventDefault()
     setCompWeight(false)
 }

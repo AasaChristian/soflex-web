@@ -15,6 +15,7 @@ import Run from './components/RunComps/Run';
 import PrivateRoute from './components/Authentication/PrivateRoute';
 import RegimenDetails from './components/RegimenComps/RegimenDetails';
 import {axiosAddress} from './AxiosAdress'
+import Run2 from './components/RunComps/Run2';
 
 function App() {
 
@@ -46,7 +47,7 @@ function App() {
       /> */}
 
       <Route exact path='/run/:regimenName'
-      render={props => <Run {...props}/>}
+      render={props => <Run2 {...props}/>}
       />
 
       <Route exact path='/board/:exName'

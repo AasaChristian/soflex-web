@@ -18,7 +18,7 @@ const handleChange = e => {
 }
 
 const register = (e) => {
-    console.log("Button")
+    // console.log("Button")
     e.preventDefault()
     axios.post(`${axiosAddress}/api/users/register`, {username: credentials.username, password: credentials.password})
     .then(res => {

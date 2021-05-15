@@ -46,7 +46,7 @@ useEffect(() => {
                 completion : true
             }
             updateRegimen(updatedObj, submission.regimenId)
-            console.log(submission.regimenId, submission.name, submission.userId, "completed")
+            // console.log(submission.regimenId, submission.name, submission.userId, "completed")
         }
         })
     
@@ -93,7 +93,7 @@ useEffect(() => {
 
 <div display={{height: '100%'}}>
 {loggedExName.map((ex1 => {
-    console.log(ex1.substr(0,16), "ex1")
+    // console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
 <div style={{display:'flex', justifyContent: 'center'}} onClick={(e) => {
