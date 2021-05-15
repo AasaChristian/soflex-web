@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
-import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont } from '../StyledComponent'
+import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite } from '../StyledComponent'
 
 function Run(props) {
 const [showReg, setShowReg] = useState(null)
@@ -58,7 +58,7 @@ const Swipe = e => {
    return(
        <div style={{ width: "100%"}}>
     <RunHeader onClick={Swipe}>
-    <h1>
+    <h1 style={{color: `${blackOrWhite[1]}`}}>
     {regimenName}
     </h1>
 </RunHeader>
