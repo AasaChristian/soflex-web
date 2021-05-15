@@ -56,13 +56,13 @@ const Swipe = e => {
 
 
    return(
-       <div style={{ width: "100%"}}>
+       <div style={{ width: "100%", height: '20%'}}>
     <RunHeader onClick={Swipe}>
     <h1 style={{color: `${blackOrWhite[1]}`}}>
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "white"}} >
+   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "white", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex) => {
            console.log(ex,'ex')
            
@@ -70,8 +70,8 @@ const Swipe = e => {
        return( 
        
 
-        <section>
-           <div>
+        <section style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%'}}>
+           <div style={{ height: '5%'}}>
            <p>test</p>
            </div>
         </section>
