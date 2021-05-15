@@ -89,7 +89,7 @@ const Swipe = e => {
            <div style={{ height: '100%', border: 'solid 5px red',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
 
-               <h1 style={{display:'flex', justifyContent: 'center', margin: '0%'}}>{ex.name.substr(0,12)}</h1>
+               <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%'}}>{ex.name.substr(0,12)}</h1>
 
                <div style={{display:'flex', justifyContent: 'center', flexDirection: 'column'}}>
                <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{lastSet}/{ex.sets}</p>
