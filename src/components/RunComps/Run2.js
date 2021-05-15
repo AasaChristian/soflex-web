@@ -62,7 +62,7 @@ const Swipe = e => {
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px black", height: "600px", overflow: "scroll", backgroundColor: "white", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+   <div style={{borderBottom: "solid 5px black", height: "600px", overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex) => {
            console.log(ex,'ex')
            const chosenLogsEx = chosenLogs.filter(
@@ -85,8 +85,8 @@ const Swipe = e => {
        return ( 
        
 
-        <section  draggable="true" style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%'}}>
-            <Pulse> <div style={{ height: '100%', border: 'solid 5px red',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+        <section  draggable="true" style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'}}>
+            <Pulse> <div style={{ height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
                <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%', marginBottom: '2%'}}>{ex.name.substr(0,12)}</h1>
