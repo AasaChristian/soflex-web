@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
 import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite } from '../StyledComponent'
-
+import Pulse from 'react-reveal/Pulse';
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
@@ -62,7 +62,7 @@ const Swipe = e => {
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "white", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+   <div style={{borderBottom: "solid 5px black", height: "600px", overflow: "scroll", backgroundColor: "white", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex) => {
            console.log(ex,'ex')
            const chosenLogsEx = chosenLogs.filter(
@@ -86,10 +86,10 @@ const Swipe = e => {
        
 
         <section style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%'}}>
-           <div style={{ height: '100%', border: 'solid 5px red',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
-           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
+            <Pulse> <div style={{ height: '100%', border: 'solid 5px red',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
-               <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%'}}>{ex.name.substr(0,12)}</h1>
+               <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%', marginBottom: '2%'}}>{ex.name.substr(0,12)}</h1>
 
                <div style={{display:'flex', justifyContent: 'center', flexDirection: 'column'}}>
                <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{lastSet}/{ex.sets}</p>
@@ -100,7 +100,8 @@ const Swipe = e => {
 
                </div>
            
-           </div>
+           </div></Pulse>
+          
         </section>
     //    <RunCardCont style={showReg === ex.regimenID? {display: "initial"}: {display: "none"}}>
 
