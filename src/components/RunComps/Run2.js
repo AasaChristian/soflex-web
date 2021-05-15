@@ -19,7 +19,7 @@ const [reState, setRestate] = useState(false)
       filterFor => filterFor.regimenName === match.params.regimenName
   )
     // console.log(chosenRegimen, "chosenRegimen RUN")
-    // console.log(chosenLogs, 'chosenLogs')
+    console.log(chosenLogs, 'chosenLogs')
 const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName
 const regsExercises = []
@@ -65,14 +65,41 @@ const Swipe = e => {
    <div style={{borderBottom: "solid 5px green", height: "600px", overflow: "scroll", backgroundColor: "white", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex) => {
            console.log(ex,'ex')
-           
-           
-       return( 
+           const chosenLogsEx = chosenLogs.filter(
+            filterFor => filterFor.name === ex.name
+        )
+           console.log(chosenLogsEx[chosenLogsEx.length -1], "chosenLogsEx in MAP")
+            let lastSet 
+            let lastWeight 
+            let lastReps 
+           if(chosenLogsEx.length > 0){
+            lastSet = chosenLogsEx[ chosenLogsEx.length -1].LoggedSet
+            lastWeight = chosenLogsEx[ chosenLogsEx.length -1].LoggedWeight
+            lastReps = chosenLogsEx[ chosenLogsEx.length -1].lastReps
+
+           } else {
+            lastSet = 0
+            lastWeight = 0
+            lastSet = 0
+           }
+       return ( 
        
 
         <section style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%'}}>
-           <div style={{ height: '5%'}}>
-           <p>test</p>
+           <div style={{ height: '100%', border: 'solid 5px red',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+           <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-evenly'}}>
+
+               <h1 style={{display:'flex', justifyContent: 'center', margin: '0%'}}>{ex.name.substr(0,12)}</h1>
+
+               <div style={{display:'flex', justifyContent: 'center', flexDirection: 'column'}}>
+               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{lastSet}/{ex.sets}</p>
+               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>PREV REPS: {lastReps}</p>
+               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>PREV WEIGHT: {lastWeight}</p>
+
+               </div>
+
+               </div>
+           
            </div>
         </section>
     //    <RunCardCont style={showReg === ex.regimenID? {display: "initial"}: {display: "none"}}>
