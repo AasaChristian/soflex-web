@@ -114,8 +114,15 @@ useEffect(() => {
            </div></Pulse>
 <Zoom>           
     <div style={shownReg === i? {position:'absolute', top: '15%', left: '5%', border: 'solid 5px black', borderRadius: '35%', height: '75%', width: '90%', backgroundColor: 'black'}: {display:'none'}}>
-           <h1>TEST</h1>
-           <button onClick={setShowntoNull}>Back</button>
+
+
+           <div style={{display: 'flex', height: '100%', flexDirection: 'column', justifyContent: 'center'}}>
+            <h1 style={{color: 'white'}}>{ex.regimenName}</h1>
+            <div style={{display:'flex', backgroundColor: 'white', height: '70%', borderRadius: '20%', width: '98%', marginLeft: '1%'}}>
+                <p>This is where the exercise work will be</p>
+            </div>
+           <button onClick={setShowntoNull}>Go-Back</button>
+           </div>
             </div>
             </Zoom>
 
