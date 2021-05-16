@@ -56,13 +56,13 @@ const Swipe = e => {
 
 
    return(
-       <div style={{ width: "100%", height: '20%'}}>
+       <div style={{ width: "100%", height: '100%'}}>
     <RunHeader onClick={Swipe}>
     <h1 style={{color: `${blackOrWhite[1]}`}}>
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px black", height: "600px", overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+   <div style={{borderBottom: "solid 5px black", height: "75%", overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex) => {
            console.log(ex,'ex')
            const chosenLogsEx = chosenLogs.filter(
