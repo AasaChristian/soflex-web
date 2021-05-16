@@ -5,9 +5,12 @@ import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
 import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite } from '../StyledComponent'
 import Pulse from 'react-reveal/Pulse';
+import Zoom from 'react-reveal/Zoom';
+import Flash from 'react-reveal/Flash';
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
+const [shownReg, setShownReg] = useState(null)
   const { match, regimen, logs} = props
 // console.log(match.params.regimenName, "match.params.regimenName")
 // console.log(regimen, "regimen")
@@ -35,20 +38,22 @@ useEffect(() => {
 },[reState])
 // console.log(showReg, "showReg")
 
-const Swipe = e => {
-    e.preventDefault()
-    if (index == chosenLen -1){
-        // console.log(chosenLen, "chosenLen")
-        setIndex(0)
-        setRestate(!reState)
-        // console.log(index, "index")
-    } else {
-        setIndex(index + 1)
-        setRestate(!reState)
-        // console.log(index, "index")
-        // console.log(chosenLen, "chosenLen")
-    }
-}
+// const Swipe = e => {
+//     e.preventDefault()
+//     if (index == chosenLen -1){
+//         // console.log(chosenLen, "chosenLen")
+//         setIndex(0)
+//         setRestate(!reState)
+//         // console.log(index, "index")
+//     } else {
+//         setIndex(index + 1)
+//         setRestate(!reState)
+//         // console.log(index, "index")
+//         // console.log(chosenLen, "chosenLen")
+//     }
+// }
+
+
 
 
 
@@ -57,18 +62,12 @@ const Swipe = e => {
 
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
-    {/* <RunHeader onClick={Swipe}>
-    <h1 style={{color: `${blackOrWhite[1]}`}}>
-    
 
-
-    {regimenName}
-    </h1>
-</RunHeader> */}
-
-   <div style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
-       {chosenRegimen.map((ex) => {
+   <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+       {chosenRegimen.map((ex, i) => {
            console.log(ex,'ex')
+        //    console.log(i,'i')
+
            const chosenLogsEx = chosenLogs.filter(
             filterFor => filterFor.name === ex.name
         )
@@ -86,11 +85,19 @@ const Swipe = e => {
             lastWeight = 0
             lastReps = 0
            }
-       return ( 
-       
 
-        <section  draggable="true" style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'}}>
-            <Pulse> <div style={{ height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}}>
+           const selectEx = (e) => {
+            e.preventDefault()
+            setShownReg(i)
+        }
+            const setShowntoNull = (e) => {
+                e.preventDefault()
+                setShownReg(null) 
+            }
+       return ( 
+
+    <section  draggable="true" style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'}}>
+            <Pulse> <div onClick={selectEx} key = {i} style={ shownReg === null? { height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}: {display:'none'}}>
            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
                <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%', marginBottom: '2%'}}>{ex.name.substr(0,12)}</h1>
@@ -105,8 +112,19 @@ const Swipe = e => {
                </div>
            
            </div></Pulse>
+<Zoom>           
+    <div style={shownReg === i? {position:'absolute', top: '15%', left: '5%', border: 'solid 5px black', borderRadius: '35%', height: '75%', width: '90%', backgroundColor: 'black'}: {display:'none'}}>
+           <h1>TEST</h1>
+           <button onClick={setShowntoNull}>Back</button>
+            </div>
+            </Zoom>
+
           
         </section>
+
+        
+
+        
     //    <RunCardCont style={showReg === ex.regimenID? {display: "initial"}: {display: "none"}}>
 
     //     <section>
