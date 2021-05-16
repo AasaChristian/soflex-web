@@ -237,7 +237,8 @@ display: flex;
 justify-Content: center;
 // border: solid 5px black;
 background: none;
-height: 5%;
+height: 10%;
+position: absolute;
 `;
 
 export const RunCardCont = styled.div`
