@@ -123,7 +123,7 @@ useEffect(() => {
 
 
            <div style={{display: 'flex', height: '100%', flexDirection: 'column', justifyContent: 'center'}}>
-            <h1 style={{color: 'white', display: 'flex', justifyContent: 'center'}}>{ex.name}</h1>
+            <h1 style={{color: 'white', display: 'flex', justifyContent: 'center'}}>{ex.name.substr(0,12)}</h1>
             <div style={{display:'flex', backgroundColor: 'white', height: '70%', borderRadius: '20%', width: '98%', marginLeft: '1%'}}>
                 <p>This is where the exercise work will be</p>
             </div>
