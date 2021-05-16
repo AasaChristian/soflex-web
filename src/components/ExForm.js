@@ -17,7 +17,7 @@ const handleChange = e => {
 const updatedObj = {
     [exToUpdate] : updated
 }
-console.log(history, "HISTORY")
+// console.log(history, "HISTORY")
 const SendUpdate = (e) => {
     e.preventDefault()
     updateRegimen(updatedObj, regimenId)

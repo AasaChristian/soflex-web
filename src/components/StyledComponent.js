@@ -64,10 +64,23 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     background-color: ${blackOrWhite[0]};
     width: 100%;
-    height: 80%;
+    height: 70%;
     max-height: 80%;
     // border-radius: 4%;
     border: solid #656176 5px;
+
+    @media (max-height: 750px) {
+
+      height: 66%;
+    
+    };
+
+    
+    @media (max-height: 680px) {
+
+      height: 60%;
+    
+    };
     `;
     export const ExboxCont = styled.section`
     display: flex;

@@ -44,7 +44,7 @@ useEffect(() => {
 
 const Swipe = e => {
     e.preventDefault()
-    console.log("DRAGGG")
+    // console.log("DRAGGG")
     if (index === arrLen -1){
         setIndex(0)
         setRestate(!reState)

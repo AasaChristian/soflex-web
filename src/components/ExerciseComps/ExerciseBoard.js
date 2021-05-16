@@ -26,7 +26,7 @@ useEffect(() => {
 
             <ExboxCont >
             <div style={{display: "flex", justifyContent: "center", fontSize: "40px"}}>
-                    <h1 style={{color: `${blackOrWhite[1]}`}}>Exercises</h1>
+                    <h1 style={{color: `${blackOrWhite[1]}`, marginBottom: "5%", marginTop: "5%"}}>Exercises</h1>
                 </div>
 
             <div style={{height: "50%"}}>

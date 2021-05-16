@@ -9,8 +9,8 @@ function ExerciseFilter(props) {
 const chosenLogs = logs.filter(
   filterFor => filterFor.name === ex1
 )
-console.log(ex1, "ex1")
-console.log(chosenLogs, "chosenLogs")
+// console.log(ex1, "ex1")
+// console.log(chosenLogs, "chosenLogs")
 
 const [curEx, setCurEx] = useState(null)
 const {} = chosenLogs

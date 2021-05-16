@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import { createRegimen, clearTempRegName } from '../../action/regimenActions';
-
+import {blackOrWhite} from '../StyledComponent'
 function RegInput(props){
 const {setRegBoard, regBoard, selectedExercise, setSelectedExercise, userIdState, createRegimen,regTempName, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName, regimenName, setHideRegimen, setHideExList} = props
 const [newReg, setNewReg] = useState({})
@@ -11,7 +11,7 @@ const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
 
-console.log(chosenExercise, 'chosenExercise')
+// console.log(chosenExercise, 'chosenExercise')
 const sendNewReg = (e) => {
     e.preventDefault()
     let userIdInput = null
@@ -36,7 +36,7 @@ const newRegimenObj = {
     completion: false
 }
 
-console.log(newRegimenObj, "newRegimenObj")
+// console.log(newRegimenObj, "newRegimenObj")
 createRegimen(newRegimenObj)
 
 setNewReg({
@@ -72,7 +72,7 @@ const confirmSets = (e) => {
 }
 
 const unSets = (e) => {
-    console.log('here')
+    // console.log('here')
     e.preventDefault()
     setCompWeight(false)
 }
@@ -96,27 +96,27 @@ return(
         <h4> {selectedExercise == null? '' : chosenExercise.name} </h4>
     </div>
     <div style={{display: 'flex', justifyContent: 'space-evenly', borderBottom: "black solid 2px"}}>
-        <div>    <p>Weight</p>
-<p>{newReg.weight}</p></div>
+        <div>    <p style={{color:`${blackOrWhite[1]}`}}>Weight</p>
+<p style={{color:`${blackOrWhite[1]}`}}>{newReg.weight}</p></div>
 
-<div><p>Sets</p>
-<p>{newReg.sets}</p></div>
+<div><p style={{color:`${blackOrWhite[1]}`}}>Sets</p>
+<p style={{color:`${blackOrWhite[1]}`}}>{newReg.sets}</p></div>
 
-<div><p>Reps</p>
-<p>{newReg.reps}</p></div>
+<div><p style={{color:`${blackOrWhite[1]}`}}>Reps</p>
+<p style={{color:`${blackOrWhite[1]}`}}>{newReg.reps}</p></div>
 
 <p></p>
     </div>
     <form onSubmit={sendNewReg}>
         <div  style={ compWeight === false? {display: 'initial'} : displayNone}>
-        <p>How Much weight?</p>
+        <p style={{color:`${blackOrWhite[1]}`}}>How Much weight?</p>
         <div style={SpacedEven}>
 
-        <p onClick={UnWeight} >
+        <p onClick={UnWeight} style={{color:`${blackOrWhite[1]}`}} >
         BACK
         </p>
         <div onClick={confirmWeight}>
-        <p  >NEXT</p>
+        <p style={{color:`${blackOrWhite[1]}`}} >NEXT</p>
         </div>
 
         </div>
@@ -126,10 +126,10 @@ return(
     <input type="number"  value={newReg.weight} style={ compWeight === false? inputStyle : displayNone} type="text" name="weight" placeholder="Weight"  onChange={handleChange}/>
 
     <div style={ compWeight === true && compSet === false? {display: 'initial'} : displayNone}>
-        <p>How Many Sets?</p>
+        <p style={{color:`${blackOrWhite[1]}`}}>How Many Sets?</p>
         <div style={SpacedEven}>
-        <p onClick={unSets}> BACK</p>
-        <p onClick={confirmSets} >NEXT</p>
+        <p onClick={unSets} style={{color:`${blackOrWhite[1]}`}}> BACK</p>
+        <p onClick={confirmSets} style={{color:`${blackOrWhite[1]}`}}>NEXT</p>
         </div>
         </div>
 
@@ -137,10 +137,10 @@ return(
 
     <div  style={ compWeight === true && compSet === true && compRep === false? {display: 'initial'} : displayNone}>
 
-    <p>How Many Reps?</p>
+    <p style={{color:`${blackOrWhite[1]}`}}>How Many Reps?</p>
     <div style={SpacedEven}>
-        <p onClick={unReps}>BACK</p>
-        <p onClick={confirmReps} >NEXT</p>
+        <p onClick={unReps} style={{color:`${blackOrWhite[1]}`}}>BACK</p>
+        <p onClick={confirmReps} style={{color:`${blackOrWhite[1]}`}} >NEXT</p>
         </div>
         </div>
 
