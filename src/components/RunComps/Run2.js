@@ -62,7 +62,7 @@ const Swipe = e => {
     {regimenName}
     </h1>
 </RunHeader>
-   <div style={{borderBottom: "solid 5px black", height: "75%", overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+   <div style={{borderBottom: "solid 5px black", height: "75%", paddingBottom:'10%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex) => {
            console.log(ex,'ex')
            const chosenLogsEx = chosenLogs.filter(
