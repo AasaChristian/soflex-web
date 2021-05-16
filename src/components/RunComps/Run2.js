@@ -117,11 +117,13 @@ useEffect(() => {
 
 
            <div style={{display: 'flex', height: '100%', flexDirection: 'column', justifyContent: 'center'}}>
-            <h1 style={{color: 'white'}}>{ex.regimenName}</h1>
+            <h1 style={{color: 'white', display: 'flex', justifyContent: 'center'}}>{ex.name}</h1>
             <div style={{display:'flex', backgroundColor: 'white', height: '70%', borderRadius: '20%', width: '98%', marginLeft: '1%'}}>
                 <p>This is where the exercise work will be</p>
             </div>
-           <button onClick={setShowntoNull}>Go-Back</button>
+            <section style={{display: 'flex', justifyContent: 'center'}}>           
+                <button style={{border: 'none', width: '50%', height: '450%', borderRadius: '15%'}} onClick={setShowntoNull}>Go-Back</button>
+            </section>
            </div>
             </div>
             </Zoom>
