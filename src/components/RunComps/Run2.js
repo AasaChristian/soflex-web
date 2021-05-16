@@ -86,7 +86,7 @@ const Swipe = e => {
        
 
         <section  draggable="true" style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'}}>
-            <Pulse> <div style={{ height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row'}}>
+            <Pulse> <div style={{ height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}}>
            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
                <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%', marginBottom: '2%'}}>{ex.name.substr(0,12)}</h1>
