@@ -122,7 +122,9 @@ useEffect(() => {
                 <p>This is where the exercise work will be</p>
             </div>
             <section style={{display: 'flex', justifyContent: 'center'}}>           
-                <button style={{border: 'none', width: '50%', height: '450%', borderRadius: '15%'}} onClick={setShowntoNull}>Go-Back</button>
+                <div style={{border: 'none', width: '50%', height: '150%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
+                   <h1 style={{display: 'flex', justifyContent: 'center'}}>Go-Back</h1> 
+                    </div>
             </section>
            </div>
             </div>
