@@ -11,6 +11,7 @@ function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
 const [shownReg, setShownReg] = useState(null)
+const [zoomOut, setZoomOut] = useState(true)
   const { match, regimen, logs} = props
 // console.log(match.params.regimenName, "match.params.regimenName")
 // console.log(regimen, "regimen")
@@ -59,7 +60,6 @@ useEffect(() => {
 
 
 
-
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
 
@@ -89,14 +89,20 @@ useEffect(() => {
            const selectEx = (e) => {
             e.preventDefault()
             setShownReg(i)
+            setZoomOut(true)
+            console.log(zoomOut, "zoomOut")
+
         }
             const setShowntoNull = (e) => {
                 e.preventDefault()
                 setShownReg(null) 
+                setZoomOut(false)
+                console.log(zoomOut, "zoomOut")
+
             }
        return ( 
 
-    <section  draggable="true" style={{border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'}}>
+    <section  draggable="true" style={  {border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'} }>
             <Pulse> <div onClick={selectEx} key = {i} style={ shownReg === null? { height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}: {display:'none'}}>
            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
@@ -112,7 +118,7 @@ useEffect(() => {
                </div>
            
            </div></Pulse>
-<Zoom>           
+<Zoom opposite when={zoomOut} duration={500}>           
     <div style={shownReg === i? {position:'absolute', top: '15%', left: '5%', border: 'solid 5px black', borderRadius: '35%', height: '75%', width: '90%', backgroundColor: 'black'}: {display:'none'}}>
 
 
@@ -122,7 +128,7 @@ useEffect(() => {
                 <p>This is where the exercise work will be</p>
             </div>
             <section style={{display: 'flex', justifyContent: 'center'}}>           
-                <div style={{border: 'none', width: '50%', height: '150%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
+                <div style={{marginTop: '1%',border: 'none', width: '50%', height: '150%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
                    <h1 style={{display: 'flex', justifyContent: 'center'}}>Go-Back</h1> 
                     </div>
             </section>
