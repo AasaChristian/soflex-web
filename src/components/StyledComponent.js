@@ -67,7 +67,7 @@ export const Exbox = styled.section`
     height: 70%;
     max-height: 80%;
     // border-radius: 4%;
-    border: solid #656176 5px;
+    // border: solid #656176 2px;
 
     @media (max-height: 750px) {
 
@@ -235,7 +235,9 @@ height: 100%;
 export const RunHeader = styled.div`
 display: flex;
 justify-Content: center;
-border: solid 5px black;
+// border: solid 5px black;
+background: none;
+height: 5%;
 `;
 
 export const RunCardCont = styled.div`
@@ -354,6 +356,14 @@ border: solid black 4px ;
 // Foot
 
 export const FootCont = styled.section`
+
+height: 60px;
+max-height: 60px;
+
+
+`;
+
+export const FootBlack = styled.section`
 background-color: black;
 height: 60px;
 max-height: 60px;
@@ -371,10 +381,14 @@ justify-content: center;
 //Head
 
 export const HeadCont = styled.section`
-background-color: #cbc5da;
+// background-color: #cbc5da;
 display: flex;
 justify-content: space-around;
-border-radius: 10%;
-border: solid #656176 5px;
-border-bottom: solid #656176 5px;
+z-index: 1;
+top: 0;
+position: sticky;
+width: 100%;
+// border-radius: 10%;
+// border: solid #656176 5px;
+// border-bottom: solid #656176 5px;
 `;

@@ -22,9 +22,12 @@ function App() {
 
   return (
     <div className="App">
-      <header>
+
+      <header style={{ zIndex: "1",  backgroundColor: "black", display: "flex", justifyContent: "space-around", height: "12%", opacity: "40%", position: "sticky", top: "0"}}>
+        </header>
+        <div style={{ zIndex: "2", display: 'flex', justifyContent: "space-evenly", position: "fixed", height: "15%", top: "0", width:"100%"}}>
         <Head/>
-      </header>
+      </div>
       <Switch>
       <PrivateRoute
       exact path="/board"
@@ -58,8 +61,18 @@ function App() {
       render={props => <ExForm {...props} axiosAddress={axiosAddress} />  }
       />
     </Switch>
-      <section style={{ bottom: "0", width: "100%", position: "fixed"}}>
+
+    {/* <section style={{position: "relative", height: "60px"}}>
+<div style={{ zIndex: "1",  backgroundColor: "black", display: "flex", justifyContent: "space-around", height: "100%", opacity: "9%", position: "sticky", bottom: "0"}}>
+        
+        </div>
+<Foot/>
+</section> */}
+      <section style={{ bottom: "0", width: "100%", position: "fixed", zIndex: "2"}}>
         <Foot/>
+      </section>
+      <section style={{zIndex: "1", bottom: "0", width: "100%", position: "fixed", backgroundColor: 'black', height: '60px', opacity: "50%"}}>
+
       </section>
     </div>
   );

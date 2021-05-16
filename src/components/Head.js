@@ -18,7 +18,7 @@ function Head() {
           </div>
             </NavLink>
           <NavLink to = {"/"}>
-          <h1>SoFlex</h1>
+          <h1 style={{fontSize: '250%', marginBottom: '0%'}}>SoFlex</h1>
           </NavLink>  
         
 
