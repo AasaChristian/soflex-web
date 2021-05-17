@@ -7,14 +7,21 @@ import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, b
 import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
 import Flash from 'react-reveal/Flash';
+import RunSets2 from './RunSets2';
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
 const [shownReg, setShownReg] = useState(null)
 const [zoomOut, setZoomOut] = useState(true)
+
+
+
+
+
+
+
   const { match, regimen, logs} = props
-// console.log(match.params.regimenName, "match.params.regimenName")
-// console.log(regimen, "regimen")
+
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
@@ -22,7 +29,7 @@ const [zoomOut, setZoomOut] = useState(true)
   const chosenLogs = logs.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
-    // console.log(chosenRegimen, "chosenRegimen RUN")
+
     console.log(chosenLogs, 'chosenLogs')
 const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName
@@ -37,28 +44,6 @@ useEffect(() => {
         return chosenLen = regsExercises.length
     })
 },[reState])
-// console.log(showReg, "showReg")
-
-// const Swipe = e => {
-//     e.preventDefault()
-//     if (index == chosenLen -1){
-//         // console.log(chosenLen, "chosenLen")
-//         setIndex(0)
-//         setRestate(!reState)
-//         // console.log(index, "index")
-//     } else {
-//         setIndex(index + 1)
-//         setRestate(!reState)
-//         // console.log(index, "index")
-//         // console.log(chosenLen, "chosenLen")
-//     }
-// }
-
-
-
-
-
-
 
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
@@ -138,9 +123,17 @@ useEffect(() => {
                     <div> <h1>Weight</h1> <h1>{ex.regimenWeight}</h1></div>
 
                     </section> 
-                </div>  
 
- 
+    <RunSets2
+    chosenLogs={chosenLogs}
+    reps={ex.reps}
+    sets={ex.sets}
+    weight={ex.regimenWeight}
+    name={ex.name}
+    regimenId={ex.regimenID}
+    />
+
+                </div>  
             </div>
             <section style={{display: 'flex', justifyContent: 'center'}}>           
                 <div style={{marginTop: '1%',border: 'none', width: '50%', height: '150%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
@@ -150,41 +143,7 @@ useEffect(() => {
            </div>
             </div>
             </Zoom>
-
-          
         </section>
-
-        
-
-        
-    //    <RunCardCont style={showReg === ex.regimenID? {display: "initial"}: {display: "none"}}>
-
-    //     <section>
-    //     <RunExerciseNameCont onClick={Swipe}>
-    //         <RunExerciseName>
-    //             {ex.name}
-    //         </RunExerciseName>
-    //     </RunExerciseNameCont>
-        
-    //     </section>
-        
-    //     <SetsCont >
-    //         <div>
-    //     <RunSets
-    //     runSets={ex.sets}
-    //     reps={ex.reps}
-    //     weight={ex.regimenWeight}
-    //     name={ex.name}
-    //     regimenId={ex.regimenID}
-    //     completion={ex.completion}
-    //     chosenLogs={chosenLogs}
-    //     showReg={showReg}
-    // Swipe={Swipe}
-    //     />
-    //         </div>
-    //     </SetsCont>
-    //         </RunCardCont>
-            
             )
    
 
