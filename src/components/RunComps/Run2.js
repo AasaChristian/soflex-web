@@ -124,10 +124,23 @@ useEffect(() => {
 
            <div style={{display: 'flex', height: '100%', flexDirection: 'column', justifyContent: 'center'}}>
             <h1 style={{color: 'white', display: 'flex', justifyContent: 'center'}}>{ex.name.substr(0,12)}</h1>
+
             <div style={{display:'flex', backgroundColor: 'white', height: '70%', borderRadius: '20%', width: '98%', marginLeft: '1%'}}>
-            <div style={{display: 'flex', height: '100%', flexDirection: 'row', justifyContent: 'center', width: '100%'}}>
+            <div style={{display: 'flex', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', width: '100%', alignItems: 'center'}}>
                 <h1 style={{fontSize: '120%', marginTop: '20%'}}>{ex.name}</h1>
-                </div>    
+
+
+                <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
+                    <div> <h1>Sets</h1> <h1>{ex.sets}</h1> </div>
+
+                    <div> <h1>Reps</h1> <h1>{ex.reps}</h1></div>
+
+                    <div> <h1>Weight</h1> <h1>{ex.regimenWeight}</h1></div>
+
+                    </section> 
+                </div>  
+
+ 
             </div>
             <section style={{display: 'flex', justifyContent: 'center'}}>           
                 <div style={{marginTop: '1%',border: 'none', width: '50%', height: '150%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
