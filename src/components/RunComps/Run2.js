@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Route, Redirect} from 'react-router-dom'
 import styled from 'styled-components'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
@@ -22,17 +23,20 @@ const [zoomOut, setZoomOut] = useState(true)
 
   const { match, regimen, logs} = props
 
-  const chosenRegimen = regimen.filter(
-      filterFor => filterFor.regimenName === match.params.regimenName
-  )
+const chosenRegimen = regimen.filter(
+    filterFor => filterFor.regimenName === match.params.regimenName
+)
 
-  const chosenLogs = logs.filter(
-      filterFor => filterFor.regimenName === match.params.regimenName
-  )
+const chosenLogs = logs.filter(
+    filterFor => filterFor.regimenName === match.params.regimenName
+)
 
-    console.log(chosenLogs, 'chosenLogs')
+
+
+    // console.log(chosenLogs.length, 'chosenLogs')
 const [index, setIndex] = useState(0)
-const regimenName = chosenRegimen[0].regimenName
+// const regimenName = chosenRegimen[0].regimenName
+
 const regsExercises = []
 let chosenLen = chosenRegimen.length
 
@@ -45,18 +49,23 @@ useEffect(() => {
     })
 },[reState])
 
+
+
+if (chosenLogs.length<1){
+    return <Redirect to="/board" />
+}
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
 
    <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex, i) => {
-           console.log(ex,'ex')
+        //    console.log(ex,'ex')
         //    console.log(i,'i')
 
            const chosenLogsEx = chosenLogs.filter(
             filterFor => filterFor.name === ex.name
         )
-           console.log(chosenLogsEx[chosenLogsEx.length -1], "chosenLogsEx in MAP")
+        //    console.log(chosenLogsEx[chosenLogsEx.length -1], "chosenLogsEx in MAP")
             let lastSet 
             let lastWeight 
             let lastReps 
@@ -75,14 +84,14 @@ useEffect(() => {
             e.preventDefault()
             setShownReg(i)
             setZoomOut(true)
-            console.log(zoomOut, "zoomOut")
+            // console.log(zoomOut, "zoomOut")
 
         }
             const setShowntoNull = (e) => {
                 e.preventDefault()
                 setShownReg(null) 
                 setZoomOut(false)
-                console.log(zoomOut, "zoomOut")
+                // console.log(zoomOut, "zoomOut")
 
             }
        return ( 
@@ -115,14 +124,14 @@ useEffect(() => {
                 <h1 style={{fontSize: '120%', marginTop: '20%'}}>{ex.name}</h1>
 
 
-                <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
+                {/* <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
                     <div> <h1>Sets</h1> <h1>{ex.sets}</h1> </div>
 
                     <div> <h1>Reps</h1> <h1>{ex.reps}</h1></div>
 
                     <div> <h1>Weight</h1> <h1>{ex.regimenWeight}</h1></div>
 
-                    </section> 
+                    </section>  */}
 
     <RunSets2
     chosenLogs={chosenLogs}
@@ -131,6 +140,8 @@ useEffect(() => {
     weight={ex.regimenWeight}
     name={ex.name}
     regimenId={ex.regimenID}
+    loggedsets = {ex.loggedsets}
+    setZoomOut = {setZoomOut}
     />
 
                 </div>  

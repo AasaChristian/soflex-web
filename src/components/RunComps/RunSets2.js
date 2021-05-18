@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 
 
 function RunSets2(props) {
-  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe} = props
+  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut} = props
 
   const [repInput, setRepInput] = useState(reps)
 
@@ -18,11 +18,15 @@ function RunSets2(props) {
 
   const [shownRep, setShownRep] = useState(0)
 
+  const [currentRep, setCurrentRep] = useState(1)
+
 
 
   const chosenLogsEx = chosenLogs.filter(
-    filterFor => filterFor.name === name
+    filterFor => filterFor.regimenId === regimenId
 )
+// console.log(chosenLogsEx.length, "chosenLogsEx.length")
+// console.log(chosenLogsEx, "chosenLogsEx")
 
   let setsArr = []
 
@@ -50,7 +54,7 @@ const sendNewLog = (e) => {
     type: "regimenlog",
     userId: userIdInput,
     regimenId: regimenId,
-    set: shownRep + 1,
+    set: chosenLogsEx.length + 1,
     reps: repInput,
     weight: weightInput,
     post: postInput
@@ -59,7 +63,7 @@ const sendNewLog = (e) => {
   createLog(newLogObj)
 
   setShownRep(shownRep + 1)
-
+  setZoomOut(true)
 
 
 
@@ -89,15 +93,20 @@ const weightDown = e => {
     <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
     <div>
         <h1>REPS</h1>
-        <div onClick={repUp}>+</div>
+        <div onClick={repUp}>+</div>    <h1>{repInput}</h1>
+
         <div onClick={repDown}>-</div>
     </div>
     <div>
         <h1 >WEIGHT</h1>
         
     <div onClick={weightUp}>+</div>
+    <h1>{weightInput}</h1>
         <div onClick={weightDown}>-</div>
     </div>
+    <button onClick={sendNewLog} >
+      Never Submit
+    </button>
 
 </section>
 
