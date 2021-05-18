@@ -104,7 +104,7 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill"}}>{ex1.substr(0,12)}</p>
+    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{ex1.substr(0,12)}</p>
 </Jump>
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>

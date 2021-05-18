@@ -9,7 +9,7 @@ import Bounce from 'react-reveal/Bounce';
 function Landing() {
 
   return (
-   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "85%", overflow: 'scroll', backgroundColor:'#5f5c67'}}>
+   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "80%", overflow: 'scroll', backgroundColor:'#5f5c67'}}>
         <Bounce cascade> <div style={{display: "flex", justifyContent: "center"}}>
                     <h1 className="city"> CITY SO FLEX</h1>
 

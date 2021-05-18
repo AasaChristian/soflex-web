@@ -1,6 +1,6 @@
 import {HeadCont} from './StyledComponent'
 import {NavLink} from "react-router-dom"
-
+import {blackOrWhite} from './StyledComponent'
 
 
 function Head() {
@@ -12,13 +12,13 @@ function Head() {
     <HeadCont>
         <NavLink to = {"/board"}>
           <div>
-            <h2>
+            <h2 style={{ color: `${blackOrWhite[1]}`}}>
             Home
             </h2>
           </div>
             </NavLink>
           <NavLink to = {"/"}>
-          <h1>SoFlex</h1>
+          <h1 style={{fontSize: '250%', marginBottom: '0%', color: `${blackOrWhite[1]}`}}>SoFlex</h1>
           </NavLink>  
         
 
@@ -30,7 +30,7 @@ function Head() {
 
 
           <div>
-          <h2>
+          <h2 style={{ color: `${blackOrWhite[1]}`}}>
 
           {userID === null ? "Login" : "Logout"}
 
