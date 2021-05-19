@@ -94,14 +94,14 @@ const weightDown = e => {
 
     <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%', flexDirection: 'column'}}>
       <div style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}> 
-        <div>
+        <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h1>REPS</h1>
         <div onClick={repUp}><FaPlus/> </div>    <h1>{repInput}</h1>
 
         <div onClick={repDown}><FaMinus/></div>
     </div>
 
-    <div>
+    <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h1 >WEIGHT</h1> 
     <div onClick={weightUp}><FaPlus/> </div>
     <h1>{weightInput}</h1>
