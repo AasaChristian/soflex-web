@@ -51,7 +51,7 @@ useEffect(() => {
 
 
 
-if (chosenLogs.length<1){
+if (logs.length<1){
     return <Redirect to="/board" />
 }
    return(

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import {RunInputText, RunText, RunInputDiv, SetSection, RunInputeCont, RunDetailCont} from '../StyledComponent'
+import {RunInputText, RunText, RunInputDiv, SetSection, RunInputeCont, RunDetailCont, blackOrWhite, CenterText} from '../StyledComponent'
 import {createLog, fetchLogs} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
 import { connect } from 'react-redux';
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 
 
@@ -88,25 +89,32 @@ const weightDown = e => {
   e.preventDefault()
   setWeightInput(weightInput - 5)
 }
+
    return(
 
-    <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
-    <div>
+    <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%', flexDirection: 'column'}}>
+      <div style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}> 
+        <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h1>REPS</h1>
-        <div onClick={repUp}>+</div>    <h1>{repInput}</h1>
+        <div onClick={repUp}><FaPlus/> </div>    <h1>{repInput}</h1>
 
-        <div onClick={repDown}>-</div>
+        <div onClick={repDown}><FaMinus/></div>
     </div>
-    <div>
-        <h1 >WEIGHT</h1>
-        
-    <div onClick={weightUp}>+</div>
+
+    <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <h1 >WEIGHT</h1> 
+    <div onClick={weightUp}><FaPlus/> </div>
     <h1>{weightInput}</h1>
-        <div onClick={weightDown}>-</div>
+        <div onClick={weightDown}><FaMinus/></div>
     </div>
-    <button onClick={sendNewLog} >
-      Never Submit
-    </button>
+    </div>
+   
+    <section style={{ display: 'flex', justifyContent: "center"}}>    
+      <div onClick={sendNewLog} style={{backgroundColor: `${blackOrWhite[0]}`, height: '150%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '6%', width: '90%'}}>
+      <p style={{color: `${blackOrWhite[1]}`, fontSize: '200%', marginBottom: '1%', marginTop: '1%'}}> Submit</p>
+    </div>
+    </section>
+
 
 </section>
 
