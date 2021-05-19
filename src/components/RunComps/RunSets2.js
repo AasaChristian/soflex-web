@@ -3,6 +3,7 @@ import {RunInputText, RunText, RunInputDiv, SetSection, RunInputeCont, RunDetail
 import {createLog, fetchLogs} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
 import { connect } from 'react-redux';
+import { FaPlus, FaMinus } from "react-icons/fa";
 
 
 
@@ -88,21 +89,22 @@ const weightDown = e => {
   e.preventDefault()
   setWeightInput(weightInput - 5)
 }
+
    return(
 
     <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
     <div>
         <h1>REPS</h1>
-        <div onClick={repUp}>+</div>    <h1>{repInput}</h1>
+        <div onClick={repUp}><FaPlus/> </div>    <h1>{repInput}</h1>
 
-        <div onClick={repDown}>-</div>
+        <div onClick={repDown}><FaMinus/></div>
     </div>
     <div>
         <h1 >WEIGHT</h1>
         
-    <div onClick={weightUp}>+</div>
+    <div onClick={weightUp}><FaPlus/> </div>
     <h1>{weightInput}</h1>
-        <div onClick={weightDown}>-</div>
+        <div onClick={weightDown}><FaMinus/></div>
     </div>
     <button onClick={sendNewLog} >
       Never Submit
