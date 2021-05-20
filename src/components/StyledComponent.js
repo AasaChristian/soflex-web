@@ -9,7 +9,7 @@ export const blackOrWhite = ['black','white']
 
 
 export const Exbox = styled.section`
-    background-color: white;
+    background-color: #e7e4ef;
     width: 90%;
     border: solid black 4px ;
     border-radius: 30%;
@@ -266,7 +266,7 @@ overflow-x: scroll;
 `;
 // RunList 
 export const RunListExbox = styled.section`
-    background-color: white;
+    background-color: #e7e4ef;
     width: 90%;
     border: solid black 4px ;
     border-radius: 30%;
