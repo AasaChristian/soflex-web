@@ -9,7 +9,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 
 function RunSets2(props) {
-  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut} = props
+  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut, setShownReg} = props
 
   const [repInput, setRepInput] = useState(reps)
 
@@ -60,11 +60,11 @@ const sendNewLog = (e) => {
     weight: weightInput,
     post: postInput
   }
-
+  setZoomOut(true)
   createLog(newLogObj)
 
   setShownRep(shownRep + 1)
-  setZoomOut(true)
+  setShownReg(null)
 
 
 

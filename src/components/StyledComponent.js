@@ -266,14 +266,14 @@ overflow-x: scroll;
 `;
 // RunList 
 export const RunListExbox = styled.section`
-    background-color: #e7e4ef;
-    width: 90%;
-    border: solid black 4px ;
+    background-color: #444347;
+    width: 40%;
+    // border: solid black 4px ;
     border-radius: 30%;
-    margin-left: 5%;
+    // margin-left: 5%;
     display: flex;
     justify-content: center;
-    height: 200px;
+    height: 150px;
 
     @media (max-width: 750px) {
 
@@ -284,11 +284,14 @@ export const RunListExbox = styled.section`
     `;
 
     export const RunListBorderBottom = styled.h3 `
-border-bottom: solid black 5px;
+border-bottom: solid white 5px;
+border-right: solid white 5px;
+border-radius: 20%;
 display: flex;
 flex-direction: column;
 justify-content: center;
 font-size: 30px;
+color: white;
 `;
 
 // RUNSETS 

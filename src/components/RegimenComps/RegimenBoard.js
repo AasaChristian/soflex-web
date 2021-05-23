@@ -48,9 +48,9 @@ useEffect(() => {
 
   },[exercises, createRegimen, updateRegimen, deleteRegimenEX, regBoard])
 
-  useEffect(() => {
+//   useEffect(() => {
 // console.log("Regimen UseEffect")
-  },[exercises])
+//   },[exercises])
 
 const SwapEdit = (e) => {
     e.preventDefault()
