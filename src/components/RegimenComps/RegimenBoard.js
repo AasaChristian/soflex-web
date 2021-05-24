@@ -3,7 +3,7 @@ import RegimenList from './RegimenList';
 import RegInput from './RegimenInpute'
 import { connect } from 'react-redux';
 import {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegimenEX} from '../../action/regimenActions'
-import {Exbox, ExName, ExboxCont} from '../StyledComponent'
+import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
 
@@ -93,7 +93,7 @@ const toggleCompletedReg = (e) => {
     <div style={{width: "100%"}}>
 
             <div style={{display: "flex", justifyContent: "center", fontSize: "40px"}}>
-                    <h>Regimen</h>
+                    <h style={{color: `${blackOrWhite[1]}`}}>Regimen</h>
                 </div>
                 {/* ExstatBox is a list or regimen */}
                <div>
