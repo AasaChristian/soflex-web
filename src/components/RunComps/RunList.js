@@ -55,7 +55,7 @@ const {regimen, name, key} = props
         <RunListBorderBottom>{name.substr(0,10)}</RunListBorderBottom>
         </div>
       </NavLink>
-      <div style={{ height: '100%', width: '25%'}}>
+      <div style={{ height: '100%', width: '25%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
         <h1 style={{fontSize: '80%'}}>This Regimen Has Not been Completed</h1>
       </div>
 
