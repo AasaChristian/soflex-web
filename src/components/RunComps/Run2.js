@@ -61,20 +61,20 @@ const [index, setIndex] = useState(0)
 const regsExercises = []
 let chosenLen = chosenRegimen.length
 
-useEffect(() => {
-    chosenRegimen.map((exs) => {
-        regsExercises.push(exs.regimenID)
-        // console.log(regsExercises, "regsExercises")
-        setShowReg(regsExercises[index])
-        return chosenLen = regsExercises.length
-    })
-},[reState])
+// useEffect(() => {
+//     chosenRegimen.map((exs) => {
+//         regsExercises.push(exs.regimenID)
+//         // console.log(regsExercises, "regsExercises")
+//         setShowReg(regsExercises[index])
+//         return chosenLen = regsExercises.length
+//     })
+// },[reState])
 
 
 
-if (logs.length<1){
-    return <Redirect to="/board" />
-}
+// if (logs.length<1){
+//     return <Redirect to="/board" />
+// }
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
 
