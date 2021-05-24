@@ -285,7 +285,7 @@ export const RunListExbox = styled.section`
 
     export const RunListBorderBottom = styled.h3 `
 border-bottom: solid white 5px;
-border-right: solid white 5px;
+border-right: solid white 3px;
 border-radius: 12%;
 display: flex;
 flex-direction: column;
