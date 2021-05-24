@@ -33,10 +33,10 @@ useEffect(() => {
 
   return (
 
-    <div>
+    <div >
         {regimenName.map((reg, i) => {
             return(
-                <div>
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '10%'}}>
                     <RunList
                     name={reg}
                     key ={i}

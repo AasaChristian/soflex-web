@@ -82,9 +82,9 @@ setRegBoard={setRegBoard}
         <LeftWall>
 
             <BackButtonCont>        
-                <BackButton onClick={SwapRun}>Work</BackButton>
-                <BackButton onClick={SwapReg}> Regimen</BackButton>
-                <BackButton onClick={SwapEx}>Exercise </BackButton>
+                <BackButton onClick={SwapRun} style={runBoard === true? {color: 'red', fontStyle: 'oblique', fontSize: '200%'}: {display: 'inherit'}}>Work</BackButton>
+                <BackButton onClick={SwapReg} style={regBoard === true? {color: 'red', fontStyle: 'oblique', fontSize: '200%'}: {display: 'inherit'}}> Regimen</BackButton>
+                <BackButton onClick={SwapEx} style={exBoard === true? {color: 'red', fontStyle: 'oblique', fontSize: '200%'}: {display: 'inherit'}}>Exercise </BackButton>
                 <BackButton onClick={SendBack}> Back</BackButton>            
             </BackButtonCont>
         </LeftWall>

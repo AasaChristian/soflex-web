@@ -9,6 +9,7 @@ import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
 import Flash from 'react-reveal/Flash';
 import RunSets2 from './RunSets2';
+import {fetchRegimen} from '../../action/regimenActions'
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
@@ -17,11 +18,31 @@ const [zoomOut, setZoomOut] = useState(true)
 
 
 
+  const { match, regimen, logs, userIdState, fetchRegimen} = props
+useEffect(() => {
+    const userIdLocalStorage = localStorage.getItem('key')
+
+    if (userIdState === null){
+
+        // console.log(userIdLocalStorage, 'userIdLocalStorage')
+        fetchRegimen(userIdLocalStorage)
+
+
+
+    } else{
+        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
+        fetchRegimen(userIdState)
+    }
+
+    
+
+  },[shownReg])
 
 
 
 
-  const { match, regimen, logs} = props
+
+
 
 const chosenRegimen = regimen.filter(
     filterFor => filterFor.regimenName === match.params.regimenName
@@ -142,6 +163,7 @@ if (logs.length<1){
     regimenId={ex.regimenID}
     loggedsets = {ex.loggedsets}
     setZoomOut = {setZoomOut}
+    setShownReg={setShownReg}
     />
 
                 </div>  
@@ -170,8 +192,9 @@ const mapStateToProps = state => {
 	return {
         exercises: state.exercises,
         regimen: state.regimen,
-        logs: state.logs
+        logs: state.logs,
+        userIdState: state.userIdState
 	};
 };
 
-export default connect(mapStateToProps, {})(Run2);
+export default connect(mapStateToProps, {fetchRegimen})(Run2);

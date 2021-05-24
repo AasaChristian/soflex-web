@@ -104,8 +104,12 @@ useEffect(() => {
         setOpenEx(null)
     }
 }}>
-    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{ex1.substr(0,12)}</p>
+    <div>    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{ex1.substr(0,12)}</p>
+
 </Jump>
+
+<h1 style={ openEx === ex1? {color: `${blackOrWhite[1]}`, fontSize: "120%", objectFit: "fill", display: 'flex', justifyContent: 'center'}: {display: 'none'}} >{ex1}</h1></div>
+
 </div>
             <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
             <ExerciesFilter
