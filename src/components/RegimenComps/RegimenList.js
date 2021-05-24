@@ -1,5 +1,5 @@
 import React from 'react'
-import { Exbox, BorderBottom, NavSection} from '../StyledComponent'
+import { Exbox, BorderBottom, NavSection, blackOrWhite} from '../StyledComponent'
 import {NavLink} from "react-router-dom"
 
 
@@ -41,15 +41,15 @@ function RegimenList({name, regimenID,  completed   }) {
   return (
     <Exbox key ={regimenID}>
       <div>
-      <NavLink  to = {`/board/${name}`}>
+      <NavLink  to = {`/board/${name}`} style={{ textDecoration: 'none' }}>
         <div style={{width: "9pc", display: "flex", justifyContent: "center"}}>
-        <BorderBottom>{name}</BorderBottom>
+        <BorderBottom>{name.substr(0,12)}</BorderBottom>
         </div>
       </NavLink>
 
         <NavSection style={completed === true? {display: 'none'}: {display: 'flex'}}>
-          <NavLink   to = {`/run/${name}`}> Start</NavLink>
-          <NavLink  to = {`/board/${name}`}>Edit</NavLink>
+          <NavLink   to = {`/run/${name}`} style={{ textDecoration: 'none' , color: `${blackOrWhite[1]}`}}> Start</NavLink>
+          <NavLink  to = {`/board/${name}`} style={{ textDecoration: 'none', color: `${blackOrWhite[1]}` }}>Edit</NavLink>
         </NavSection>
 
         </div>
