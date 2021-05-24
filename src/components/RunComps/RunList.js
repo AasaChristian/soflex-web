@@ -50,7 +50,7 @@ const {regimen, name, key} = props
     <RunListExbox key ={key}>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", width: '100%', alignItems: 'center'}}>
         <MdFitnessCenter style={{height: '90%', width: '25%'}}/>
-      <NavLink  to = {`/run/${name}`}>
+      <NavLink  to = {`/run/${name}`} style={{ textDecoration: 'none' }}>
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "center"}}>
         <RunListBorderBottom>{name.substr(0,10)}</RunListBorderBottom>
         </div>
