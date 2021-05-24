@@ -267,9 +267,9 @@ overflow-x: scroll;
 // RunList 
 export const RunListExbox = styled.section`
     background-color: #444347;
-    width: 40%;
+    width: 95%;
     // border: solid black 4px ;
-    border-radius: 30%;
+    border-radius: 5%;
     // margin-left: 5%;
     display: flex;
     justify-content: center;
