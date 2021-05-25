@@ -9,7 +9,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 
 function RunSets2(props) {
-  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut, setShownReg} = props
+  const {manSet, setManSet, runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut, setShownReg} = props
 
   const [repInput, setRepInput] = useState(reps)
 
@@ -66,7 +66,7 @@ const sendNewLog = (e) => {
   setShownRep(shownRep + 1)
   setShownReg(null)
 
-
+  setManSet(manSet + 1)
 
 }
 

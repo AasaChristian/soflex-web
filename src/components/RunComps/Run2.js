@@ -15,8 +15,9 @@ const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
 const [shownReg, setShownReg] = useState(null)
 const [zoomOut, setZoomOut] = useState(true)
+const [manSet, setManSet] = useState(1)
 
-
+console.log(manSet, "manSet Should be going up")
 
   const { match, regimen, logs, userIdState, fetchRegimen} = props
 useEffect(() => {
@@ -75,6 +76,7 @@ let chosenLen = chosenRegimen.length
 // if (logs.length<1){
 //     return <Redirect to="/board" />
 // }
+
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
 
@@ -100,6 +102,13 @@ let chosenLen = chosenRegimen.length
             lastWeight = 0
             lastReps = 0
            }
+           let finalLastSet;
+           if (manSet > lastSet){
+            finalLastSet = manSet
+           } else{
+            finalLastSet = lastSet
+           }
+
 
            const selectEx = (e) => {
             e.preventDefault()
@@ -124,7 +133,7 @@ let chosenLen = chosenRegimen.length
                <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%', marginBottom: '2%'}}>{ex.name.substr(0,12)}</h1>
 
                <div style={{display:'flex', justifyContent: 'center', flexDirection: 'column'}}>
-               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{lastSet}/{ex.sets}</p>
+               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{finalLastSet}/{ex.sets}</p>
                <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>PREV REPS: {lastReps}</p>
                <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>PREV WEIGHT: {lastWeight}</p>
 
@@ -164,6 +173,8 @@ let chosenLen = chosenRegimen.length
     loggedsets = {ex.loggedsets}
     setZoomOut = {setZoomOut}
     setShownReg={setShownReg}
+    setManSet={setManSet}
+    manSet={manSet}
     />
 
                 </div>  
