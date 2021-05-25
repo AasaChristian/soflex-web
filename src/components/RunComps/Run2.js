@@ -24,27 +24,21 @@ useEffect(() => {
 
     if (userIdState === null){
 
-        // console.log(userIdLocalStorage, 'userIdLocalStorage')
+        console.log(userIdLocalStorage, 'userIdLocalStorage')
         fetchRegimen(userIdLocalStorage)
 
 
 
     } else{
-        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
+        console.log(userIdState[0], 'userIdState  Attempted Regimen get')
         fetchRegimen(userIdState)
     }
 
     
 
-  },[shownReg])
+  },[logs])
 
-
-
-
-
-
-
-const chosenRegimen = regimen.filter(
+  const chosenRegimen = regimen.filter(
     filterFor => filterFor.regimenName === match.params.regimenName
 )
 
@@ -54,12 +48,16 @@ const chosenLogs = logs.filter(
 
 
 
+
+
+
+
     // console.log(chosenLogs.length, 'chosenLogs')
-const [index, setIndex] = useState(0)
+// const [index, setIndex] = useState(0)
 // const regimenName = chosenRegimen[0].regimenName
 
-const regsExercises = []
-let chosenLen = chosenRegimen.length
+// const regsExercises = []
+// let chosenLen = chosenRegimen.length
 
 // useEffect(() => {
 //     chosenRegimen.map((exs) => {
@@ -68,7 +66,7 @@ let chosenLen = chosenRegimen.length
 //         setShowReg(regsExercises[index])
 //         return chosenLen = regsExercises.length
 //     })
-// },[reState])
+// },[])
 
 
 
