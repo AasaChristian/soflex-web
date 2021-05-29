@@ -100,7 +100,7 @@ const toggleCompletedReg = (e) => {
                </div>
             <ExboxCont> 
             <div style={{display: 'flex', justifyContent: 'center'}}>   
-                    {loading &&  <Pulse forever={true} >
+                    {loading &&  <Pulse  delay={500}  forever={true} >
                     <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
                 </Pulse >}</div>
                 <div style={hideRegimen === true ? {display: "none"}: {display: "initial"}} >

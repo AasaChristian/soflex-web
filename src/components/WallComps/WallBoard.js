@@ -90,7 +90,7 @@ useEffect(() => {
         {/* <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div> */}
 
         <div style={{display: 'flex', justifyContent: 'center'}}>   
-                    {loading &&  <Flash forever={true} >
+                    {loading &&  <Flash delay={500} forever={true} >
                     <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
                 </Flash >}</div>
 <div display={{height: '100%'}}>
