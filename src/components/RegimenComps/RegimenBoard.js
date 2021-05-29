@@ -6,10 +6,10 @@ import {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegi
 import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
-
+import Pulse from 'react-reveal/Pulse';
 
 function RegimenBoard(props) {
-    const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState, completedNames} = props
+    const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState, completedNames, loading} = props
 //////////////////////////////////////////////////////////////////////////
 const [newRegNameEditor, setNewRegNameEditor] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
@@ -92,14 +92,17 @@ const toggleCompletedReg = (e) => {
 
     <div style={{width: "100%"}}>
 
-            <div style={{display: "flex", justifyContent: "center", fontSize: "40px"}}>
+            <div style={{display: "flex", justifyContent: "center", fontSize: "40px", flexWrap: 'wrap'}}>
                     <h style={{color: `${blackOrWhite[1]}`}}>Regimen</h>
-                </div>
-                {/* ExstatBox is a list or regimen */}
-               <div>
+
+
                    <button style={{width: "100%"}} onClick={toggleCompletedReg}>{ hideCompleted === true?   "Show Completed Regimen" : "Hide Completed Regimen"}</button>
                </div>
             <ExboxCont> 
+            <div style={{display: 'flex', justifyContent: 'center'}}>   
+                    {loading &&  <Pulse forever={true} >
+                    <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
+                </Pulse >}</div>
                 <div style={hideRegimen === true ? {display: "none"}: {display: "initial"}} >
             {regimenName.map((e, i) => {
                 return(
@@ -205,7 +208,8 @@ const mapStateToProps = state => {
         regTempName: state.regTempName,
         regimenName: state.regimenName,
         completedNames: state.completedNames,
-        userIdState: state.userIdState
+        userIdState: state.userIdState,
+        loading: state.loading
 	};
 };
 
