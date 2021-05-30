@@ -40,7 +40,7 @@ useEffect(() => {
 
     {logs.map((submission, i) => {
  
-        if (submission.LoggedSet === submission.sets && submission.completion === false){
+        if (submission.LoggedSet >= submission.sets && submission.completion === false){
             const updatedObj = {
                 completion : true
             }
