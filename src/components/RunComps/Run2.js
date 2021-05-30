@@ -36,7 +36,7 @@ useEffect(() => {
         fetchLogs(userIdState)
     }
 
-    
+    setRestate(!reState)
 
   },[zoomOut, shownReg])
 
@@ -187,7 +187,6 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
            </div>
             </div>
             </Zoom>
-            <div>{reState}</div>
         </section>
             )
    
