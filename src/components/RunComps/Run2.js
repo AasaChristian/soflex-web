@@ -10,6 +10,7 @@ import Zoom from 'react-reveal/Zoom';
 import Flash from 'react-reveal/Flash';
 import RunSets2 from './RunSets2';
 import {fetchRegimen} from '../../action/regimenActions'
+import {fetchLogs} from '../../action/runActions'
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
@@ -18,35 +19,37 @@ const [zoomOut, setZoomOut] = useState(true)
 
 
 
-  const { match, regimen, logs, userIdState, fetchRegimen} = props
+  const { match, regimen, logs, userIdState, fetchRegimen, fetchLogs} = props
+
 useEffect(() => {
     const userIdLocalStorage = localStorage.getItem('key')
 
-    if (userIdState === null){
+    if (userIdState<0){
 
         console.log(userIdLocalStorage, 'userIdLocalStorage')
-        fetchRegimen(userIdLocalStorage)
+        fetchLogs(userIdLocalStorage)
 
 
 
     } else{
-        console.log(userIdState[0], 'userIdState  Attempted Regimen get')
-        fetchRegimen(userIdState)
+        console.log(userIdState, 'userIdState  Attempted Regimen get')
+        fetchLogs(userIdState)
     }
 
     
 
-  },[logs])
+  },[zoomOut, shownReg])
+
+
 
   const chosenRegimen = regimen.filter(
     filterFor => filterFor.regimenName === match.params.regimenName
 )
 
-const chosenLogs = logs.filter(
+let chosenLogs = logs.filter(
     filterFor => filterFor.regimenName === match.params.regimenName
 )
-
-
+console.log(chosenLogs, "CHOSEN LOGS FILTER")
 
 
 
@@ -76,7 +79,7 @@ const chosenLogs = logs.filter(
 
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
-
+<div>{reState}</div>
    <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex, i) => {
         //    console.log(ex,'ex')
@@ -85,20 +88,26 @@ const chosenLogs = logs.filter(
            const chosenLogsEx = chosenLogs.filter(
             filterFor => filterFor.name === ex.name
         )
-        //    console.log(chosenLogsEx[chosenLogsEx.length -1], "chosenLogsEx in MAP")
+           console.log(chosenLogsEx, "chosenLogsEx in MAP")
+
             let lastSet 
             let lastWeight 
             let lastReps 
+
+
            if(chosenLogsEx.length > 0){
-            lastSet = chosenLogsEx[ chosenLogsEx.length -1].LoggedSet
-            lastWeight = chosenLogsEx[ chosenLogsEx.length -1].LoggedWeight
-            lastReps = chosenLogsEx[ chosenLogsEx.length -1].LoggedReps
+            lastSet = chosenLogsEx[ 0].LoggedSet
+            lastWeight = chosenLogsEx[ 0].LoggedWeight
+            lastReps = chosenLogsEx[ 0].LoggedReps
 
            } else {
             lastSet = 0
             lastWeight = 0
             lastReps = 0
            }
+
+           console.log(lastSet , "lastSet")
+
 
 
            const selectEx = (e) => {
@@ -124,7 +133,7 @@ const chosenLogs = logs.filter(
                <h1 style={{display:'flex', justifyContent: 'center', margin: '0%', fontSize: '125%', marginBottom: '2%'}}>{ex.name.substr(0,12)}</h1>
 
                <div style={{display:'flex', justifyContent: 'center', flexDirection: 'column'}}>
-               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{lastSet}/{ex.sets}</p>
+               <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>SET:{lastSet }/{ex.sets}</p>
                <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>PREV REPS: {lastReps}</p>
                <p style={{display:'flex', justifyContent: 'center', margin: '0%'}}>PREV WEIGHT: {lastWeight}</p>
 
@@ -164,6 +173,8 @@ const chosenLogs = logs.filter(
     loggedsets = {ex.loggedsets}
     setZoomOut = {setZoomOut}
     setShownReg={setShownReg}
+    setRestate={setRestate}
+    reState={reState}
     />
 
                 </div>  
@@ -197,4 +208,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {fetchRegimen})(Run2);
+export default connect(mapStateToProps, {fetchRegimen, fetchLogs})(Run2);
