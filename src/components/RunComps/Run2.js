@@ -78,6 +78,7 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
 <div>{reState}</div>
+<div>{!reState}</div>
    <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex, i) => {
         //    console.log(ex,'ex')
