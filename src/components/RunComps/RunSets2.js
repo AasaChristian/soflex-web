@@ -69,6 +69,7 @@ const sendNewLog = (e) => {
   setShownReg(null)
   console.log("ending")
   setRestate(!reState)
+  fetchLogs(userIdState)
 }
 
 
