@@ -95,7 +95,7 @@ useEffect(() => {
                 </Flash >}</div>
 <div display={{height: '100%'}}>
     
-{loggedExName.map((ex1 => {
+{loggedExName.sort().map((ex1 => {
     // console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
