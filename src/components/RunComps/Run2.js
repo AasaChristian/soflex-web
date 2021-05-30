@@ -36,8 +36,6 @@ useEffect(() => {
         fetchLogs(userIdState)
     }
 
-    setRestate(!reState)
-
   },[zoomOut, shownReg])
 
 
