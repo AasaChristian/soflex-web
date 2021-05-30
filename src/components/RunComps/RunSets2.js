@@ -61,6 +61,7 @@ const sendNewLog = (e) => {
     weight: weightInput,
     post: postInput
   }
+  setRestate(!reState)
   setZoomOut(true)
   createLog(newLogObj)
 
