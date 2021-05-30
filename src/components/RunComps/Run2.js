@@ -187,6 +187,7 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
            </div>
             </div>
             </Zoom>
+            <div>{reState}</div>
         </section>
             )
    
