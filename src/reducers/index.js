@@ -22,7 +22,8 @@ error: ''
           ...state,
           regimen: action.payload[0],
           regimenName: action.payload[1],
-          completedNames: action.payload[2]
+          completedNames: action.payload[2],
+          userIdState: action.payload[0][0].userId
         };
       case Fetch_Exercise_Loading:
         return{
@@ -82,9 +83,12 @@ error: ''
               userIdState: action.payload
                     };
         case Create_Log:
+          // console.log(action.payload[0].userId, "action.payload")
               return {
                       ...state,
-              logs: [...state.logs, action.payload[0]]
+              logs: [...state.logs, action.payload[0]],
+              userIdState: action.payload[0].userId
+
               };
         case Fetch_Logs:
               return{
