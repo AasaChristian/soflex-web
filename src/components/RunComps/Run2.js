@@ -96,9 +96,9 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
 
 
            if(chosenLogsEx.length > 0){
-            lastSet = chosenLogsEx[ 0].LoggedSet
-            lastWeight = chosenLogsEx[ 0].LoggedWeight
-            lastReps = chosenLogsEx[ 0].LoggedReps
+            lastSet = chosenLogsEx[chosenLogsEx.length -1].LoggedSet
+            lastWeight = chosenLogsEx[ chosenLogsEx.length -1].LoggedWeight
+            lastReps = chosenLogsEx[ chosenLogsEx.length -1].LoggedReps
 
            } else {
             lastSet = 0
