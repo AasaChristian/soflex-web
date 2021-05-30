@@ -4,10 +4,11 @@ import ExList from './ExerciesList';
 import {fetchExercise, createExercise, deleteExercise} from '../../action/exerciseActions'
 import { connect } from 'react-redux';
 import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
+import Pulse from 'react-reveal/Pulse';
 
 
 function ExerciseBoard(props) {
-    const {history, exercises, regimen, exBoard, deleteExercise} = props
+    const {history, exercises, regimen, exBoard, deleteExercise, loading} = props
 //////////////////////////////////////////////////////////////////////////
 const [edit, setEdit] = useState(false)
 const [reEdit, setRegEdit] = useState(false)
@@ -30,7 +31,11 @@ useEffect(() => {
                 </div>
 
             <div style={{height: "50%"}}>
-
+                <div style={{display: 'flex', justifyContent: 'center'}}>   
+                    {loading &&  <Pulse  delay={500}  forever={true} >
+                    <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
+                </Pulse >}</div>
+         
                 <section style={ edit=== true?{ display: "none"}:  {overflow: "scroll", height: "200px", marginTop: "10%", borderBottom: "solid black 1px"}}>
             {exercises.map((e) => {
                        return(
@@ -76,7 +81,8 @@ useEffect(() => {
 const mapStateToProps = state => {
 	return {
         exercises: state.exercises,
-        regimen: state.regimen
+        regimen: state.regimen,
+        loading: state.loading
 	};
 };
 

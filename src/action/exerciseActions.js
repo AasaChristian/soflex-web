@@ -1,12 +1,16 @@
 import axios from 'axios'
-import {Fetch_Exercise, Create_Exercise, Delete_Exercise} from './index'
+import {Fetch_Exercise_Success, Fetch_Exercise_Failed, Fetch_Exercise_Loading, Create_Exercise, Delete_Exercise} from './index'
 import {axiosAddress} from '../AxiosAdress'
 
 
 export const fetchExercise = () => dispatch => {
+    dispatch({type: Fetch_Exercise_Loading})
     axios.get(`${axiosAddress}/api/exercises/all`)
-    .then(res => dispatch({type: Fetch_Exercise, payload: res.data}))
-    .catch(error => console.log(error, "fetchExercie action error"))
+    .then(res => dispatch({type: Fetch_Exercise_Success, payload: res.data}))
+    .catch(error =>{
+        dispatch({type: Fetch_Exercise_Failed, payload: 'error'})
+        console.log(error, "fetchExercie action error")
+    })
             
     };
 

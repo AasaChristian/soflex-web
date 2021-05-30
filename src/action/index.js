@@ -1,6 +1,10 @@
 
 // Exercise Actions
-export const Fetch_Exercise = 'Fetch_Exercise';
+export const Fetch_Exercise_Success = 'Fetch_Exercise_Success';
+
+export const Fetch_Exercise_Failed = 'Fetch_Exercise_Failed';
+
+export const Fetch_Exercise_Loading = 'Fetch_Exercise_Loading';
 
 export const Create_Exercise = 'Create_Exercise'
 

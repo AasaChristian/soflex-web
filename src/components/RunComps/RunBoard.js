@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchRegimen, clearTempRegName, createRegimen,updateRegimen} from '../../action/regimenActions'
 import RunList from './RunList';
-
+import Pulse from 'react-reveal/Pulse';
 function RunBoard(props) {
-    const {createRegimen, updateRegimen, exercises, regimenName, userIdState} = props
+    const {createRegimen, updateRegimen, exercises, regimenName, userIdState, loading} = props
 //////////////////////////////////////////////////////////////////////////
 
 
@@ -34,6 +34,10 @@ useEffect(() => {
   return (
 
     <div >
+                    <div style={{display: 'flex', justifyContent: 'center'}}>   
+                    {loading &&  <Pulse  delay={500} forever={true} >
+                    <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
+                </Pulse >}</div>
         {regimenName.map((reg, i) => {
             return(
                 <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '10%'}}>
@@ -54,7 +58,8 @@ const mapStateToProps = state => {
         regimen: state.regimen,
         regTempName: state.regTempName,
         regimenName: state.regimenName,
-        userIdState: state.userIdState
+        userIdState: state.userIdState,
+        loading: state.loading
 	};
 };
 

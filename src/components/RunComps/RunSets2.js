@@ -9,7 +9,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 
 
 function RunSets2(props) {
-  const {runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut, setShownReg} = props
+  const {setRestate,reState, runSets,  reps, weight, name, createLog, fetchLogs, userIdState, regimenId, chosenLogs, Swipe, setZoomOut, setShownReg, addedRep} = props
 
   const [repInput, setRepInput] = useState(reps)
 
@@ -41,6 +41,7 @@ const handleChange = e => {
 
 const sendNewLog = (e) => {
   e.preventDefault()
+
   let userIdInput = null
   const userIdLocalStorage = localStorage.getItem('key')
 
@@ -60,14 +61,15 @@ const sendNewLog = (e) => {
     weight: weightInput,
     post: postInput
   }
+  setRestate(!reState)
   setZoomOut(true)
   createLog(newLogObj)
 
   setShownRep(shownRep + 1)
   setShownReg(null)
-
-
-
+  console.log("ending")
+  setRestate(!reState)
+  fetchLogs(userIdState)
 }
 
 

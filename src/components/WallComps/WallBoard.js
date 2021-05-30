@@ -11,9 +11,8 @@ import Pulse from 'react-reveal/Pulse';
 import Flash from 'react-reveal/Flash';
 import Flip from 'react-reveal/Flip';
 import Jump from 'react-reveal/Jump';
-
 function WallBoard(props) {
-    const {logs, createLog, fetchLogs, userIdState, updateRegimen} = props
+    const {logs, createLog, fetchLogs, userIdState, updateRegimen, loading} = props
 //////////////////////////////////////////////////////////////////////////
 
 const [filterParams, setFilterParams] = useState(null)
@@ -41,7 +40,7 @@ useEffect(() => {
 
     {logs.map((submission, i) => {
  
-        if (submission.LoggedSet === submission.sets && submission.completion === false){
+        if (submission.LoggedSet >= submission.sets && submission.completion === false){
             const updatedObj = {
                 completion : true
             }
@@ -90,9 +89,13 @@ useEffect(() => {
     <section style={{display: "flex", flexDirection: "column", overflow: 'scroll', height: '100%', maxHeight: "100%"}}>
         {/* <div style={{display: 'flex', justifyContent: 'center', borderBottom: "black solid 2px"}}><p>Main Wall</p></div> */}
 
-
+        <div style={{display: 'flex', justifyContent: 'center'}}>   
+                    {loading &&  <Flash delay={500} forever={true} >
+                    <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
+                </Flash >}</div>
 <div display={{height: '100%'}}>
-{loggedExName.map((ex1 => {
+    
+{loggedExName.sort().map((ex1 => {
     // console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
@@ -157,7 +160,8 @@ const mapStateToProps = state => {
         regTempName: state.regTempName,
         regimenName: state.regimenName,
         userIdState: state.userIdState,
-        logs: state.logs
+        logs: state.logs,
+        loading: state.loading
 	};
 };
 

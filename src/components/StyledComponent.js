@@ -9,10 +9,10 @@ export const blackOrWhite = ['black','white']
 
 
 export const Exbox = styled.section`
-    background-color: #e7e4ef;
+    background-color: #444347;
     width: 90%;
     border: solid black 4px ;
-    border-radius: 30%;
+    border-radius: 5%;
     margin-left: 5%;
     display: flex;
     justify-content: center;
@@ -160,6 +160,7 @@ justify-content: space-between;
 
 export const BorderBottom = styled.h3 `
 border-bottom: solid black 5px;
+color: ${blackOrWhite[1]}
 `;
 
 export const Constainer = styled.section`

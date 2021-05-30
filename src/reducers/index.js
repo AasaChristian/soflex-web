@@ -1,4 +1,4 @@
-import {Fetch_Exercise, Create_Exercise, Delete_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Delete_RegimenEx, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log, Fetch_Logs} from '../action/index'
+import {Fetch_Exercise_Loading, Fetch_Exercise_Success, Fetch_Exercise_Failed, Create_Exercise, Delete_Exercise, Fetch_Regimen, Create_Regimen, Update_Regimen, Delete_RegimenEx, Create_TempRegName, Clear_TempRegName, Set_UserId, Create_Log, Fetch_Logs} from '../action/index'
 
 const initialState = {
 exercises: [],
@@ -7,7 +7,10 @@ regimenName:[],
 completedNames: [],
 regTempName: [],
 userIdState: null,
-logs: []
+logs: [],
+loading: false,
+error: ''
+
   };
   
   export const reducer = (state = initialState, action) => {
@@ -19,13 +22,26 @@ logs: []
           ...state,
           regimen: action.payload[0],
           regimenName: action.payload[1],
-          completedNames: action.payload[2]
+          completedNames: action.payload[2],
+          userIdState: action.payload[0][0].userId
         };
-      case Fetch_Exercise:
+      case Fetch_Exercise_Loading:
+        return{
+          ...state,
+          loading: true
+        };
+      case Fetch_Exercise_Success:
         return {
           ...state,
-          exercises: action.payload
+          exercises: action.payload,
+          loading: false
         };
+        // case Fetch_Exercise_Failed:
+        //   return {
+        //     ...state,
+        //     loading: false,
+        //     error: action.payload
+        //   };
         case Create_Exercise:
           return {
             ...state,
@@ -67,9 +83,12 @@ logs: []
               userIdState: action.payload
                     };
         case Create_Log:
+          // console.log(action.payload[0].userId, "action.payload")
               return {
                       ...state,
-              logs: [...state.logs, action.payload[0]]
+              logs: [...state.logs, action.payload[0]],
+              userIdState: action.payload[0].userId
+
               };
         case Fetch_Logs:
               return{
