@@ -1,5 +1,5 @@
 import axios from 'axios'
-import {Fetch_Regimen, Create_Regimen, Delete_RegimenEx, Update_Regimen, Create_TempRegName, Clear_TempRegName, Set_UserId} from './index'
+import {Fetch_Regimen, Create_Regimen, Delete_RegimenEx, Update_Regimen, UnComplete, Create_TempRegName, Clear_TempRegName, Set_UserId} from './index'
 import {axiosAddress} from '../AxiosAdress'
 
 export const fetchRegimen = (id) => dispatch => {
@@ -17,7 +17,7 @@ export const fetchRegimen = (id) => dispatch => {
         }  
 
         if (!completedNames.includes(reggy[i].regimenName) && reggy[i].completion === true){
-            completedNames.push(reggy[i].regimenName)
+            completedNames.push([reggy[i].regimenName, reggy[i].link])
         }
         }
         
@@ -39,6 +39,13 @@ export const updateRegimen = (update, regimenId) => dispatch => {
     .then(res => {
         dispatch({type: Update_Regimen, payload: res.data})
     }).catch(error => console.log(error, "createRegimen action error"))
+}
+
+export const unComplete = (update, link) => dispatch => {
+    axios.put(`${axiosAddress}/api/regimen/unComplete/${link}`, update)
+    .then(res => {
+        dispatch({type: UnComplete, payload: res.data})
+    }).catch(error => console.log(error, "uncomplete rigemin action error"))
 }
 
 export const deleteRegimenEX = (regimenID) => dispatch => {
