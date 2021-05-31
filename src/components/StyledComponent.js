@@ -155,7 +155,7 @@ height: 3.5pc;
 // Regimen List
 export const NavSection = styled.section`
 display: flex;
-justify-content: space-between;
+justify-content: space-between; 
 `;
 
 export const BorderBottom = styled.h3 `
@@ -226,7 +226,8 @@ export const CenterTextREGDE = styled.h4`
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 30px;
-`;
+  color: ${blackOrWhite[1]}`
+;
 
 export const PageScroll = styled.div`
 height: 100%;
