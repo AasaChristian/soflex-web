@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react'
 import RegimenList from './RegimenList';
 import RegInput from './RegimenInpute'
 import { connect } from 'react-redux';
-import {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegimenEX} from '../../action/regimenActions'
+import {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegimenEX, unComplete} from '../../action/regimenActions'
 import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
 import TempRegName from './TempRegName';
 import ExList from '../ExerciseComps/ExerciesList';
 import Pulse from 'react-reveal/Pulse';
 
 function RegimenBoard(props) {
-    const { regTempName, clearTempRegName, createRegimen, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState, completedNames, loading} = props
+    const { regTempName, clearTempRegName, createRegimen,unComplete, updateRegimen,deleteRegimenEX, exercises, regBoard, setRegBoard, regimenName, userIdState, completedNames, loading, regimen} = props
 //////////////////////////////////////////////////////////////////////////
 const [newRegNameEditor, setNewRegNameEditor] = useState(false)
 const [selectedExercise, setSelectedExercise] = useState(null)
@@ -88,6 +88,39 @@ const toggleCompletedReg = (e) => {
     setHideCompleted(!hideCompleted)
 }
 
+// useEffect(() => {
+
+//     {logs.map((submission, i) => {
+ 
+//         if (submission.LoggedSet >= submission.sets && submission.completion === false){
+//             const updatedObj = {
+//                 completion : true
+//             }
+//             updateRegimen(updatedObj, submission.regimenId)
+//             // console.log(submission.regimenId, submission.name, submission.userId, "completed")
+//         }
+//         })
+    
+    
+//     }
+
+// },[fetchLogs])
+
+// const chosenRegimen = regimen.filter(
+//     filterFor => filterFor.regimenName === match.params.regimenName
+// )
+
+const UnComplete = (link) => {
+    // const regToBeUpdated = regimen.filter(
+    //     filterfor => filterfor.link === link
+    // )
+    // console.log(regToBeUpdated, "regToBeUpdated")
+                const updatedObj = {
+                completion : false
+            }
+            unComplete(updatedObj, link)
+}
+
   return (
 
     <div style={{width: "100%"}}>
@@ -105,11 +138,13 @@ const toggleCompletedReg = (e) => {
                 </Pulse >}</div>
                 <div style={hideRegimen === true ? {display: "none"}: {display: "initial"}} >
             {regimenName.map((e, i) => {
+                console.log(e, "EEEEEEEEEEEEEEEE")
                 return(
                     <RegimenList
                 name = {e}
                 regimenID = {i}
-                completed = {false}    
+                completed = {false} 
+                regimen={regimen}   
                 />
                 )
             })}</div>
@@ -118,9 +153,12 @@ const toggleCompletedReg = (e) => {
             {completedNames.map((e, i) => {
                 return(
                     <RegimenList
-                name = {e}
+                name = {e[0]}
+                link = {e[1]}
                 regimenID = {i}
-                completed = {true}    
+                completed = {true}  
+                UnComplete={UnComplete}
+                regimen={regimen}  
                 />
                 )
             })}</div>
@@ -213,4 +251,4 @@ const mapStateToProps = state => {
 	};
 };
 
-export default connect(mapStateToProps, {fetchRegimen, clearTempRegName, createRegimen, updateRegimen, deleteRegimenEX})(RegimenBoard);
+export default connect(mapStateToProps, {fetchRegimen,unComplete, clearTempRegName, createRegimen, updateRegimen, deleteRegimenEX})(RegimenBoard);

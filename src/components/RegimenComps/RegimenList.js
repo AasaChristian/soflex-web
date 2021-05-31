@@ -4,7 +4,7 @@ import {NavLink} from "react-router-dom"
 
 
 
-function RegimenList({name, regimenID,  completed   }) {
+function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
 
     // const Exbox = styled.section`
     // background-color: white;
@@ -38,6 +38,14 @@ function RegimenList({name, regimenID,  completed   }) {
     // console.log(regimenID, "key")
     // console.log(name, "name")
 
+    const updateregimen = () => {
+      UnComplete(link)
+    }
+
+    console.log(regimenID, "regimenID")
+    console.log(name, "name", link, "link")
+
+
   return (
     <Exbox key ={regimenID}>
       <div>
@@ -51,6 +59,10 @@ function RegimenList({name, regimenID,  completed   }) {
           <NavLink   to = {`/run/${name}`} style={{ textDecoration: 'none' , color: `${blackOrWhite[1]}`}}> Start</NavLink>
           <NavLink  to = {`/board/${name}`} style={{ textDecoration: 'none', color: `${blackOrWhite[1]}` }}>Edit</NavLink>
         </NavSection>
+
+        <div style={completed === false? {display: 'none'}: {display: 'flex', backgroundColor: 'yellow'}} onClick={updateregimen}>
+          <h1>BUTTON</h1>
+        </div>
 
         </div>
     </Exbox>
