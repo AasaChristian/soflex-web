@@ -20,6 +20,8 @@ export const Delete_RegimenEx = 'Delete_RegimenEx'
 
 export const Update_Regimen = 'Update_Regimen'
 
+export const UnComplete = 'UnComplete'
+
 export const Create_TempRegName = 'Create_TempRegName'
 
 export const Clear_TempRegName = 'Clear_TempRegName'
