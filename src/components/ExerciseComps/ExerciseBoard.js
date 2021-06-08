@@ -52,9 +52,9 @@ useEffect(() => {
                    </section>
             </div>
 
-            <section style={selectedExercise > 0? {display: "inherit"}: {display: "none"}}>
+            {/* <section style={selectedExercise > 0? {display: "inherit"}: {display: "none"}}>
                 <button onClick={DeleteExercis}>Delete</button>
-            </section>
+            </section> */}
 
             <Exbox style={{marginTop: "15px", }}>
                 <div >
