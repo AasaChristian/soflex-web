@@ -16,7 +16,7 @@ import PrivateRoute from './components/Authentication/PrivateRoute';
 import RegimenDetails from './components/RegimenComps/RegimenDetails';
 import {axiosAddress} from './AxiosAdress'
 import Run2 from './components/RunComps/Run2';
-
+import {FooterContTopLevel} from './components/StyledComponent'
 function App() {
 
 
@@ -71,9 +71,9 @@ function App() {
       <section style={{ bottom: "0", width: "100%", position: "fixed", zIndex: "2"}}>
         <Foot/>
       </section>
-      <section style={{zIndex: "1", bottom: "0", width: "100%", position: "fixed", backgroundColor: 'black', height: '63px', opacity: "50%"}}>
-
-      </section>
+      <FooterContTopLevel >
+<diV></diV>
+      </FooterContTopLevel>
     </div>
   );
 }
