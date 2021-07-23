@@ -38,10 +38,23 @@ export const Exbox = styled.section`
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    height: 100%;
+    height: 90%;
     border-radius: 2%;
-    overflow-y: scroll;
+    // overflow-y: scroll;
     overflow-x: hidden;
+
+    @media (max-height: 750px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 90%;
+      border-radius: 2%;
+      overflow-y: scroll;
+      overflow-x: hidden;
+
+    
+    };
     ;`
 
     export const LeftWall = styled.section`
@@ -51,11 +64,27 @@ export const Exbox = styled.section`
     // border-left: solid #656176 1px;
     // border-bottom: solid #656176 1px;
     // border-top: solid #656176 1px;
-    height: 20%;
+    // height: 20%;
     width: 100%;
-    overflow-x: scroll;
+    // overflow-x: scroll;
 
+    @media (max-height: 750px) {
+      display: flex;
+      flex-direction: row;
+      background-color: black ;
+      // border-left: solid #656176 1px;
+      // border-bottom: solid #656176 1px;
+      // border-top: solid #656176 1px;
+      // height: 20%;
+      width: 100%;
+      // overflow-x: scroll;
+    };
 
+    @media (max-width: 500px) {
+      z-index: 1;
+      background-color: black ;
+ ;
+    }
     `;
     
    export const MainWall = styled.section`
@@ -72,7 +101,6 @@ export const Exbox = styled.section`
     @media (max-height: 750px) {
 
       height: 66%;
-    
     };
 
     
@@ -88,7 +116,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     height: 100%;
 
-    overflow: scroll;
+    // overflow: scroll;
     margin-top: 2%;
     `;
     export const BackButton = styled.h1`
@@ -101,10 +129,36 @@ export const Exbox = styled.section`
     // color: white;
     // box-shadow: 2px 1px white;
     // margin-right: 10px;
-    background-color: white;
+    // background-color: black;
     outline: none;
     border: none;
     flex-direction: column;
+    color: black;
+
+    @media (max-height: 750px) {
+
+      display: flex;
+      justify-content: center;
+      // padding-top: 25%;
+      // background-color: black;
+      // width: 177px;
+      // border-radius: 40%;
+      // color: white;
+      // box-shadow: 2px 1px white;
+      // margin-right: 10px;
+      // background-color: white;
+      color: white;
+      outline: none;
+      border: none;
+      flex-direction: column;
+      z-index: 1;
+    
+    
+    }
+
+    @media (max-width: 450px){
+    color: white;
+    }
     `;
     export const BackButtonText = styled.button`
         font-size: 35px;
@@ -383,6 +437,31 @@ margin-bottom: 0;
 display:flex;
 justify-content: center;
 `;
+
+
+export const FooterContTopLevel = styled.div`
+z-index: 1;
+bottom: 0;
+width: 100%;
+// position: fixed;
+background-color: black;
+height: 63px;
+// opacity: 50%;
+
+@media (max-width: 750px) {
+
+  z-index: 1;
+  bottom: 0;
+  width: 100%;
+  // position: fixed;
+  background-color: black;
+  height: 63px;
+  opacity: 50%;
+
+}
+`;
+
+// style={{zIndex: "1", bottom: "0", width: "100%", position: "fixed", backgroundColor: 'black', height: '63px', opacity: "50%"}}
 
 //Head
 
