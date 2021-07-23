@@ -83,6 +83,8 @@ export const Exbox = styled.section`
     @media (max-width: 500px) {
       z-index: 1;
       background-color: black ;
+      height: 5%;
+
  ;
     }
     `;
