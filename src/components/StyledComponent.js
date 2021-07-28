@@ -82,7 +82,9 @@ export const Exbox = styled.section`
 
     @media (max-width: 500px) {
       z-index: 1;
-      background-color: black ;
+      background: none ;
+      height: 5%;
+
  ;
     }
     `;
@@ -151,9 +153,7 @@ export const Exbox = styled.section`
       outline: none;
       border: none;
       flex-direction: column;
-      z-index: 1;
-    
-    
+      z-index: 1;    
     }
 
     @media (max-width: 450px){
