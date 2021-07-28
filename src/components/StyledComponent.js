@@ -82,7 +82,7 @@ export const Exbox = styled.section`
 
     @media (max-width: 500px) {
       z-index: 1;
-      background-color: black ;
+      background: none ;
       height: 5%;
 
  ;
@@ -154,6 +154,7 @@ export const Exbox = styled.section`
       border: none;
       flex-direction: column;
       z-index: 1;
+      text-shadow: 13px 13px 30px #292833, -13px -13px 30px #7d7b8a 
     
     
     }
@@ -169,6 +170,7 @@ export const Exbox = styled.section`
         background-color: white;
         display: flex;
         justify-content: center;
+        text-shadow: 13px 13px 30px #292833, -13px -13px 30px #7d7b8a; 
     `
 
     export const BackButtonCont = styled.div`
