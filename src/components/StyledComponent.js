@@ -202,6 +202,7 @@ background-color: white;
 width: 90%;
 max-width: 90%;
 margin-left: 15px;
+padding-bottom: 10px;
 border-radius: 5%;
 height: 3.5pc;
 `;
