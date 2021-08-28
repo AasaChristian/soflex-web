@@ -36,7 +36,7 @@ export const Exbox = styled.section`
     export const BoardCont = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     height: 90%;
     border-radius: 2%;
@@ -46,7 +46,7 @@ export const Exbox = styled.section`
     @media (max-height: 750px) {
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-evenly;
       width: 100%;
       height: 90%;
       border-radius: 2%;
