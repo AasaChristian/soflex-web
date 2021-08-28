@@ -103,6 +103,7 @@ export const Exbox = styled.section`
     @media (max-height: 750px) {
 
       height: 66%;
+      
     };
 
     
@@ -118,7 +119,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     height: 100%;
 
-    // overflow: scroll;
+    overflow: scroll;
     margin-top: 2%;
     `;
     export const BackButton = styled.h1`
