@@ -192,6 +192,7 @@ display: flex;
 justify-content: center;
 margin-top: 1px;
 margin-bottom: 5px;
+// color: black;
 `;
 
 export const ExListConstainer = styled.section`
@@ -268,6 +269,7 @@ display: flex;
 flex-direction: column;
 width: 300px;
 height: 200px;
+background-color: #000000b3;
 `;
 
 export const ExContREGDE = styled.section`
