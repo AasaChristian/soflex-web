@@ -457,7 +457,7 @@ height: 63px;
   z-index: 1;
   bottom: 0;
   width: 100%;
-  // position: fixed;
+  position: fixed;
   background-color: black;
   height: 63px;
   opacity: 50%;
