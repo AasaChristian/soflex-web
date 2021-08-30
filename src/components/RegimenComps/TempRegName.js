@@ -34,7 +34,7 @@ const useUpdatedNameAsTemp = e =>{
 
 return(
     <div >
-               <div style={{display: "flex", justifyContent: "center"}}> <p>Add Ecercise to Existing Regimen</p> </div>
+               <div style={{display: "flex", justifyContent: "center"}}> <p style={{color: 'white'}}>Add Ecercise to Existing Regimen</p> </div>
         {regimenName.map((regimenName) => {
             return(
                 <div>

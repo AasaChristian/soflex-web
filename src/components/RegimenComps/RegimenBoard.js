@@ -165,7 +165,7 @@ const UnComplete = (link) => {
 
                 <Exbox style={regTempName.length === 0 ? {marginTop: "25px"} : {display: "none"} }>
                 <div >
-                    <ExName  onClick={SwapEdit}> {newRegNameEditor === false? 'Create Regimen +' : 'Go Back'} </ExName>
+                    <ExName  onClick={SwapEdit}> {newRegNameEditor === false? 'Create/Update Regimen +' : 'Go Back'} </ExName>
                 </div>
    
             </Exbox>
