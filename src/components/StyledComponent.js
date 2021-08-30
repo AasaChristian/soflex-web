@@ -48,7 +48,7 @@ export const Exbox = styled.section`
       flex-direction: column;
       justify-content: space-evenly;
       width: 100%;
-      height: 90%;
+      height: 85%;
       border-radius: 2%;
       overflow-y: scroll;
       overflow-x: hidden;
@@ -192,6 +192,7 @@ display: flex;
 justify-content: center;
 margin-top: 1px;
 margin-bottom: 5px;
+// color: black;
 `;
 
 export const ExListConstainer = styled.section`
@@ -268,6 +269,7 @@ display: flex;
 flex-direction: column;
 width: 300px;
 height: 200px;
+background-color: #000000b3;
 `;
 
 export const ExContREGDE = styled.section`
@@ -455,7 +457,7 @@ height: 63px;
   z-index: 1;
   bottom: 0;
   width: 100%;
-  // position: fixed;
+  position: fixed;
   background-color: black;
   height: 63px;
   opacity: 50%;
