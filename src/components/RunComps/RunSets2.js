@@ -112,7 +112,7 @@ const weightDown = e => {
     </div>
    
     <section style={{ display: 'flex', justifyContent: "center"}}>    
-      <div onClick={sendNewLog} style={{backgroundColor: `${blackOrWhite[0]}`, height: '150%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '6%', width: '90%'}}>
+      <div onClick={sendNewLog} style={{backgroundColor: `${blackOrWhite[0]}`, height: '150%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', marginTop: '6%', width: '90%', borderRadius: '30%'}}>
       <p style={{color: `${blackOrWhite[1]}`, fontSize: '200%', marginBottom: '1%', marginTop: '1%'}}> Submit</p>
     </div>
     </section>
