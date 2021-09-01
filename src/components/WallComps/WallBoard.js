@@ -2,23 +2,20 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchLogs, createLog} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
-import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
-import ExList from '../ExerciseComps/ExerciesList';
-import WallPost from './WallPost';
-import logo from '../../img/logo.jpg'
+import {blackOrWhite} from '../StyledComponent'
 import ExerciesFilter from './ExerciesFilter';
-import Pulse from 'react-reveal/Pulse';
 import Flash from 'react-reveal/Flash';
-import Flip from 'react-reveal/Flip';
 import Jump from 'react-reveal/Jump';
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState, updateRegimen, loading} = props
 //////////////////////////////////////////////////////////////////////////
 
-const [filterParams, setFilterParams] = useState(null)
 const [openEx, setOpenEx] = useState(null)
 const loggedExName = []
 const loggedRegName = []
+const loggedDates = []
+
+console.log(logs, "Logs 17")
 
 {logs.map((submission, i) => {
     if (  loggedExName.includes(submission.name)){
@@ -29,12 +26,20 @@ const loggedRegName = []
     
     if (  loggedRegName.includes(submission.regimenName)){
     
-        }else{
+    }else{
             loggedRegName.push(submission.regimenName)
-        }    
-        // console.log(submission, "submissions")    
+        }
+
+    if (  loggedDates.includes(submission.dateAdded.substr(0,10))){
+    
+    }else{
+        loggedDates.push(submission.dateAdded.substr(0,10))
+        }   
+        // console.log(submission.dateAdded.substr(0,10), "submission 38") 
     })
 }
+
+console.log(loggedDates, "loggedDates")
 
 useEffect(() => {
 
@@ -45,7 +50,6 @@ useEffect(() => {
                 completion : true
             }
             updateRegimen(updatedObj, submission.regimenId)
-            // console.log(submission.regimenId, submission.name, submission.userId, "completed")
         }
         })
     
@@ -127,6 +131,23 @@ useEffect(() => {
     )
 }))}
 </div>
+
+
+
+
+
+{loggedDates.sort().map((days => {
+
+    return(
+        <div>
+        <Jump top >
+            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{days}</p>
+</Jump>
+   </div>
+    )
+
+
+}))}
 {/* <div>
 {loggedRegName.map((regimen => {
     return(
