@@ -13,6 +13,9 @@ function WallBoard(props) {
 const [openEx, setOpenEx] = useState(null)
 const loggedExName = []
 const loggedRegName = []
+const loggedDates = []
+
+console.log(logs, "Logs 17")
 
 {logs.map((submission, i) => {
     if (  loggedExName.includes(submission.name)){
@@ -23,11 +26,20 @@ const loggedRegName = []
     
     if (  loggedRegName.includes(submission.regimenName)){
     
-        }else{
+    }else{
             loggedRegName.push(submission.regimenName)
-        }    
+        }
+
+    if (  loggedDates.includes(submission.dateAdded.substr(0,10))){
+    
+    }else{
+        loggedDates.push(submission.dateAdded.substr(0,10))
+        }   
+        // console.log(submission.dateAdded.substr(0,10), "submission 38") 
     })
 }
+
+console.log(loggedDates, "loggedDates")
 
 useEffect(() => {
 
@@ -119,6 +131,23 @@ useEffect(() => {
     )
 }))}
 </div>
+
+
+
+
+
+{loggedDates.sort().map((days => {
+
+    return(
+        <div>
+        <Jump top >
+            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{days}</p>
+</Jump>
+   </div>
+    )
+
+
+}))}
 {/* <div>
 {loggedRegName.map((regimen => {
     return(
