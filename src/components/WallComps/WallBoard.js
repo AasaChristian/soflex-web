@@ -160,12 +160,17 @@ useEffect(() => {
     // console.log(days.slice(8,10), "Day")
     // console.log(monthString, "months")
 
-    const showDate = monthString + dayString + yearString
+    const showDate = monthString.substr(0,3) + dayString + yearString
     console.log(showDate ,"showDate")
     return(
-        <div>
+        <div style={{display: "flex", flexDirection: 'row', justifyContent: 'space-evenly'}}>
         <Jump top >
-            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{showDate}</p>
+            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{monthString.substr(0,3)}</p>
+
+            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{dayString}</p>
+
+            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{yearString}</p>
+
 </Jump>
    </div>
     )
