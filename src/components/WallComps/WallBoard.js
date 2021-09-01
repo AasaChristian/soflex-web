@@ -41,6 +41,8 @@ console.log(logs, "Logs 17")
 
 console.log(loggedDates, "loggedDates")
 
+
+
 useEffect(() => {
 
     {logs.map((submission, i) => {
@@ -133,15 +135,37 @@ useEffect(() => {
 </div>
 
 
-
-
-
 {loggedDates.sort().map((days => {
 
+    const months = {
+    "01" : "January",
+     "02": "Febuary",
+      "03": "March",
+       "04": "Arpil", 
+       "05": "May",
+        "06": "June",
+        "07": "July",
+          "08": "August",
+         "09":   "September",
+         "10":   "October",
+           "11":   "November",
+           "12":   "December"
+        }
+
+
+    const monthString = months[days.slice(5,7)]
+    const yearString = days.slice(0,4)
+    const dayString = days.slice(8,10)
+    // console.log(days.slice(0,4), "year")
+    // console.log(days.slice(8,10), "Day")
+    // console.log(monthString, "months")
+
+    const showDate = monthString + dayString + yearString
+    console.log(showDate ,"showDate")
     return(
         <div>
         <Jump top >
-            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{days}</p>
+            <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{showDate}</p>
 </Jump>
    </div>
     )
