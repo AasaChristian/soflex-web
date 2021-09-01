@@ -2,20 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { connect } from 'react-redux';
 import {fetchLogs, createLog} from '../../action/runActions'
 import {updateRegimen} from '../../action/regimenActions'
-import {Exbox, ExName, ExboxCont, blackOrWhite} from '../StyledComponent'
-import ExList from '../ExerciseComps/ExerciesList';
-import WallPost from './WallPost';
-import logo from '../../img/logo.jpg'
+import {blackOrWhite} from '../StyledComponent'
 import ExerciesFilter from './ExerciesFilter';
-import Pulse from 'react-reveal/Pulse';
 import Flash from 'react-reveal/Flash';
-import Flip from 'react-reveal/Flip';
 import Jump from 'react-reveal/Jump';
 function WallBoard(props) {
     const {logs, createLog, fetchLogs, userIdState, updateRegimen, loading} = props
 //////////////////////////////////////////////////////////////////////////
 
-const [filterParams, setFilterParams] = useState(null)
 const [openEx, setOpenEx] = useState(null)
 const loggedExName = []
 const loggedRegName = []
@@ -32,7 +26,6 @@ const loggedRegName = []
         }else{
             loggedRegName.push(submission.regimenName)
         }    
-        // console.log(submission, "submissions")    
     })
 }
 
@@ -45,7 +38,6 @@ useEffect(() => {
                 completion : true
             }
             updateRegimen(updatedObj, submission.regimenId)
-            // console.log(submission.regimenId, submission.name, submission.userId, "completed")
         }
         })
     
