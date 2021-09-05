@@ -11,6 +11,7 @@ function WallBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 
 const [openEx, setOpenEx] = useState(null)
+const [logFilter, setLogFilter] = useState(2)
 const loggedExName = []
 const loggedRegName = []
 const loggedDates = []
@@ -90,6 +91,12 @@ useEffect(() => {
 //     }
 // }
 
+const fliplog = (x,e) => {
+    e.preventDefault()
+    setLogFilter(x)
+    console.log(logFilter, "logFilter")
+}
+
   return (
 
     <section style={{display: "flex", flexDirection: "column", overflowX: 'hidden', height: '100%', maxHeight: "100%"}}>
@@ -99,12 +106,30 @@ useEffect(() => {
                     {loading &&  <Flash delay={500} forever={true} >
                     <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
                 </Flash >}</div>
-<div display={{height: '100%'}}>
-    
+
+                <div style={{display: 'flex', justifyContent: 'space-Evenly'}} >
+                <h1 key={1} style={{color: 'white'}} onClick={ e => {
+    e.preventDefault()
+    setLogFilter(1)
+    console.log(logFilter, "logFilter")
+
+}}>Exercise</h1>
+
+<h1 key={2} style={{color: 'white'}} onClick={ e => {
+    e.preventDefault()
+    setLogFilter(2)
+    console.log(logFilter, "logFilter")
+
+}}>Date</h1>
+            </div>
+<div style={ logFilter === 1? {display: "initial"}: {display: 'none'}}>
+
+
 {loggedExName.sort().map((ex1 => {
     // console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
+
 <div style={{display:'flex', justifyContent: 'center'}} onClick={(e) => {
     e.preventDefault()
     if (openEx === null){
@@ -120,7 +145,7 @@ useEffect(() => {
 <h1 style={ openEx === ex1? {color: `${blackOrWhite[1]}`, fontSize: "120%", objectFit: "fill", display: 'flex', justifyContent: 'center'}: {display: 'none'}} >{ex1}</h1></div>
 
 </div>
-            <div style={openEx === ex1? {display: "initial"}: {display: 'none'}}>
+            <div style={openEx === ex1 ? {display: "initial"}: {display: 'none'}}>
             <ExerciesFilter
 
             ex1={ex1}
@@ -163,7 +188,7 @@ useEffect(() => {
     const showDate = monthString.substr(0,3) + dayString + yearString
     console.log(showDate ,"showDate")
     return(
-        <div style={{display: "flex", flexDirection: 'row', justifyContent: 'space-evenly'}}>
+        <div style={ logFilter === 2 ? {display: "flex", flexDirection: 'row', justifyContent: 'space-evenly'}: {display: 'none'}} >
         <Jump top >
             <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{monthString.substr(0,3)}</p>
 
