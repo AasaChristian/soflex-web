@@ -11,7 +11,7 @@ function WallBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 
 const [openEx, setOpenEx] = useState(null)
-const [logFilter, setLogFilter] = useState(2)
+const [logFilter, setLogFilter] = useState(1)
 const loggedExName = []
 const loggedRegName = []
 const loggedDates = []
