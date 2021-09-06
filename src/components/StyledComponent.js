@@ -52,6 +52,7 @@ export const Exbox = styled.section`
       border-radius: 2%;
       overflow-y: scroll;
       overflow-x: hidden;
+      align-items: center;
 
     
     };
@@ -103,14 +104,19 @@ export const Exbox = styled.section`
     @media (max-height: 750px) {
 
       height: 66%;
-      
+      background-color: #5f5c67;
+      width: 85%;
+      border-radius: 5%;
+
     };
 
     
     @media (max-height: 680px) {
 
       height: 60%;
-    
+      background-color: #5f5c67;
+      width: 85%;
+
     };
     `;
     export const ExboxCont = styled.section`
