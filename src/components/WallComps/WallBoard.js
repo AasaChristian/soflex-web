@@ -11,7 +11,7 @@ function WallBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 
 const [openEx, setOpenEx] = useState(null)
-const [logFilter, setLogFilter] = useState(2)
+const [logFilter, setLogFilter] = useState(1)
 const loggedExName = []
 const loggedRegName = []
 const loggedDates = []
@@ -103,7 +103,7 @@ console.log(loading, "loading")
                     <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
                 </Flash >}</div>
 
-                <div style={ loading? {display: "none"}:{display: 'flex', justifyContent: 'space-Evenly'}} >
+                <div style={ loading? {display: "none"}:{display: 'flex', justifyContent: 'space-Evenly', position: 'absolute', width: "85%"}} >
                 <h1 key={1} style={{color: 'white'}} onClick={ e => {
     e.preventDefault()
     setLogFilter(1)
@@ -134,7 +134,7 @@ console.log(loading, "loading")
         setOpenEx(null)
     }
 }}>
-    <div>    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "270%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{ex1.substr(0,12)}</p>
+    <div>    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "270%",letterSpacing: "1px", objectFit: "fill", zIndex: '2', backgroundColor: "black", borderRadius: "10%"}}>{ex1.substr(0,12)}</p>
 
 </Jump>
 
