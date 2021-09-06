@@ -103,7 +103,7 @@ console.log(loading, "loading")
                     <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
                 </Flash >}</div>
 
-                <div style={ loading? {display: "none"}:{display: 'flex', justifyContent: 'space-Evenly'}} >
+                <div style={ loading? {display: "none"}:{display: 'flex', justifyContent: 'space-Evenly', position: 'absolute', width: "85%"}} >
                 <h1 key={1} style={{color: 'white'}} onClick={ e => {
     e.preventDefault()
     setLogFilter(1)
