@@ -90,12 +90,8 @@ useEffect(() => {
 
 //     }
 // }
+console.log(loading, "loading")
 
-const fliplog = (x,e) => {
-    e.preventDefault()
-    setLogFilter(x)
-    console.log(logFilter, "logFilter")
-}
 
   return (
 
@@ -107,7 +103,7 @@ const fliplog = (x,e) => {
                     <h1 style={{color: 'white', fontSize: '400%'}}>LOADING</h1>
                 </Flash >}</div>
 
-                <div style={{display: 'flex', justifyContent: 'space-Evenly'}} >
+                <div style={ loading? {display: "none"}:{display: 'flex', justifyContent: 'space-Evenly'}} >
                 <h1 key={1} style={{color: 'white'}} onClick={ e => {
     e.preventDefault()
     setLogFilter(1)
@@ -188,7 +184,7 @@ const fliplog = (x,e) => {
     const showDate = monthString.substr(0,3) + dayString + yearString
     console.log(showDate ,"showDate")
     return(
-        <div style={ logFilter === 2 ? {display: "flex", flexDirection: 'row', justifyContent: 'space-evenly'}: {display: 'none'}} >
+        <div style={ logFilter === 2 && loading == false ? {display: "flex", flexDirection: 'row', justifyContent: 'space-evenly'}: {display: 'none'}} >
         <Jump top >
             <p style={{color: `${blackOrWhite[1]}`, fontSize: "300%",letterSpacing: "1px", objectFit: "fill", zIndex: '2'}}>{monthString.substr(0,3)}</p>
 
