@@ -26,13 +26,11 @@ useEffect(() => {
 
     if (userIdState<0){
 
-        console.log(userIdLocalStorage, 'userIdLocalStorage')
         fetchLogs(userIdLocalStorage)
 
 
 
     } else{
-        console.log(userIdState, 'userIdState  Attempted Regimen get')
         fetchLogs(userIdState)
     }
 
@@ -47,13 +45,11 @@ useEffect(() => {
 let chosenLogs = logs.filter(
     filterFor => filterFor.regimenName === match.params.regimenName
 )
-console.log(chosenLogs, "CHOSEN LOGS FILTER")
 
 
 
 
 
-    // console.log(chosenLogs.length, 'chosenLogs')
 // const [index, setIndex] = useState(0)
 // const regimenName = chosenRegimen[0].regimenName
 
@@ -63,7 +59,6 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
 // useEffect(() => {
 //     chosenRegimen.map((exs) => {
 //         regsExercises.push(exs.regimenID)
-//         // console.log(regsExercises, "regsExercises")
 //         setShowReg(regsExercises[index])
 //         return chosenLen = regsExercises.length
 //     })
@@ -81,13 +76,11 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
 <div>{!reState}</div>
    <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
        {chosenRegimen.map((ex, i) => {
-        //    console.log(ex,'ex')
-        //    console.log(i,'i')
+
 
            const chosenLogsEx = chosenLogs.filter(
             filterFor => filterFor.name === ex.name
         )
-           console.log(chosenLogsEx, "chosenLogsEx in MAP")
 
             let lastSet 
             let lastWeight 
@@ -105,7 +98,6 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
             lastReps = 0
            }
 
-           console.log(lastSet , "lastSet")
 
 
 
@@ -113,14 +105,12 @@ console.log(chosenLogs, "CHOSEN LOGS FILTER")
             e.preventDefault()
             setShownReg(i)
             setZoomOut(true)
-            // console.log(zoomOut, "zoomOut")
 
         }
             const setShowntoNull = (e) => {
                 e.preventDefault()
                 setShownReg(null) 
                 setZoomOut(false)
-                // console.log(zoomOut, "zoomOut")
 
             }
        return ( 

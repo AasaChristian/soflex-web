@@ -9,8 +9,7 @@ function WallPost(props) {
 
 
 // const {LoggedReps, LoggedSet, LoggedWeight, name, post, dateAdded} = submission
-// console.log(subIndex, "subIndex")
-// console.log(dateAdded, "dateAdded")
+
 
 const [curEx, setCurEx] = useState(null)
 

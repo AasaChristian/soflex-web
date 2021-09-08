@@ -6,12 +6,10 @@ function RegInput(props){
 const {setRegBoard, regBoard, selectedExercise, setSelectedExercise, userIdState, createRegimen,regTempName, exercises, compSet, setCompSet, compRep,  setCompRep, compWeight, setCompWeight, setConfEx, chosenExercise, clearTempRegName, regimenName, setHideRegimen, setHideExList} = props
 const [newReg, setNewReg] = useState({})
 const [nameOfUpdatedReg, setNameOfUpdatedReg] = useState()
-// console.log(userIdState, 'userIdState')
 const handleChange = e => {
     setNewReg({...newReg, [e.target.name]: e.target.value})
 }
 
-// console.log(chosenExercise, 'chosenExercise')
 const sendNewReg = (e) => {
     e.preventDefault()
     let userIdInput = null
@@ -36,7 +34,6 @@ const newRegimenObj = {
     completion: false
 }
 
-// console.log(newRegimenObj, "newRegimenObj")
 createRegimen(newRegimenObj)
 
 setNewReg({
@@ -72,7 +69,6 @@ const confirmSets = (e) => {
 }
 
 const unSets = (e) => {
-    // console.log('here')
     e.preventDefault()
     setCompWeight(false)
 }

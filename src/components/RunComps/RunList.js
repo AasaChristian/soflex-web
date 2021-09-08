@@ -10,7 +10,6 @@ import {MdFitnessCenter} from  'react-icons/md'
 function RunList(props) {
 const {regimen, name, key} = props
 
-  // console.log(regimen, "regimen")
 //   const chosenLogsEx = chosenLogs.filter(
 //     filterFor => filterFor.regimenId === regimenId
 // )
@@ -43,8 +42,7 @@ const {regimen, name, key} = props
     // justify-content: space-between;
     // `;
 
-    // console.log(key, "key")
-    // console.log(name, "name")
+
 
   return (
     <RunListExbox key ={key}>

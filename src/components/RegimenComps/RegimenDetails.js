@@ -20,15 +20,7 @@ history.push('/board')
   } 
 
 
-// console.log(match.params.exName, "EXNAME")
 
-    // console.log(regimen.length, "regimen Len")
-
-    // console.log(regimen, "regimen")
-
-    // console.log(curEx, "curEx")
-
-    // console.log(chosenExercise, "chosenExercise")
 
 
 
@@ -44,7 +36,6 @@ useEffect(() => {
 
 const Swipe = e => {
     e.preventDefault()
-    // console.log("DRAGGG")
     if (index === arrLen -1){
         setIndex(0)
         setRestate(!reState)
@@ -58,7 +49,6 @@ const Swipe = e => {
 const RemoveExerciseFromRegimen = e => {
   e.preventDefault()
   deleteRegimenEX(curEx)
-  // console.log("Removers exdeercies Button", curEx)
   history.push('/board')
 }
 

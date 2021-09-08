@@ -21,11 +21,7 @@ const [hideRegimen, setHideRegimen] = useState(false)
 const [hideExList, setHideExList] = useState(false)
 const [hideCompleted, setHideCompleted] = useState(true)
 
-// console.log(userIdState, "userIdState")
-// console.log(regimenName, "regimenName")
-// console.log(newRegNameEditor, "newRegNameEditor")
 
-// console.log(completedNames,"completedNames")
 
 
 
@@ -34,7 +30,6 @@ useEffect(() => {
 
     if (userIdState === null){
 
-        // console.log(userIdLocalStorage, 'userIdLocalStorage')
         props.fetchRegimen(userIdLocalStorage)
 
 
@@ -49,7 +44,6 @@ useEffect(() => {
   },[exercises, createRegimen, updateRegimen, deleteRegimenEX, regBoard])
 
 //   useEffect(() => {
-// console.log("Regimen UseEffect")
 //   },[exercises])
 
 const SwapEdit = (e) => {
@@ -97,7 +91,6 @@ const toggleCompletedReg = (e) => {
 //                 completion : true
 //             }
 //             updateRegimen(updatedObj, submission.regimenId)
-//             // console.log(submission.regimenId, submission.name, submission.userId, "completed")
 //         }
 //         })
     
@@ -114,7 +107,6 @@ const UnComplete = (link) => {
     // const regToBeUpdated = regimen.filter(
     //     filterfor => filterfor.link === link
     // )
-    // console.log(regToBeUpdated, "regToBeUpdated")
                 const updatedObj = {
                 completion : false
             }
@@ -138,7 +130,6 @@ const UnComplete = (link) => {
                 </Pulse >}</div>
                 <div style={hideRegimen === true ? {display: "none"}: {display: "initial"}} >
             {regimenName.map((e, i) => {
-                console.log(e, "EEEEEEEEEEEEEEEE")
                 return(
                     <RegimenList
                 name = {e}
