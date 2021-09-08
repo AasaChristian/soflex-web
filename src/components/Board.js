@@ -45,7 +45,7 @@ const SwapEx = (e) => {
     <BoardCont >
 
         <MainWall>
-            <div style={{display: "flex", justifyContent: "space-evenly"}}>
+            <div style={{display: "flex", justifyContent: "space-evenly", backgroundColor: "#0000008a"}}>
             < h1 style={{color: `${blackOrWhite[1]}`, margin: 'none'}}>{userName}'s World</h1>
             </div>
             <ExboxCont>
