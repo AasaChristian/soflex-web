@@ -332,7 +332,7 @@ overflow-x: scroll;
 `;
 // RunList 
 export const RunListExbox = styled.section`
-    background-color: #444347;
+    background-color: #0000008a;
     width: 95%;
     // border: solid black 4px ;
     border-radius: 5%;
