@@ -104,7 +104,7 @@ export const Exbox = styled.section`
     @media (max-height: 750px) {
 
       height: 66%;
-      background-color: #5f5c67;
+      background-color: #5f5c678f;
       width: 85%;
       border-radius: 5%;
 
@@ -114,7 +114,7 @@ export const Exbox = styled.section`
     @media (max-height: 680px) {
 
       height: 60%;
-      background-color: #5f5c67;
+      background-color: #5f5c678f;
       width: 85%;
 
     };
