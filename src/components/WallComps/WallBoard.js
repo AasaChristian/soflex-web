@@ -134,7 +134,7 @@ console.log(loading, "loading")
         setOpenEx(null)
     }
 }}>
-    <div>    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "270%",letterSpacing: "1px", objectFit: "fill", zIndex: '2', backgroundColor: "#0000008a", borderRadius: "10%"}}>{ex1.substr(0,12)}</p>
+    <div>    <Jump top ><p style={{color: `${blackOrWhite[1]}`, fontSize: "270%",letterSpacing: "1px", objectFit: "fill", zIndex: '2', backgroundColor: "#00000033", borderRadius: "10%"}}>{ex1.substr(0,12)}</p>
 
 </Jump>
 
