@@ -47,15 +47,15 @@ const {regimen, name, key} = props
   return (
     <RunListExbox key ={key}>
       <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-around", width: '100%', alignItems: 'center'}}>
-        <MdFitnessCenter style={{height: '90%', width: '25%'}}/>
+        {/* <MdFitnessCenter style={{height: '90%', width: '25%'}}/> */}
       <NavLink  to = {`/run/${name}`} style={{ textDecoration: 'none' }}>
         <div style={{ display: "flex", flexDirection: "row", justifyContent: "center"}}>
         <RunListBorderBottom>{name.substr(0,10)}</RunListBorderBottom>
         </div>
       </NavLink>
-      <div style={{ height: '100%', width: '25%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+      {/* <div style={{ height: '100%', width: '25%', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
         <h1 style={{fontSize: '80%'}}>This Regimen Has Not been Completed</h1>
-      </div>
+      </div> */}
 
 
 
