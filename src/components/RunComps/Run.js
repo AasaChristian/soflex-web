@@ -9,8 +9,7 @@ function Run(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
   const { match, regimen, logs} = props
-// console.log(match.params.regimenName, "match.params.regimenName")
-// console.log(regimen, "regimen")
+
   const chosenRegimen = regimen.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
@@ -18,8 +17,7 @@ const [reState, setRestate] = useState(false)
   const chosenLogs = logs.filter(
       filterFor => filterFor.regimenName === match.params.regimenName
   )
-    // console.log(chosenRegimen, "chosenRegimen RUN")
-    // console.log(chosenLogs, 'chosenLogs')
+
 const [index, setIndex] = useState(0)
 const regimenName = chosenRegimen[0].regimenName
 const regsExercises = []
@@ -28,25 +26,20 @@ let chosenLen = chosenRegimen.length
 useEffect(() => {
     chosenRegimen.map((exs) => {
         regsExercises.push(exs.regimenID)
-        // console.log(regsExercises, "regsExercises")
         setShowReg(regsExercises[index])
         return chosenLen = regsExercises.length
     })
 },[reState])
-// console.log(showReg, "showReg")
 
 const Swipe = e => {
     e.preventDefault()
     if (index == chosenLen -1){
-        // console.log(chosenLen, "chosenLen")
         setIndex(0)
         setRestate(!reState)
-        // console.log(index, "index")
     } else {
         setIndex(index + 1)
         setRestate(!reState)
-        // console.log(index, "index")
-        // console.log(chosenLen, "chosenLen")
+
     }
 }
 

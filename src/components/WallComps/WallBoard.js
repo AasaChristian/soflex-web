@@ -16,7 +16,6 @@ const loggedExName = []
 const loggedRegName = []
 const loggedDates = []
 
-console.log(logs, "Logs 17")
 
 {logs.map((submission, i) => {
     if (  loggedExName.includes(submission.name)){
@@ -36,11 +35,9 @@ console.log(logs, "Logs 17")
     }else{
         loggedDates.push(submission.dateAdded.substr(0,10))
         }   
-        // console.log(submission.dateAdded.substr(0,10), "submission 38") 
     })
 }
 
-console.log(loggedDates, "loggedDates")
 
 
 
@@ -61,7 +58,6 @@ useEffect(() => {
 
 },[fetchLogs])
 
-// console.log(logs.filter(entry => entry.completion), "logs")
 
 
 
@@ -71,16 +67,12 @@ useEffect(() => {
 
     if (userIdState === null){
 
-        // console.log(userIdLocalStorage, 'userIdLocalStorage')
         fetchLogs(userIdLocalStorage)
 
-        // console.log(logs, "logs")
 
     } else{
-        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
     fetchLogs(userIdState)
     }
-    // console.log(logs, "logs")
 
   },[createLog])
 
@@ -90,7 +82,6 @@ useEffect(() => {
 
 //     }
 // }
-console.log(loading, "loading")
 
 
   return (
@@ -107,14 +98,12 @@ console.log(loading, "loading")
                 <h1 key={1} style={{color: 'white'}} onClick={ e => {
     e.preventDefault()
     setLogFilter(1)
-    console.log(logFilter, "logFilter")
 
 }}>Exercise</h1>
 
 <h1 key={2} style={{color: 'white'}} onClick={ e => {
     e.preventDefault()
     setLogFilter(2)
-    console.log(logFilter, "logFilter")
 
 }}>Date</h1>
             </div>
@@ -122,7 +111,6 @@ console.log(loading, "loading")
 
 
 {loggedExName.sort().map((ex1 => {
-    // console.log(ex1.substr(0,16), "ex1")
     return(
         <section>
 
@@ -177,12 +165,9 @@ console.log(loading, "loading")
     const monthString = months[days.slice(5,7)]
     const yearString = days.slice(0,4)
     const dayString = days.slice(8,10)
-    // console.log(days.slice(0,4), "year")
-    // console.log(days.slice(8,10), "Day")
-    // console.log(monthString, "months")
+
 
     const showDate = monthString.substr(0,3) + dayString + yearString
-    console.log(showDate ,"showDate")
     return(
         <div style={ logFilter === 2 && loading == false ? {display: "flex", flexDirection: 'row', justifyContent: 'space-evenly'}: {display: 'none'}} >
         <Jump top >

@@ -10,9 +10,7 @@ function ExDetailsPage(props) {
 
     const chosenExercise = regimen.filter(x => x.regimenName === match.params.exName)
 
-    // console.log(chosenExercise, "chosenExercise")
 
-    // console.log(regimen, "regimen")
 
 const { name, reps, regimenName} = chosenExercise
 

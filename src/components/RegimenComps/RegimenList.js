@@ -35,15 +35,13 @@ function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
     // justify-content: space-between;
     // `;
 
-    // console.log(regimenID, "key")
-    // console.log(name, "name")
+
 
     const updateregimen = () => {
       UnComplete(link)
     }
 
-    console.log(regimenID, "regimenID")
-    console.log(name, "name", link, "link")
+
 
 
   return (

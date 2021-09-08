@@ -8,7 +8,6 @@ function RunBoard(props) {
 //////////////////////////////////////////////////////////////////////////
 
 
-// console.log(regimenName, "regimenName")
 
 
 
@@ -17,13 +16,11 @@ useEffect(() => {
 
     if (userIdState === null){
 
-        // console.log(userIdLocalStorage, 'userIdLocalStorage')
         props.fetchRegimen(userIdLocalStorage)
 
 
 
     } else{
-        // console.log(userIdState[0], 'userIdState  Attempted Regimen get')
         props.fetchRegimen(userIdState)
     }
 

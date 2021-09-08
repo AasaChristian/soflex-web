@@ -14,8 +14,7 @@ error: ''
   };
   
   export const reducer = (state = initialState, action) => {
-    // console.log(action.payload, "action.payload")
-    // console.log(state.regTempName, "action.regTempName")
+
     switch (action.type){
       case Fetch_Regimen:
         return{
@@ -83,7 +82,6 @@ error: ''
               userIdState: action.payload
                     };
         case Create_Log:
-          // console.log(action.payload[0].userId, "action.payload")
               return {
                       ...state,
               logs: [...state.logs, action.payload[0]],

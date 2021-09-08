@@ -8,7 +8,6 @@ const {match, history, updateRegimen} = props
 const exToUpdate =  match.params.update
 const regimenId = match.params.id
 
-// console.log(regimen, "regimen")
 
 const [updated, setUpdated] = useState([])
 const handleChange = e => {
@@ -17,7 +16,7 @@ const handleChange = e => {
 const updatedObj = {
     [exToUpdate] : updated
 }
-// console.log(history, "HISTORY")
+
 const SendUpdate = (e) => {
     e.preventDefault()
     updateRegimen(updatedObj, regimenId)

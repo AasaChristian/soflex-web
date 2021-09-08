@@ -7,9 +7,7 @@ const {createTempRegName, regTempName, setNewRegNameEditor, regimenName} = props
 
 const [tempRegName, setTempRegName] = useState("")
 const [nameOfUpdatedReg, setNameOfUpdatedReg] = useState("")
-// console.log(tempRegName, "tempRegName")
-// console.log(regTempName, 'regTempName Here')
-// console.log(nameOfUpdatedReg, "nameOfUpdatedReg")
+
 
 
 const handleChange = e => {

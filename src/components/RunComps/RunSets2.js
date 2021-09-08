@@ -26,8 +26,7 @@ function RunSets2(props) {
   const chosenLogsEx = chosenLogs.filter(
     filterFor => filterFor.regimenId === regimenId
 )
-// console.log(chosenLogsEx.length, "chosenLogsEx.length")
-// console.log(chosenLogsEx, "chosenLogsEx")
+
 
   let setsArr = []
 
@@ -67,7 +66,6 @@ const sendNewLog = (e) => {
 
   setShownRep(shownRep + 1)
   setShownReg(null)
-  console.log("ending")
   setRestate(!reState)
   fetchLogs(userIdState)
 }
