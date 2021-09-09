@@ -11,6 +11,7 @@ import Flash from 'react-reveal/Flash';
 import RunSets2 from './RunSets2';
 import {fetchRegimen} from '../../action/regimenActions'
 import {fetchLogs} from '../../action/runActions'
+import {NavLink} from "react-router-dom"
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
@@ -72,9 +73,17 @@ let chosenLogs = logs.filter(
 
    return(
        <div style={{ width: "100%", height: '100%', position: 'fixed', top: '0'}}>
+
 <div>{reState}</div>
 <div>{!reState}</div>
+
+
    <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+
+   <div style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center'}}>
+      <NavLink to = {"/board"}
+><h1>BACK</h1></NavLink>
+</div>
        {chosenRegimen.map((ex, i) => {
 
 
@@ -116,6 +125,7 @@ let chosenLogs = logs.filter(
        return ( 
 
     <section  draggable="true" style={  {border: 'solid 5px black', borderRadius: '50%', height: '35%', width: '45%', backgroundColor: 'white'} }>
+
             <Pulse> <div onClick={selectEx} key = {i} style={ shownReg === null? { height: '100%', border: 'solid 5px #cbc5da',borderRadius: '50%', display: 'flex', justifyContent: 'center', flexDirection: 'row', boxShadow: "13px 13px 30px #292833, -13px -13px 30px #7d7b8a "}: {display:'none'}}>
            <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
 
