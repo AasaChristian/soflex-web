@@ -78,9 +78,9 @@ let chosenLogs = logs.filter(
 <div>{!reState}</div>
 
 
-   <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+   <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '20%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
 
-   <div style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center'}}>
+   <div style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center', height: '10%'}}>
       <NavLink to = {"/board"}
 ><h1>BACK</h1></NavLink>
 </div>
