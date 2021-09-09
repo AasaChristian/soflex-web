@@ -11,6 +11,7 @@ import Flash from 'react-reveal/Flash';
 import RunSets2 from './RunSets2';
 import {fetchRegimen} from '../../action/regimenActions'
 import {fetchLogs} from '../../action/runActions'
+import {NavLink} from "react-router-dom"
 function Run2(props) {
 const [showReg, setShowReg] = useState(null)
 const [reState, setRestate] = useState(false)
@@ -78,8 +79,10 @@ let chosenLogs = logs.filter(
 
 
    <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '30%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
-   <div style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center'}}
-><h1>BACK</h1>
+
+   <div style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center'}}>
+      <NavLink to = {"/board"}
+><h1>BACK</h1></NavLink>
 </div>
        {chosenRegimen.map((ex, i) => {
 
