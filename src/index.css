@@ -9,7 +9,7 @@ body {
   /* font-family: 'Big Shoulders Stencil Text', cursive; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* height: 500px; */
+  height: 800px;
 }
 
 code {
