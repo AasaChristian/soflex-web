@@ -17,6 +17,7 @@ position: absolute;
 top: 0;
 overflow: scroll;
 background-color: #5f5c67;
+padding-top: 3%;
 
 @media (max-width: 900px) {
 
