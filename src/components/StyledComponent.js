@@ -7,6 +7,25 @@ export const blackOrWhite = ['black','white']
 // export const blackOrWhite = ['white','black']
 
 
+{/* <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", position: "absolute", top: "0", overflow: 'scroll', backgroundColor:'#5f5c67'}}> */}
+
+export const LandingCont = styled.section`
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+position: absolute;
+top: 0;
+overflow: scroll;
+background-color: #5f5c67;
+
+@media (max-width: 900px) {
+
+position: relative;
+top: initial;
+
+
+}
+`;
 
 export const Exbox = styled.section`
     background-color: #444347;
