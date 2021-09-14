@@ -15,7 +15,7 @@ flex-direction: column;
 justify-content: space-evenly;
 position: absolute;
 top: 0;
-overflow: scroll;
+// overflow: scroll;
 background-color: #5f5c67;
 padding-top: 3%;
 
