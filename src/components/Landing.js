@@ -1,15 +1,15 @@
 import React from 'react'
-import styled from 'styled-components'
 import {NavLink} from "react-router-dom"
 import Logo from "../img/logo.jpg"
 import HeadShake from 'react-reveal/HeadShake';
 import Wobble from 'react-reveal/Wobble';
 import Bounce from 'react-reveal/Bounce';
+import {LandingCont} from './StyledComponent'
 
 function Landing() {
 
   return (
-   <section style={{display: "flex", flexDirection: "column", justifyContent: "space-evenly", height: "80%", overflow: 'scroll', backgroundColor:'#5f5c67'}}>
+   <LandingCont >
         <Bounce cascade> <div style={{display: "flex", justifyContent: "center"}}>
                     <h1 className="city"> CITY SO FLEX</h1>
 
@@ -35,7 +35,7 @@ function Landing() {
            </div>
 
        </div>
-   </section>
+   </LandingCont>
   );
 }
 
