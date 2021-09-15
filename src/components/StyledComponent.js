@@ -15,7 +15,7 @@ flex-direction: column;
 justify-content: space-evenly;
 position: absolute;
 top: 0;
-overflow: scroll;
+// overflow: scroll;
 background-color: #5f5c67;
 padding-top: 3%;
 
@@ -143,9 +143,9 @@ export const Exbox = styled.section`
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 100%;
+    // height: 100%;
 
-    overflow: scroll;
+    overflow: hidden;
     margin-top: 2%;
     `;
     export const BackButton = styled.h1`
