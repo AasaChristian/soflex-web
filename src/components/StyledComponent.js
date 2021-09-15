@@ -70,6 +70,20 @@ export const Exbox = styled.section`
       width: 100%;
       height: 85%;
       border-radius: 2%;
+      // overflow-y: scroll;
+      overflow-x: hidden;
+      align-items: center;
+
+    
+    };
+
+    @media (max-height: 721px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      width: 100%;
+      height: 85%;
+      border-radius: 2%;
       overflow-y: scroll;
       overflow-x: hidden;
       align-items: center;
