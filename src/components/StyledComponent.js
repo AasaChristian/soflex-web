@@ -58,7 +58,7 @@ export const Exbox = styled.section`
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
-    height: 90%;
+    // height: 90%;
     border-radius: 2%;
     // overflow-y: scroll;
     overflow-x: hidden;
