@@ -32,7 +32,7 @@ export const Exbox = styled.section`
     background-color: #444347;
     width: 90%;
     border: solid black 4px ;
-    border-radius: 5%;
+    // border-radius: 5%;
     margin-left: 5%;
     display: flex;
     justify-content: center;
@@ -59,7 +59,7 @@ export const Exbox = styled.section`
     justify-content: space-evenly;
     width: 100%;
     // height: 90%;
-    border-radius: 2%;
+    // border-radius: 2%;
     // overflow-y: scroll;
     overflow-x: hidden;
 
@@ -68,8 +68,8 @@ export const Exbox = styled.section`
       flex-direction: column;
       justify-content: space-evenly;
       width: 100%;
-      height: 85%;
-      border-radius: 2%;
+      // height: 85%;
+      // border-radius: 2%;
       // overflow-y: scroll;
       overflow-x: hidden;
       align-items: center;
@@ -136,6 +136,15 @@ export const Exbox = styled.section`
     // border: solid #656176 2px;
 
     @media (max-height: 750px) {
+
+      height: 66%;
+      background-color: #5f5c678f;
+      width: 85%;
+      // border-radius: 5%;
+
+    };
+
+    @media (max-height: 721px) {
 
       height: 66%;
       background-color: #5f5c678f;
