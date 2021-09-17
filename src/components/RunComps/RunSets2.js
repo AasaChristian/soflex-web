@@ -94,18 +94,18 @@ const weightDown = e => {
 
     <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%', flexDirection: 'column'}}>
       <div style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}> 
-        <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
+        <div style={{display:'flex', flexDirection: 'column', alignItems: 'center', width: "20%"}}>
         <h1>REPS</h1>
-        <div onClick={repUp}><FaPlus/> </div>    <h1>{repInput}</h1>
+        <div onClick={repUp} style={{display: "flex",justifyContent: "center",border: "2px solid black", width: "100%"}}><FaPlus/> </div>    <h1>{repInput}</h1>
 
-        <div onClick={repDown}><FaMinus/></div>
+        <div onClick={repDown} style={{display: "flex",justifyContent: "center",border: "2px solid black", width: "100%"}}><FaMinus/></div>
     </div>
 
     <div style={{display:'flex', flexDirection: 'column', alignItems: 'center'}}>
         <h1 >WEIGHT</h1> 
-    <div onClick={weightUp}><FaPlus/> </div>
+    <div onClick={weightUp} style={{display: "flex",justifyContent: "center",border: "2px solid black", width: "100%"}}><FaPlus/> </div>
     <h1>{weightInput}</h1>
-        <div onClick={weightDown}><FaMinus/></div>
+        <div onClick={weightDown} style={{display: "flex",justifyContent: "center",border: "2px solid black", width: "100%"}}><FaMinus/></div>
     </div>
     </div>
    
