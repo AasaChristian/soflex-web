@@ -154,7 +154,7 @@ export const Exbox = styled.section`
     };
 
     
-    @media (max-height: 721px) {
+    @media (max-height: 680px) {
 
       height: 60%;
       background-color: #5f5c678f;
@@ -170,7 +170,7 @@ export const Exbox = styled.section`
 
     overflow: hidden;
     margin-top: 2%;
-    @media (max-height: 680px) {
+    @media (max-height: 721px) {
     overflow: scroll;
     }
     `;
