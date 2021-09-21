@@ -154,7 +154,7 @@ export const Exbox = styled.section`
     };
 
     
-    @media (max-height: 680px) {
+    @media (max-height: 721px) {
 
       height: 60%;
       background-color: #5f5c678f;
