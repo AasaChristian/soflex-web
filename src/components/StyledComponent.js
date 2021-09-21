@@ -170,6 +170,9 @@ export const Exbox = styled.section`
 
     overflow: hidden;
     margin-top: 2%;
+    @media (max-height: 680px) {
+    overflow: scroll;
+    }
     `;
     export const BackButton = styled.h1`
     display: flex;
