@@ -18,7 +18,7 @@ const display1 = {display: "flex", flexDirection: 'column'}
 
   return (
 
-<section style={{height: '150px', overflow:'scroll'}}>
+<section style={{height: '150px', overflow:'scroll', position: "sticky", bottom: "0"}}>
 
 {chosenLogs.map((ex) => {
 return(
