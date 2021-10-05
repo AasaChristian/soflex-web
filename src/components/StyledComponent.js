@@ -92,7 +92,7 @@ export const Exbox = styled.section`
     };
 
     @media (max-height: 450px) {
-      height: 50%;
+      height: 100%;
       background-color: black;
        border-radius: 0%;
 
