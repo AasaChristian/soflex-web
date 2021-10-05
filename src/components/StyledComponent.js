@@ -163,7 +163,7 @@ export const Exbox = styled.section`
     
     @media (max-height: 680px) {
 
-      height: 60%;
+      height: 70%;
       background-color: #5f5c678f;
       width: 85%;
 
