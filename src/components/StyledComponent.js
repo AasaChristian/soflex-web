@@ -403,6 +403,38 @@ padding-top: 0%;
 
 
 `;
+
+export const RunExTitle = styled.h1`
+font-size: 120%; 
+margin-top: 20%;
+
+@media (max-height: 450px){
+  margin-top: 0%;
+  margin-bottom: 0%;
+
+}
+
+`;
+
+export const RunGoBack = styled.h1`
+display: flex; 
+justify-content: center;
+
+@media (max-height: 450px){
+  height: 20%;
+
+}
+
+`;
+
+export const RunButCont = styled.div`
+height: 150%;
+@media (max-height: 450px){
+  height: 55%;
+}
+
+`;
+
 // RunList 
 export const RunListExbox = styled.section`
     background-color: #0000008a;
