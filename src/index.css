@@ -20,5 +20,6 @@ code {
 @media(max-height:450px){
   body{
     height: 350px;
+    background-color: black;
   }
 }
