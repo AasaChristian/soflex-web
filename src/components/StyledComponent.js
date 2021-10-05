@@ -383,6 +383,26 @@ height: 100%;
 width: 100%;
 overflow-x: scroll;
 `;
+
+export const RunBackButton = styled.div`
+height: 10%;
+
+@media (max-height: 450px){
+  height: none;
+}
+`;
+
+export const RunButnCont = styled.div`
+padding-bottom: 10%;
+padding-top: 20%;
+
+@media (max-height: 450px){
+padding-bottom: 0%;
+padding-top: 0%;
+}
+
+
+`;
 // RunList 
 export const RunListExbox = styled.section`
     background-color: #0000008a;

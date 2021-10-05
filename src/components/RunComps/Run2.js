@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
-import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite } from '../StyledComponent'
+import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite, RunBackButton, RunButnCont } from '../StyledComponent'
 import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
 import Flash from 'react-reveal/Flash';
@@ -78,12 +78,12 @@ let chosenLogs = logs.filter(
 <div>{!reState}</div>
 
 
-   <div  style={{borderBottom: "solid 5px black", height: "100%", paddingBottom:'10%', paddingTop: '20%', overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
+   <RunButnCont  style={{borderBottom: "solid 5px black", height: "100%",  overflow: "scroll", backgroundColor: "#5f5c67", display: 'flex',flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'space-evenly'}} >
 
-   <div style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center', height: '10%'}}>
+   <RunBackButton style={{display: 'flex', width: "100%", flexDirection: 'row', justifyContent: 'center'}}>
       <NavLink to = {"/board"}
-><h1>BACK</h1></NavLink>
-</div>
+><h1 >BACK</h1></NavLink>
+</RunBackButton>
        {chosenRegimen.map((ex, i) => {
 
 
@@ -190,7 +190,7 @@ let chosenLogs = logs.filter(
             )
    
 
-   })}</div>
+   })}</RunButnCont>
    <section style={{backgroundColor: '#5f5c67'}}>
        <p>test</p>
    </section>
