@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { connect } from 'react-redux';
 import {ExboxCont} from '../StyledComponent'
 import RunSets from './RunSets';
-import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite, RunBackButton, RunButnCont } from '../StyledComponent'
+import {RunHeader,RunCardCont, RunExerciseNameCont, RunExerciseName, SetsCont, blackOrWhite, RunBackButton, RunButnCont, RunExTitle,RunGoBack, RunButCont } from '../StyledComponent'
 import Pulse from 'react-reveal/Pulse';
 import Zoom from 'react-reveal/Zoom';
 import Flash from 'react-reveal/Flash';
@@ -150,7 +150,7 @@ let chosenLogs = logs.filter(
 
             <div style={{display:'flex', backgroundColor: 'white', height: '70%', borderRadius: '20%', width: '98%', marginLeft: '1%'}}>
             <div style={{display: 'flex', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', width: '100%', alignItems: 'center'}}>
-                <h1 style={{fontSize: '120%', marginTop: '20%'}}>{ex.name}</h1>
+                <RunExTitle >{ex.name}</RunExTitle>
 
 
                 {/* <section style={{display:'flex', justifyContent: 'space-evenly', width: '100%'}}>
@@ -179,9 +179,9 @@ let chosenLogs = logs.filter(
                 </div>  
             </div>
             <section style={{display: 'flex', justifyContent: 'center'}}>           
-                <div style={{marginTop: '1%',border: 'none', width: '50%', height: '150%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
-                   <h1 style={{display: 'flex', justifyContent: 'center'}}>Go-Back</h1> 
-                    </div>
+                <RunButCont style={{marginTop: '1%',border: 'none', width: '50%', borderRadius: '15%', backgroundColor: 'white', display: 'flex', flexDirection: 'column', justifyContent: 'center'}} onClick={setShowntoNull}>
+                   <RunGoBack >Go-Back</RunGoBack> 
+                    </RunButCont>
             </section>
            </div>
             </div>
