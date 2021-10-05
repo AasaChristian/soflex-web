@@ -90,6 +90,13 @@ export const Exbox = styled.section`
 
     
     };
+
+    @media (max-height: 450px) {
+      height: 50%;
+      background-color: black;
+       border-radius: 0%;
+
+    };
     ;`
 
     export const LeftWall = styled.section`
@@ -135,7 +142,7 @@ export const Exbox = styled.section`
     // border-radius: 4%;
     // border: solid #656176 2px;
 
-    @media (max-height: 750px) {
+    @media (max-height: 760px) {
 
       height: 66%;
       background-color: #5f5c678f;
@@ -170,7 +177,7 @@ export const Exbox = styled.section`
 
     overflow: hidden;
     margin-top: 2%;
-    @media (max-height: 721px) {
+    @media (max-height: 760px) {
     overflow: scroll;
     }
     `;
