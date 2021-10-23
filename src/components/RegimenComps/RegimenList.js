@@ -55,7 +55,9 @@ function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
 
         <NavSection style={completed === true? {display: 'none'}: {display: 'flex'}}>
           <NavLink   to = {`/run/${name}`} style={{ textDecoration: 'none' , color: `${blackOrWhite[1]}`}}> Start</NavLink>
+          <NavLink  to = {`/board/${name}`} style={{ textDecoration: 'none', color: `${blackOrWhite[1]}` }}>Add</NavLink>
           <NavLink  to = {`/board/${name}`} style={{ textDecoration: 'none', color: `${blackOrWhite[1]}` }}>Edit</NavLink>
+
         </NavSection>
 
         <div style={completed === false? {display: 'none'}: {display: 'flex', backgroundColor: 'yellow'}} onClick={updateregimen}>
