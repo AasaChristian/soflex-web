@@ -113,13 +113,16 @@ const RemoveExerciseFromRegimen = e => {
     </ExboxREGDE>
 
   </ExContREGDE>
-  <section>
-    <div>
+  <section style={{display: 'flex', justifyContent: 'center'}}>
+    {/* <div>
 
       <button onClick={RemoveExerciseFromRegimen}>Remove Exercies</button>
 
+    </div> */}
+    <div>
+    <NavLink to = {"/board"}
+><h1 >BACK</h1></NavLink>
     </div>
-    <div></div>
   </section>
 </PageScroll>
 
