@@ -121,7 +121,7 @@ const UnComplete = (link) => {
                     <h style={{color: `${blackOrWhite[1]}`}}>Regimen</h>
 
 
-                   <button style={{width: "100%"}} onClick={toggleCompletedReg}>{ hideCompleted === true?   "Show Completed Regimen" : "Hide Completed Regimen"}</button>
+                   {/* <button style={{width: "100%"}} onClick={toggleCompletedReg}>{ hideCompleted === true?   "Show Completed Regimen" : "Hide Completed Regimen"}</button> */}
                </div>
             <ExboxCont> 
             <div style={{display: 'flex', justifyContent: 'center'}}>   
