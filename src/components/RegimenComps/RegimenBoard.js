@@ -21,7 +21,7 @@ const [hideRegimen, setHideRegimen] = useState(false)
 const [hideExList, setHideExList] = useState(false)
 const [hideCompleted, setHideCompleted] = useState(true)
 
-
+console.log(regTempName, "regTempName after add button")
 
 
 
@@ -49,7 +49,7 @@ useEffect(() => {
 const SwapEdit = (e) => {
     e.preventDefault()
     setNewRegNameEditor(!newRegNameEditor)
-    setHideRegimen(!newRegNameEditor)
+    setHideRegimen(!hideRegimen)
 }
 
 const ClearTempName = (e) => {
@@ -132,6 +132,9 @@ const UnComplete = (link) => {
             {regimenName.map((e, i) => {
                 return(
                     <RegimenList
+                SwapEdit={SwapEdit}
+                setHideExList={setHideExList}
+                hideExList={hideExList}
                 name = {e}
                 regimenID = {i}
                 completed = {false} 
@@ -164,6 +167,7 @@ const UnComplete = (link) => {
             <div style={newRegNameEditor === false? {display: "none"}: {display: "initial"}}>
             <TempRegName
             setNewRegNameEditor={setNewRegNameEditor}
+            newRegNameEditor={newRegNameEditor}
 
             />
             </div>
@@ -173,7 +177,7 @@ const UnComplete = (link) => {
 
                 <h4 style={{fontSize: "35px"}}>{regTempName}</h4>
 
-                <button style={regTempName.length === 0 ?  {display: "none"} : {display: "initial"} } onClick={ClearTempName}>Cancel
+                <button style={regTempName.length === 0 ?  {display: "none"} : {display: "initial"} } onClick={ClearTempName}>Cancel 
                 </button>
         <h4 style={regTempName.length === 0 ? {display: 'none'}: {fontSize: "20px", display: "flex", justifyContent: 'center'}}>{selectedExercise == null? "Select an Exercise": `${chosenExercise.name} selected`}</h4>
 
