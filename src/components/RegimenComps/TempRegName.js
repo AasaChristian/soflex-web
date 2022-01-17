@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { createRegimen, createTempRegName } from '../../action/regimenActions';
 
 function TempRegName(props){
-const {createTempRegName, regTempName, setNewRegNameEditor, regimenName} = props
+const {createTempRegName, regTempName, setNewRegNameEditor, regimenName, newRegNameEditor} = props
 
 const [tempRegName, setTempRegName] = useState("")
 const [nameOfUpdatedReg, setNameOfUpdatedReg] = useState("")
@@ -19,7 +19,8 @@ const submitTempName = e => {
     e.preventDefault()
     createTempRegName(tempRegName)
     setTempRegName("")
-    setNewRegNameEditor(false)
+    setNewRegNameEditor(!newRegNameEditor)
+
 }
 
 const handleButtonPressed = e => {
@@ -38,8 +39,11 @@ return(
                 <div>
                     <button onClick={(e) => {
                     e.preventDefault()
-                    setNewRegNameEditor(false)
-                    createTempRegName(regimenName)   
+                    setNewRegNameEditor()
+                    createTempRegName(regimenName)  
+                    setNewRegNameEditor(!newRegNameEditor)
+                    console.log(regTempName, "name 2")
+ 
                     }}>{regimenName}</button>
                 </div>
                 

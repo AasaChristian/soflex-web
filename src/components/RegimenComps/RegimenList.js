@@ -1,10 +1,13 @@
 import React from 'react'
 import { Exbox, BorderBottom, NavSection, blackOrWhite} from '../StyledComponent'
 import {NavLink} from "react-router-dom"
+import { connect } from 'react-redux';
+import { createTempRegName } from '../../action/regimenActions';
 
 
 
-function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
+
+function RegimenList({name, regimenID,  completed, UnComplete, link, SwapEdit, regTempName   }) {
 
     // const Exbox = styled.section`
     // background-color: white;
@@ -43,7 +46,14 @@ function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
 
 
 
-
+const addExToReg = (e) => {
+e.preventDefault()
+SwapEdit(e)
+console.log(name, "name")
+createTempRegName(name)
+// setHideExList(false)
+console.log(regTempName, "name 2")
+}
   return (
     <Exbox key ={regimenID}>
       <div>
@@ -55,7 +65,9 @@ function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
 
         <NavSection style={completed === true? {display: 'none'}: {display: 'flex'}}>
           <NavLink   to = {`/run/${name}`} style={{ textDecoration: 'none' , color: `${blackOrWhite[1]}`}}> Start</NavLink>
+          <div  onClick={addExToReg} style={{ textDecoration: 'none', color: `${blackOrWhite[1]}` }}>Add </div>
           <NavLink  to = {`/board/${name}`} style={{ textDecoration: 'none', color: `${blackOrWhite[1]}` }}>Edit</NavLink>
+
         </NavSection>
 
         <div style={completed === false? {display: 'none'}: {display: 'flex', backgroundColor: 'yellow'}} onClick={updateregimen}>
@@ -65,6 +77,11 @@ function RegimenList({name, regimenID,  completed, UnComplete, link   }) {
         </div>
     </Exbox>
   );
-}
-
-export default RegimenList;
+};
+const mapStateToProps = state => {
+	return {
+        regTempName: state.regTempName,
+        regimenName: state.regimenName,
+	};
+};
+export default    connect(mapStateToProps, { createTempRegName})(RegimenList);
